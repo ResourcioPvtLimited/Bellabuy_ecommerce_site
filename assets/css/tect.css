@@ -1,0 +1,819 @@
+:root {
+      --primary: #ff4757;
+      --secondary: #111112;
+      --light: #ffffff;
+      --dark: #1e272e;
+      --success: #2ed573;
+      --text: #2f3542;
+      --text-light: #747d8c;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--text);
+      padding-bottom: 70px;
+    }
+   a {
+    text-decoration: none;
+    color: #333;
+}
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1e1e1e;
+    }
+
+    .search-bar form {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background-color: #fff;
+      width: 300px;
+    }
+
+    .search-bar input[type="text"] {
+      border: none;
+      outline: none;
+      padding: 6px 10px;
+      flex: 1;
+      font-size: 14px;
+    }
+
+    .search-bar button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-icons a {
+      color: black;
+      position: relative;
+      font-size: 18px;
+    }
+
+    .header-icons span {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: #ff6b01;
+      color: white;
+      border-radius: 50%;
+      font-size: 10px;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SION</div>
+
+  <div class="search-bar">
+    <form action="inc/search.php" method="GET">
+      <input type="text" name="search" placeholder="Search for products..." required>
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+
+  <div class="header-icons">
+    <a href="wishlist.php" class="wishlist-icon-container">
+      <i class="fas fa-heart"></i>
+      <span class="wishlist-count"><?= $wishCount ?></span>
+    </a>
+    <a href="cart.php" class="cart-icon-container">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-count"><?= $cartCount ?></span>
+    </a>
+  </div>
+</header>
+
+</body>
+</html>
+🔧 Notes:
+The layout and spacing are matched exactly as in your screenshot.
+
+Use <?= $wishCount ?> and <?= $cartCount ?> from PHP for dynamic badge counts.
+
+The color of the badge is #ff6b01 to match the screenshot.
+
+Let me know if you want this to be mobile responsive, sticky, or embedded in your existing site layout.
+
+
+
+
+
+
+
+
+You said:
+dont change the class
+
+
+ChatGPT said:
+Thanks! Here's the updated header design that matches your image without changing any of your existing class names (logo, search-bar, wishlist-icon-container, cart-icon-container, etc.).
+
+✅ Final HTML + CSS (Only Styling, Class Names Unchanged)
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SION Header</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1d1d1d;
+    }
+
+    .search-bar form {
+      display: flex;
+      align-items: center;
+     width:auto;
+      min-width:250px;
+      border-radius: 30px;
+      padding: 5px 10px;
+      height:40px;
+      border: 1px solid #ddd;
+    }
+
+    .search-bar input[type="text"] {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+
+    .search-bar button {
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-icons a {
+      position: relative;
+      color: #111;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .header-icons span {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background-color: #ff6b01;
+      color: white;
+      font-size: 10px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .gender-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px 0;
+      background-color: white;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    
+    .gender-btn {
+      padding: 8px 25px;
+      border-radius: 20px;
+      border: 2px solid var(--secondary);
+      background: white;
+      font-weight: bold;
+      cursor: pointer;
+      width: 45%;
+    }
+    
+    .gender-btn.active {
+      background: var(--secondary);
+      color: white;
+    }
+    
+    .slider-container {
+      position: relative;
+      margin: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 180px;
+    }
+    
+    .banner-slider {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    
+    .banner-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    
+    .banner-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .banner-content {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+    }
+    
+    .banner-content h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    
+    .banner-content h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    
+    .banner-btn {
+      background-color: white;
+      color: var(--secondary);
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .slider-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.5);
+      cursor: pointer;
+    }
+    
+    .slider-dot.active {
+      background-color: white;
+    }
+    
+    .section-title {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      
+      text-align: center;
+     
+    }
+    
+    .section-title span {
+      color: var(--primary);
+      font-size: 14px;
+    }
+    
+    .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      
+    }
+    
+    .category-slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .category-slide {
+      min-width: 70px;
+      text-align: center;
+      padding: 0px;
+      
+      
+    }
+    
+    .category-slide img{
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 5px;
+      background-color: #f4f6f6;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    
+    .category-slide p {
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+
+   .brand-slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .top-brand-title{
+      text-align: center;
+      color: #000000;
+      font-size: 15px;
+ 
+    }
+    .brand-slide {
+      min-width: 70px;
+      text-align: center;
+      
+      
+    }
+    
+    .brand-slide img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      padding: 5px;
+      border-radius: 50%;
+      
+     
+    }
+  
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    .slider-nav.prev {
+      left: 5px;
+    }
+    
+    .slider-nav.next {
+      right: 5px;
+    }
+    
+    .big-deals {
+      display: flex;
+      gap: 10px;
+      padding: 0 15px;
+      margin-bottom: 20px;
+    }
+    
+    .main-deal {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .main-deal img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    
+    .deal-rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+    
+    .deal-rating .stars {
+      color: #ffd700;
+      font-size: 8px;
+    }
+    .stars {
+      color: #ffd700;
+      font-size: 8px;
+    }
+    
+    
+    
+    .side-deals {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .side-deal {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .side-deal img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+    
+    .deal-title {
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .deal-price {
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+    
+    .deal-price .current {
+      font-weight: bold;
+    }
+    
+    .deal-price .original {
+      text-decoration: line-through;
+      color: var(--text-light);
+      margin-left: 5px;
+    }
+    
+    .deal-discount {
+      font-size: 10px;
+      color: var(--success);
+      font-weight: bold;
+    }
+    
+    .deal-brand {
+      font-size: 10px;
+      color: var(--text-light);
+      margin-top: 5px;
+    }
+    
+    .products {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 0 15px;
+    }
+    
+     .product-card {
+      border-radius: 16px;
+      
+      overflow: hidden;
+      
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+     
+
+    }
+
+    .product-image {
+       width: 100%;
+      height: 250px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px 2px 0 0;
+    border-radius: 8px;
+    background: #d9d8d8;
+    overflow: hidden;
+    border-bottom: 1px solid var(--s);
+    
+     
+
+    }
+
+    .product-image img {
+      width: 300px;
+    height: 300px;
+    transition: .1s ease;
+    object-fit: cover;
+     
+     
+    }
+.product_img .transform:hover {
+    width: 340px;
+    height: 340px;
+}
+   
+    .label-launch {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: #7A3FFC;
+      color: white;
+      padding: 5px 8px;
+      border-bottom-right-radius:8px ;
+      font-size: 10px;
+    }
+
+    .wishlist-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 25px;
+      color: #141414;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease;
+      
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      text-align: center;
+      vertical-align: middle;
+      
+      
+    }
+
+    .wishlist-icon:hover {
+      color: #E91E63;
+      transform: scale(1.2);
+    }
+.rating{
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      font-size: 15px;
+      color: #444;
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease;
+      background-color: rgb(255, 255, 255);
+      border-radius: 5px;
+      width: 70px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      vertical-align: middle;
+       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+}
+.rating i{
+  margin-top: -3px;
+  margin-right: 4px;
+  color: #fdc417;
+}
+    .product-info {
+      padding: 18px 16px;
+      background: #fff;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #080808;
+    }
+
+    .product-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 6px;
+    }
+ 
+    .product-original {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    .product-discount {
+      color: #C25400;
+      font-weight: 600;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    margin-top:20px;
+    }
+
+    .brand img {
+      height: 25px;
+      width: auto;
+    }
+
+    .add-to-cart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .add-to-cart button {
+      margin-left: 10px;
+      font-size: 10px;
+      padding: 5px 15px;
+      border: 2px solid #000;
+      border-radius: 30px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .add-to-cart button:hover {
+      background: #000;
+      color: #fff;
+      transform: scale(1.05);
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .footer-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .footer-btn i {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+    
+    .footer-btn.active {
+      color: var(--primary);
+    }
+
+
+
+
+
+
+    .bigdeal-main{
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #f87618, #f8b043);
+  border-radius: 10px;
+  margin: 10px;
+
+}
+    .big-deals-title {
+      text-align: center;
+      font-size: 45px;
+      font-weight: bold;
+      color: #ffcc00;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .big-deals-subtitle {
+      text-align: center;
+      font-size: 16px;
+      margin: 8px 0 20px;
+      color: #080808;
+      font-weight: 600;
+    }
+
+    .deals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      
+    }
+
+    .deal-card img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: block;
+    }
+
+    .discover-button {
+      display: block;
+      margin: 25px auto 10px;
+      background-color: #FF6F00;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 10px 24px;
+      border-radius: 20px;
+      text-align: center;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 0.3s;
+    }
+
+    .discover-button:hover {
+      background-color: #e65100;
+    }
+
+    @media (min-width: 760px) {
+      .big-deals-title {
+        font-size: 36px;
+      }
+      .big-deals-subtitle {
+        font-size: 18px;
+      }
+      .deals-grid {
+        max-width: 600px;
+        margin: auto;
+      }
+    }

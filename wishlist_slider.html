@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Scroll UI</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+       font-family: 'Arial', sans-serif;
+            
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      
+      padding: 30px 10px;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: #eee;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .indicators {
+      display: flex;
+      gap: 6px;
+    }
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #bbb;
+      transition: 0.3s;
+    }
+
+    .indicator.active {
+      background: #e74c3c;
+      transform: scale(1.2);
+    }
+
+    .product-carousel {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: auto;
+      height: 300px;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+      box-shadow: 0 30px 20px -20px rgba(31, 31, 31, 0.4);
+      border-radius: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .product-category {
+     font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            margin-top: 40px;
+    }
+
+    .product-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 5px 0;
+    }
+
+    .product-rating {
+      color: #f39c12;
+      font-size: 14px;
+    }
+
+    .product-price {
+       font-size: 28px;
+            font-weight: 800;
+            color: #e74c3c;
+            margin-bottom: 20px;
+    }
+
+    .add-to-cart, .buy-now {
+      background: white;
+            color: rgb(5, 5, 5);
+            border:1px solid black;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 51%;
+            margin-top: auto;
+    }
+
+    .add-to-cart {
+      background: white;
+      color: #000;
+      border: 1px solid black;
+      margin-bottom: 20px;
+    }
+
+    .add-to-cart:hover {
+      transform: translateY(-2px);
+      
+    }
+
+    .buy-now {
+      background: black;
+      color: white;
+    }
+
+    .buy-now:hover {
+      transform: translateY(-2px);
+    
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Your Products</h1>
+      <p>Discover amazing deals</p>
+    </div>
+
+    <div class="navigation">
+      <button class="nav-btn" id="prevBtn">‹</button>
+      <div class="indicators" id="indicators"></div>
+      <button class="nav-btn" id="nextBtn">›</button>
+    </div>
+
+    <div class="product-carousel" id="carousel">
+      <img src="" alt="Product" id="productImage" class="product-image" draggable="false">
+      <div class="product-category" id="productCategory"></div>
+      <h2 class="product-title" id="productTitle"></h2>
+      <div class="product-rating" id="productRating"></div>
+      <div class="product-price" id="productPrice"></div>
+      <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+      <button class="buy-now" onclick="addToCart()">Buy Now</button>
+    </div>
+  </div>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        title: "Premium Sneakers",
+        category: "Footwear",
+        price: "৳1299",
+        rating: 4.8,
+        image: "prod/img1.png"
+      },
+      {
+        id: 2,
+        title: "Vintage T-Shirt",
+        category: "Clothing",
+        price: "৳399",
+        rating: 4.5,
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600"
+      },
+      {
+        id: 3,
+        title: "Leather Backpack",
+        category: "Accessories",
+        price: "৳1199",
+        rating: 4.7,
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600"
+      },
+       {
+        id: 4,
+        title: "New Fashion",
+        category: "Accessories",
+        price: "৳3000",
+        rating: 4.7,
+        image: "prod/img1.png"
+      }
+    ];
+
+    let currentIndex = 0;
+    const productImage = document.getElementById("productImage");
+    const productTitle = document.getElementById("productTitle");
+    const productCategory = document.getElementById("productCategory");
+    const productPrice = document.getElementById("productPrice");
+    const productRating = document.getElementById("productRating");
+    const indicators = document.getElementById("indicators");
+
+    function showProduct(index) {
+      const p = products[index];
+      productImage.src = p.image;
+      productTitle.textContent = p.title;
+      productCategory.textContent = p.category;
+      productPrice.textContent = p.price;
+      productRating.textContent = "★".repeat(Math.floor(p.rating)) + ` (${p.rating})`;
+
+      document.querySelectorAll(".indicator").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    function createIndicators() {
+      indicators.innerHTML = "";
+      products.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.classList.add("indicator");
+        if (i === 0) dot.classList.add("active");
+        dot.onclick = () => {
+          currentIndex = i;
+          showProduct(currentIndex);
+        };
+        indicators.appendChild(dot);
+      });
+    }
+
+    function addToCart() {
+      alert(`Product added: ${products[currentIndex].title}`);
+    }
+
+    document.getElementById("prevBtn").onclick = () => {
+      currentIndex = (currentIndex - 1 + products.length) % products.length;
+      showProduct(currentIndex);
+    };
+
+    document.getElementById("nextBtn").onclick = () => {
+      currentIndex = (currentIndex + 1) % products.length;
+      showProduct(currentIndex);
+    };
+
+    // Touch gesture support
+    const carousel = document.getElementById("carousel");
+    let touchStartX = 0;
+
+    carousel.addEventListener("touchstart", e => {
+      touchStartX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchend", e => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchStartX - touchEndX;
+
+      if (diffX > 50) document.getElementById("nextBtn").click();
+      else if (diffX < -50) document.getElementById("prevBtn").click();
+    });
+
+    // Auto-scroll
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % products.length;
+      showProduct(currentIndex);
+    }, 5000);
+
+    createIndicators();
+    showProduct(currentIndex);
+  </script>
+</body>
+</html>

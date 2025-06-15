@@ -1,0 +1,226 @@
+[24-May-2025 17:13:36 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[24-May-2025 17:14:07 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[24-May-2025 17:14:40 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/pen_ord.php on line 34
+[25-May-2025 00:36:47 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 00:50:47 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/pen_ord.php on line 34
+[25-May-2025 00:50:56 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/disable.php on line 40
+[25-May-2025 00:51:01 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/products.php on line 47
+[25-May-2025 00:51:17 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/single.php on line 19
+[25-May-2025 00:51:17 Asia/Kolkata] PHP Warning:  Undefined variable $name in /home/alokito2/public_html/shop/main/single.php on line 42
+[25-May-2025 00:51:17 Asia/Kolkata] PHP Warning:  Undefined variable $dis in /home/alokito2/public_html/shop/main/single.php on line 46
+[25-May-2025 00:51:17 Asia/Kolkata] PHP Warning:  Undefined variable $price in /home/alokito2/public_html/shop/main/single.php on line 50
+[25-May-2025 00:51:17 Asia/Kolkata] PHP Warning:  Undefined variable $discount in /home/alokito2/public_html/shop/main/single.php on line 54
+[25-May-2025 00:51:20 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/products.php on line 47
+[25-May-2025 01:39:26 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 01:41:44 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 01:41:54 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 01:47:47 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 01:47:59 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/products.php on line 47
+[25-May-2025 01:48:04 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/pen_ord.php on line 34
+[25-May-2025 01:48:10 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/disable.php on line 40
+[25-May-2025 01:48:11 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/products.php on line 47
+[25-May-2025 01:48:15 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 01:57:02 Asia/Kolkata] PHP Warning:  Undefined variable $name in /home/alokito2/public_html/shop/main/single.php on line 42
+[25-May-2025 01:57:02 Asia/Kolkata] PHP Warning:  Undefined variable $dis in /home/alokito2/public_html/shop/main/single.php on line 46
+[25-May-2025 01:57:02 Asia/Kolkata] PHP Warning:  Undefined variable $price in /home/alokito2/public_html/shop/main/single.php on line 50
+[25-May-2025 01:57:02 Asia/Kolkata] PHP Warning:  Undefined variable $discount in /home/alokito2/public_html/shop/main/single.php on line 54
+[25-May-2025 02:45:30 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:45:35 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:45:35 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:45:36 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:45:38 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:45:48 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:46:25 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:46:34 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 02:46:34 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 08:49:27 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 10:04:58 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 10:09:49 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 10:10:19 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 10:11:28 Asia/Kolkata] PHP Warning:  Undefined variable $result in /home/alokito2/public_html/shop/main/withdraw_requests.php on line 57
+[25-May-2025 10:11:28 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/alokito2/public_html/shop/main/withdraw_requests.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/alokito2/public_html/shop/main/withdraw_requests.php on line 57
+[25-May-2025 10:11:29 Asia/Kolkata] PHP Warning:  Undefined variable $result in /home/alokito2/public_html/shop/main/withdraw_requests.php on line 57
+[25-May-2025 10:11:29 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/alokito2/public_html/shop/main/withdraw_requests.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/alokito2/public_html/shop/main/withdraw_requests.php on line 57
+[25-May-2025 10:22:18 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 10:30:56 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 10:59:43 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[25-May-2025 11:01:24 Asia/Kolkata] PHP Warning:  Undefined variable $u_id in /home/alokito2/public_html/shop/main/order_details.php on line 65
+[25-May-2025 14:02:29 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[26-May-2025 08:30:48 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[27-May-2025 16:41:13 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[27-May-2025 16:41:30 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[27-May-2025 16:41:33 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[27-May-2025 16:41:57 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/products.php on line 47
+[27-May-2025 16:42:12 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home/alokito2/public_html/shop/main/reviews.php on line 29
+[27-May-2025 16:42:12 Asia/Kolkata] PHP Warning:  Undefined array key "lname" in /home/alokito2/public_html/shop/main/reviews.php on line 29
+[27-May-2025 16:42:12 Asia/Kolkata] PHP Warning:  Undefined array key "title" in /home/alokito2/public_html/shop/main/reviews.php on line 31
+[27-May-2025 16:42:25 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home/alokito2/public_html/shop/main/reviews.php on line 29
+[27-May-2025 16:42:25 Asia/Kolkata] PHP Warning:  Undefined array key "lname" in /home/alokito2/public_html/shop/main/reviews.php on line 29
+[27-May-2025 16:42:25 Asia/Kolkata] PHP Warning:  Undefined array key "title" in /home/alokito2/public_html/shop/main/reviews.php on line 31
+[27-May-2025 16:42:31 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/products.php on line 47
+[27-May-2025 16:42:35 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 00:45:49 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 00:47:18 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 09:05:26 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 12:09:41 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 16:10:05 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 16:11:27 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 16:11:35 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/pen_ord.php on line 34
+[28-May-2025 17:45:51 Asia/Kolkata] PHP Warning:  Undefined variable $u_id in /home/alokito2/public_html/shop/main/order_details.php on line 65
+[28-May-2025 22:44:50 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 22:45:20 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[28-May-2025 22:45:26 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/products.php on line 47
+[28-May-2025 22:45:36 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/disable.php on line 40
+[28-May-2025 22:45:42 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/pen_ord.php on line 34
+[28-May-2025 22:45:45 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home/alokito2/public_html/shop/main/reviews.php on line 29
+[28-May-2025 22:45:45 Asia/Kolkata] PHP Warning:  Undefined array key "lname" in /home/alokito2/public_html/shop/main/reviews.php on line 29
+[28-May-2025 22:45:45 Asia/Kolkata] PHP Warning:  Undefined array key "title" in /home/alokito2/public_html/shop/main/reviews.php on line 31
+[28-May-2025 22:46:02 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/main/index.php on line 23
+[30-May-2025 00:07:18 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:07:55 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:08:09 Asia/Kolkata] PHP Notice:  Undefined index: shop_id in /home/alokito2/public_html/shop/main/index.php on line 23
+[30-May-2025 00:08:12 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:08:35 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:08:40 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:08:40 Asia/Kolkata] PHP Notice:  Undefined index: shop_id in /home/alokito2/public_html/shop/main/disable.php on line 40
+[30-May-2025 00:08:46 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:08:49 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:08:57 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:09:03 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:09:05 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:09:13 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:09:28 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:09:30 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:11:41 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:29:58 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:30:15 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:30:29 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:32:15 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:32:21 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:32:29 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 00:49:47 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 17:19:41 Asia/Kolkata] PHP Notice:  Undefined index: shop_id in /home/alokito2/public_html/shop/main/index.php on line 23
+[30-May-2025 17:19:43 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 17:20:15 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[30-May-2025 17:20:23 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 10:56:54 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 10:57:06 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 10:57:14 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 10:58:58 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 10:58:58 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 10:59:05 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:03:37 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:03:37 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:03:41 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:03:41 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:03:46 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:03:49 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:03:52 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:03:54 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:03:56 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:04:00 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:04:05 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:04:08 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:04:11 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:22:38 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:22:38 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:22:43 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:22:45 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:22:48 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:22:51 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:23:04 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:25:11 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:25:11 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:37:30 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:37:30 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:37:59 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:37:59 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:39:17 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:39:52 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:40:12 Asia/Dhaka] PHP Notice:  Undefined variable: name in /home/alokito2/public_html/shop/main/single.php on line 42
+[31-May-2025 11:40:12 Asia/Dhaka] PHP Notice:  Undefined variable: dis in /home/alokito2/public_html/shop/main/single.php on line 46
+[31-May-2025 11:40:12 Asia/Dhaka] PHP Notice:  Undefined variable: price in /home/alokito2/public_html/shop/main/single.php on line 50
+[31-May-2025 11:40:12 Asia/Dhaka] PHP Notice:  Undefined variable: discount in /home/alokito2/public_html/shop/main/single.php on line 54
+[31-May-2025 11:40:29 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:40:29 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:40:46 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:40:55 Asia/Dhaka] PHP Notice:  Undefined variable: name in /home/alokito2/public_html/shop/main/single.php on line 42
+[31-May-2025 11:40:55 Asia/Dhaka] PHP Notice:  Undefined variable: dis in /home/alokito2/public_html/shop/main/single.php on line 46
+[31-May-2025 11:40:55 Asia/Dhaka] PHP Notice:  Undefined variable: price in /home/alokito2/public_html/shop/main/single.php on line 50
+[31-May-2025 11:40:55 Asia/Dhaka] PHP Notice:  Undefined variable: discount in /home/alokito2/public_html/shop/main/single.php on line 54
+[31-May-2025 11:41:06 Asia/Dhaka] PHP Notice:  Undefined variable: name in /home/alokito2/public_html/shop/main/single.php on line 42
+[31-May-2025 11:41:06 Asia/Dhaka] PHP Notice:  Undefined variable: dis in /home/alokito2/public_html/shop/main/single.php on line 46
+[31-May-2025 11:41:06 Asia/Dhaka] PHP Notice:  Undefined variable: price in /home/alokito2/public_html/shop/main/single.php on line 50
+[31-May-2025 11:41:06 Asia/Dhaka] PHP Notice:  Undefined variable: discount in /home/alokito2/public_html/shop/main/single.php on line 54
+[31-May-2025 11:41:10 Asia/Dhaka] PHP Notice:  Undefined variable: name in /home/alokito2/public_html/shop/main/single.php on line 42
+[31-May-2025 11:41:10 Asia/Dhaka] PHP Notice:  Undefined variable: dis in /home/alokito2/public_html/shop/main/single.php on line 46
+[31-May-2025 11:41:10 Asia/Dhaka] PHP Notice:  Undefined variable: price in /home/alokito2/public_html/shop/main/single.php on line 50
+[31-May-2025 11:41:10 Asia/Dhaka] PHP Notice:  Undefined variable: discount in /home/alokito2/public_html/shop/main/single.php on line 54
+[31-May-2025 11:41:24 Asia/Dhaka] PHP Notice:  Undefined variable: name in /home/alokito2/public_html/shop/main/single.php on line 42
+[31-May-2025 11:41:24 Asia/Dhaka] PHP Notice:  Undefined variable: dis in /home/alokito2/public_html/shop/main/single.php on line 46
+[31-May-2025 11:41:24 Asia/Dhaka] PHP Notice:  Undefined variable: price in /home/alokito2/public_html/shop/main/single.php on line 50
+[31-May-2025 11:41:24 Asia/Dhaka] PHP Notice:  Undefined variable: discount in /home/alokito2/public_html/shop/main/single.php on line 54
+[31-May-2025 11:42:21 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[31-May-2025 11:42:21 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[31-May-2025 11:42:25 Asia/Dhaka] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/main/product_request.php on line 3
+[03-Jun-2025 22:46:25 Asia/Kolkata] PHP Notice:  Undefined index: shop_id in /home/alokito2/public_html/shop/main/index.php on line 23
+[03-Jun-2025 22:46:31 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[03-Jun-2025 23:48:28 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/shop/config.php on line 2
+[04-Jun-2025 04:18:27 Asia/Kolkata] PHP Notice:  Undefined index: shop_id in /home/alokito2/public_html/new/main/index.php on line 23
+[04-Jun-2025 04:18:42 Asia/Kolkata] PHP Notice:  Undefined index: shop_id in /home/alokito2/public_html/new/main/index.php on line 23
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/new/config.php on line 2
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:45 Asia/Kolkata] PHP Notice:  Undefined index: subcat in /home/alokito2/public_html/new/main/add_cat.php on line 62
+[04-Jun-2025 04:18:46 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/new/config.php on line 2
+[04-Jun-2025 04:20:53 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/new/config.php on line 2
+[04-Jun-2025 04:22:39 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/new/config.php on line 2
+[04-Jun-2025 04:22:58 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:22:58 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:22:58 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:22:58 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:22:58 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:22:58 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:23:50 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:23:50 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:23:50 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:23:50 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:23:50 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:23:50 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:23:51 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/new/config.php on line 2
+[04-Jun-2025 04:24:03 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:24:03 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:24:03 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:24:03 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:24:03 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:24:03 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:25:18 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:25:18 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:25:18 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:25:18 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:25:18 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:25:18 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:25:22 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:25:22 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 25
+[04-Jun-2025 04:25:22 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:25:22 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 26
+[04-Jun-2025 04:25:22 Asia/Kolkata] PHP Notice:  Undefined index: image2 in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:25:22 Asia/Kolkata] PHP Notice:  Trying to access array offset on value of type null in /home/alokito2/public_html/new/main/submit2.php on line 27
+[04-Jun-2025 04:26:33 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/new/config.php on line 2
+[04-Jun-2025 04:33:52 Asia/Kolkata] PHP Notice:  session_start(): A session had already been started - ignoring in /home/alokito2/public_html/new/config.php on line 2

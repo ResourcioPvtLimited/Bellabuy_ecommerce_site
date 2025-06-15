@@ -1,0 +1,51 @@
+@font-face {
+font-family: font;
+src: url('../assets/css/2.otf')
+}
+*{
+font-family: 'Jost';
+}
+.main{
+display: flex;
+}.left{
+width: 300px;
+height:auto;
+}.flex_{
+display: flex;
+}.align-items{
+align-items: center;
+}
+.right{
+position: absolute;
+padding-left: 250px;
+
+}.space{
+width: 20px!important;
+}.form-control{
+width: 100%!important
+}.right{overflow-y: scroll;
+width: 100%;height: calc(100vh - 80px);
+}.flex_ div{
+width: 100%;
+}.right>form{
+width:100%;
+margin: auto;
+}a{
+text-decoration: none!important;
+}.list-group li{
+color: #fff;
+}.row_ >div{
+
+
+width: 250px!important;
+}
+.flex-wrap{
+flex-wrap: wrap;
+}.padding{
+padding: 20px 60px;
+}
+.sidebar-nav ul .sidebar-item .sidebar-link span {
+	margin-left: 10px!important;
+}.sidebar-nav ul .sidebar-item .sidebar-link i {
+	font-size: 16px!important;
+}

@@ -1,0 +1,222 @@
+[24-May-2025 17:15:15 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[24-May-2025 17:15:36 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[24-May-2025 17:15:57 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[24-May-2025 19:13:08 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 00:51:36 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 00:55:54 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:55:56 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:06 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:07 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:07 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:10 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:19 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:19 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:20 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:20 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:20 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:56:20 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 1 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:01 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:02 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:02 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:03 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:24 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:26 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:26 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:26 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:57:41 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:58:04 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days e' at line 2 in /home/alokito2/public_html/shop/shop/back/login.php:57
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(57): mysqli->query('UPDATE `item` S...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 57
+[25-May-2025 00:59:21 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Clothing,Women's Clothing,Hats,Jewelry
+Tag:Electronic,Printer,Office
+30 days' at line 2 in /home/alokito2/public_html/shop/shop/back/add_product.php:37
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/add_product.php(37): mysqli->query('INSERT INTO ite...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/add_product.php on line 37
+[25-May-2025 01:19:08 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:20:20 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:20:20 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'mononhasan0@gmail.com' for key 'shop.email' in /home/alokito2/public_html/shop/shop/back/login.php:45
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(45): mysqli->query('INSERT INTO `sh...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 45
+[25-May-2025 01:20:53 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:38:49 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:39:45 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:39:45 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'sadiuldhrubo@gmail.com' for key 'shop.email' in /home/alokito2/public_html/shop/shop/back/login.php:45
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(45): mysqli->query('INSERT INTO `sh...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 45
+[25-May-2025 01:45:01 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:47:37 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:47:37 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'sadiuldhrubo@gmail.com' for key 'shop.email' in /home/alokito2/public_html/shop/shop/back/login.php:45
+Stack trace:
+#0 /home/alokito2/public_html/shop/shop/back/login.php(45): mysqli->query('INSERT INTO `sh...')
+#1 {main}
+  thrown in /home/alokito2/public_html/shop/shop/back/login.php on line 45
+[25-May-2025 01:48:41 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 01:48:48 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 08:42:30 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 08:50:25 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 08:50:28 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 10:12:04 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 10:30:43 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 10:30:47 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 10:32:07 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 10:59:55 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 15:35:41 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[25-May-2025 17:50:26 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 00:46:56 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 02:07:52 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 02:11:31 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 02:12:39 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 08:30:59 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 11:56:01 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 19:07:06 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 19:33:55 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 19:37:33 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 20:03:11 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 20:34:42 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 21:09:44 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 21:10:37 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 21:11:43 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[26-May-2025 22:55:33 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[27-May-2025 09:24:42 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[27-May-2025 09:32:46 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[27-May-2025 09:43:49 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[27-May-2025 11:27:48 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[27-May-2025 15:54:08 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[27-May-2025 16:43:37 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
+[28-May-2025 02:11:37 Asia/Kolkata] PHP Warning:  Undefined array key "shop_id" in /home/alokito2/public_html/shop/shop/back/login.php on line 2
