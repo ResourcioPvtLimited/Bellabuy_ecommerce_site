@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $identifier = trim($_POST['identifier']);
   $password = $_POST['password'];
 
-  $conn = new mysqli("localhost", "root", "", "bellabuy");//change with the config file 
+  $conn = new mysqli("localhost", "root", "", "demo");//change with the config file 
 
   // Determine if input is email or phone
   $field = filter_var($identifier, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
@@ -40,101 +40,118 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login | BellaBuy</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('prod/loginbac.png') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .login-container {
-      background: #fff;
-      padding: 25px 20px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-      text-align: center;
-    }
-
-    .login-container img {
-      height: 60px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: #222;
-      margin-bottom: 20px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1.5px solid #ccc;
-      border-radius: 10px;
-      font-size: 15px;
-      outline: none;
-      transition: border-color 0.3s;
-    }
-
-    input:focus {
-      border-color: #e44a2d;
-    }
-
-    button {
-      background: #e44a2d;
-      color: #fff;
-      border: none;
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #d43b22;
-    }
-
-    .error {
-      background: #ffe5e5;
-      color: #d60000;
-      padding: 10px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    @media (max-width: 480px) {
-      .login-container {
-        padding: 25px 15px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/login.css" />
 </head>
 <body>
 
-  <div class="login-container">
-    <img src="prod/logo.png" alt="BellaBuy Logo" />
-    <h2>Login to BellaBuy</h2>
-
-    <?php if (!empty($error)): ?>
-      <div class="error"><?= $error ?></div>
-    <?php endif; ?>
-
-    <form method="POST" autocomplete="off">
-      <input type="text" name="identifier" placeholder="Email or Phone" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
+  <div class="container">
+  <div class="avatar">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A4 4 0 017 16h10a4 4 0 011.879.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+    </svg>
   </div>
 
+  <h1>Welcome back</h1>
+
+  <?php if ($error): ?>
+    <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
+  <?php endif; ?>
+
+  <form id="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <div class="input-wrapper">
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+      </svg>
+      <input type="text" id="email" name="email" placeholder="Enter your E-mail or Phone" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+    </div>
+
+    <div class="input-wrapper" style="margin-top: 1.5rem;">
+      <!-- Lock SVG icon -->
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="20" height="20">
+        <rect x="5" y="11" width="14" height="8" rx="2" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4" />
+      </svg>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <button type="button" class="toggle-password" id="togglePasswordBtn" aria-label="Show password">
+        <!-- Eye icon SVG here (unchanged) -->
+        <svg id="eyeIcon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.458 12C3.732 7.943 7.522 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7s-8.268-2.943-9.542-7z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="checkbox-group">
+      <label>
+        <input type="checkbox" id="rememberMe" name="rememberMe" <?php if(isset($_POST['rememberMe'])) echo 'checked'; ?>> Remember me
+      </label>
+      <a href="#">Forget password ?</a>
+    </div>
+
+    <button class="btn-login" type="submit">
+      Login
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16" height="16">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </form>
+
+  <div class="divider">
+    <hr>
+    <span>OR</span>
+    <hr>
+  </div>
+
+  <div class="socials">
+    <button class="facebook">
+      <!-- Facebook SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+        <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+      </svg>
+    </button>
+    <button class="google">
+      <!-- Google SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+      <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+    </svg>
+    </button>
+    <button class="github">
+      <!-- Apple SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+       <path d="M25.565,9.785c-0.123,0.077-3.051,1.702-3.051,5.305c0.138,4.109,3.695,5.55,3.756,5.55 c-0.061,0.077-0.537,1.963-1.947,3.94C23.204,26.283,21.962,28,20.076,28c-1.794,0-2.438-1.135-4.508-1.135 c-2.223,0-2.852,1.135-4.554,1.135c-1.886,0-3.22-1.809-4.4-3.496c-1.533-2.208-2.836-5.673-2.882-9 c-0.031-1.763,0.307-3.496,1.165-4.968c1.211-2.055,3.373-3.45,5.734-3.496c1.809-0.061,3.419,1.242,4.523,1.242 c1.058,0,3.036-1.242,5.274-1.242C21.394,7.041,23.97,7.332,25.565,9.785z M15.001,6.688c-0.322-1.61,0.567-3.22,1.395-4.247 c1.058-1.242,2.729-2.085,4.17-2.085c0.092,1.61-0.491,3.189-1.533,4.339C18.098,5.937,16.488,6.872,15.001,6.688z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="register">
+    <span>Don't have an account? </span>
+    <a href=".">Register now</a>
+  </div>
+</div>
+<script>
+document.getElementById('togglePasswordBtn').addEventListener('click', function () {
+  const passwordInput = document.getElementById('password');
+  const eyeIcon = document.getElementById('eyeIcon');
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    // Change to eye-off icon
+    eyeIcon.innerHTML = `
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.956 9.956 0 012.223-3.592M6.634 6.634A9.956 9.956 0 0112 5c4.478 0 8.268 2.943 9.542 7a9.956 9.956 0 01-4.293 5.066M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 3l18 18"/>
+    `;
+  } else {
+    passwordInput.type = 'password';
+    // Change to eye icon
+    eyeIcon.innerHTML = `
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M2.458 12C3.732 7.943 7.522 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7s-8.268-2.943-9.542-7z"/>
+    `;
+  }
+});
+</script>
 </body>
 </html>

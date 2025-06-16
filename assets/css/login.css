@@ -1,0 +1,174 @@
+body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .avatar {
+      background: #f3f4f6;
+      border-radius: 9999px;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 2rem;
+    }
+    input {
+      width: 100%;
+      padding: 1rem 3rem 1rem 3rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      background: #f9fafb;
+      color: #374151;
+      font-size: 1rem;
+      outline: none;
+      box-sizing: border-box;
+
+    }
+    input:focus {
+      border-color: transparent;
+      box-shadow: 0 0 0 2px #e5e7eb;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    .input-wrapper svg {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      color: #9ca3af;
+      width: 20px;
+      height: 20px;
+    }
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+
+    }
+    .checkbox-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: #4b5563;
+      margin: 0;           /* Ensure no default margin */
+      width: auto;         /* Prevent label from taking full width */
+      white-space: nowrap; /* Prevent label text from wrapping */
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      min-width: unset;
+      padding: 0;
+      margin: 0;
+      margin-right: 0.5rem;
+      accent-color: #1f2937; /* Optional: style the checkbox */
+    }
+    .checkbox-group a {
+      color: #ef4444;
+      font-size: 0.75rem;
+      text-decoration: none;
+
+    }
+    .btn-login {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      background: #1f2937;
+      color: white;
+      border: none;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+    }
+    .divider hr {
+      flex: 1;
+      border: none;
+      height: 1px;
+      background: #e5e7eb;
+    }
+    .divider span {
+      margin: 0 1rem;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .socials button {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+    }
+    .facebook { background: #f7f6f6; }
+    .google { background: #f7f6f6; }
+    .github { background: #f7f6f6; }
+    .register {
+      text-align: center;
+      font-size: 0.875rem;
+    }
+    .register a {
+      color: #ef4444;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .error-message {
+      color: #ef4444;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    input[type="password"] {
+  padding-right: 3.5rem;
+}
