@@ -1,0 +1,110 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f8;
+    margin: 0;
+    padding: 40px 0;
+  }
+  
+  /* Add Button Styling */
+  .add-button {
+    width: 64px;
+    height: 64px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .add-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .add-button img {
+    width: 36px;      /* Increased from 28px */
+    height: 36px;     /* Increased from 28px */
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* Main container styling */
+  .container {
+    width: 600px;
+    min-height: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: #eff0f4;
+    border-radius: 12px;
+    padding: 16px 22px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Card header */
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .card-header h3 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  /* Truck icon */
+  .icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    object-fit: contain;
+  }
+  
+  /* Edit icon (pen button) */
+  .edit-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-icon:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .edit-icon i {
+    font-size: 16px;
+  }
+  
+  /* Text inside cards */
+  .card p {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  
