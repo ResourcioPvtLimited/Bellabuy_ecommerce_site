@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --primary: #7e57c2;
+      --secondary: #f5f5f5;
+      --text-dark: #333333;
+      --text-light: #777777;
+      --accent: #fd5631;
+      --button-black: #212121;
+    }
+    
+    body {
+      font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-dark);
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-container {
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: white;
+      min-height: 100vh;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    /* Updated Header Styles */
+    .profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .avatar-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-container {
+      position: relative;
+      width: 70px;
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid #eee;
+      object-fit: cover;
+    }
+
+    .activity-button {
+      background-color: var(--button-black);
+      color: white;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .notification-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .notification-icon {
+      position: relative;
+    }
+
+    .notification-count {
+      position: absolute;
+      top: -5px;
+      right: -8px;
+      background-color: #FF6B35;
+      color: white;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.7rem;
+    }
+
+    .greeting-text {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .name-highlight {
+      color: #FF6B35;
+    }
+
+    /* Modified Account Section Styles */
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 15px 20px;
+      color: var(--text-dark);
+    }
+    
+    /* Style for section headers and other subheadings */
+    .section-header .section-title,
+    .font-medium,
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      padding: 0 20px;
+      margin-bottom: 30px;
+    }
+
+    .feature-item {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 5px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 5px;
+      object-fit: contain;
+    }
+
+    .feature-label {
+      font-size: 0.8rem;
+      color: var(--text-dark);
+      margin-top: 5px;
+      font-weight: 500;
+    }
+    
+    /* Keep existing styles */
+    .shop-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .back-button {
+      width: 24px;
+      color: var(--text-dark);
+    }
+
+    .page-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      border-radius: 8px 8px 0 0;
+      object-fit: cover;
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+
+    .product-card .wishlist-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .see-all {
+      display: flex;
+      align-items: center;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .see-all-icon {
+      background-color: var(--primary);
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 6px;
+    }
+    
+    .discount-badge {
+      color: var(--accent);
+      font-weight: bold;
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+    
+    .current-price {
+      font-weight: 600;
+    }
+
+    .action-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .action-button i {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .action-button span {
+      font-size: 0.8rem;
+      color: var(--text-dark);
+    }
+
+    .brand-logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #eee;
+    }
+    
+    .add-to-cart-btn {
+      border: 1px solid #ddd;
+      border-radius: 18px;
+      padding: 6px 12px;
+      background-color: white;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    
+    .activity-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .activity-icons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .activity-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eee;
+      color: var(--primary);
+    }
+
+    /* Updated slider styles */
+    .section-container {
+      padding: 0 15px;
+      margin-bottom: 25px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .slider-container {
+      display: flex;
+      overflow-x: scroll;
+      gap: 15px;
+      padding: 5px 5px 20px 5px;
+      margin: 0 -5px;
+      scrollbar-width: thin;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .slider-container::-webkit-scrollbar {
+      height: 3px;
+    }
+    
+    .slider-container::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    .slider-container::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 3px;
+    }
+    
+    .brand-logo {
+      min-width: 70px;
+      flex: 0 0 auto;
+      margin: 0 5px;
+      text-align: center;
+      scroll-snap-align: start;
+    }
+    
+    .brand-logo img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      box-shadow: none;
+      border-radius: 0;
+      background-color: transparent;
+      padding: 0;
+    }
+    
+    /* Product card styles */
+    .product-card {
+      min-width: 170px;
+      width: 170px;
+      flex: 0 0 auto;
+      border-radius: 8px;
+      background-color: white;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      scroll-snap-align: start;
+    }
+    
+    .product-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    /* Remove the conflicting brand logo styles and create clean, focused styles */
+    /* Clear all previous brand logo styles */
+    .brand-logo {
+      /* Clear conflicting definitions */
+      min-width: unset;
+      width: unset;
+      height: unset;
+      border-radius: 0;
+      object-fit: unset;
+      border: none;
+      box-shadow: none;
+      background: none;
+    }
+    
+    /* Simple, direct brand logo container */
+    .brands-container {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px 0;
+      gap: 20px;
+    }
+    
+    /* Clean brand logo image styling */
+    .brands-container img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      background: transparent;
+    }
+
+    /* Wishlist icon animations */
+    .wishlist-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .wishlist-icon:hover {
+      transform: scale(1.1);
+      background-color: rgba(255, 240, 240, 1);
+    }
+    
+    .wishlist-icon.active {
+      background-color: rgba(255, 220, 220, 1);
+    }
+    
+    .wishlist-icon.active i {
+      color: #ff4757;
+    }
+    
+    .wishlist-icon i {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .wishlist-icon.clicked i {
+      animation: heartPulse 0.4s ease;
+    }
+    
+    @keyframes heartPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Flash Sale section styles */
+    .flash-sale-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      margin-bottom: 15px;
+    }
+    
+    .flash-sale-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    
+    .flash-sale-timer {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .timer-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--button-black);
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .timer-separator {
+      margin: 0 2px;
+      font-weight: 700;
+      color: var(--button-black);
+    }
+    
+    .flash-sale-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+    
+    .sale-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #f8e1e1;
+    }
+    
+    .sale-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    
+    .discount-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background-color: #FF3B30;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    
+    /* Top Selling section styles */
+    .top-selling-section {
+      margin-bottom: 30px;
+      padding: 0 15px;
+    }
+    
+    .top-selling-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+      padding-left: 5px;
+    }
+    
+    .top-selling-slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 5px 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .top-selling-slider::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .top-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+    
+    .top-item-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #eee;
+    }
+
+    /* Just For You section styles */
+    .just-for-you {
+      padding: 15px;
+      margin-bottom: 70px; /* Space for the bottom nav bar */
+    }
+    
+    .just-for-you-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .just-for-you-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    
+    .just-for-you-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .product-item {
+      border-radius: 8px;
+      background-color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    
+    .product-item-content {
+      padding: 10px;
+    }
+    
+    .product-description {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+    
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .price-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .current-price {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+    
+    .discount-badge {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .retailer-logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .retailer-logo img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      margin-right: 5px;
+    }
+    
+    .add-btn {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+    }
+    
+    /* Footer Navigation */
+    .footer-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.7rem;
+    }
+    
+    .nav-item i {
+      font-size: 1.2rem;
+      margin-bottom: 3px;
+    }
+    
+    .nav-item.active {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- UPDATED Profile Header Section -->
+    <div class="profile-header">
+      <div class="avatar-section">
+        <div class="avatar-container">
+          <img src="https://i.pravatar.cc/150?img=32" alt="Profile Picture" class="avatar">
+        </div>
+        <button class="activity-button">My Activity</button>
+      </div>
+      <div class="notification-icons">
+        <div class="notification-icon">
+          <i class="fas fa-bell fa-lg"></i>
+          <span class="notification-count">4</span>
+        </div>
+        <div class="notification-icon">
+          <i class="fas fa-heart fa-lg"></i>
+          <span class="notification-count">2</span>
+        </div>
+        <div class="notification-icon">
+          <i class="fas fa-shopping-bag fa-lg"></i>
+          <span class="notification-count">5</span>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="greeting-text">Hello, <span class="name-highlight">Romina!</span></h1>
+    <div class="mb-6">
+      <h2 class="section-title">My Account</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <img src="assets/images/editprofile.png" alt="Edit Profile" class="feature-icon">
+          <span class="feature-label">Edit Profile</span>
+        </div>
+        <div class="feature-item">
+          <img src="assets/images/myorders.png" alt="My Orders" class="feature-icon">
+          <span class="feature-label">My Orders</span>
+        </div>
+        <div class="feature-item">
+          <img src="assets/images/toreview.png" alt="To Review" class="feature-icon">
+          <span class="feature-label">To Review</span>
+        </div>
+        <div class="feature-item">
+          <img src="assets/images/address.png" alt="Address" class="feature-icon">
+          <span class="feature-label">Address</span>
+        </div>
+
+        <div class="feature-item">
+          <img src="assets/images/supportt.png" alt="Support" class="feature-icon">
+          <span class="feature-label">Support</span>
+        </div>
+        <div class="feature-item">
+          <img src="assets/images/trending.png" alt="Trending" class="feature-icon">
+          <span class="feature-label">Trending</span>
+        </div>
+        <div class="feature-item">
+          <img src="assets/images/settings.png" alt="Settings" class="feature-icon">
+          <span class="feature-label">Settings</span>
+        </div>
+        <div class="feature-item">
+          <img src="assets/images/logout.png" alt="Logout" class="feature-icon">
+          <span class="feature-label">Logout</span>
+        </div>
+      </div>
+
+      <!-- Recently viewed Brands section -->
+      <div class="section-container">
+        <h3 class="font-medium mb-2 px-2">Recently viewed Brands</h3>
+        <div class="brands-container">
+          <img src="assets/images/zara.png" alt="ZARA">
+          <img src="assets/images/Apex.png" alt="APEX STUDIO">
+          <img src="https://i.imgur.com/MuY89T5.png" alt="VOGUE">
+          <img src="assets/images/Apex.png" alt="APEX STUDIO">
+          <img src="assets/images/zara.png" alt="ZARA">
+        </div>
+      </div>
+
+
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-title">New Items</div>
+          <a href="#" class="see-all">
+            See All
+            <div class="arrow-icon">
+              <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </a>
+        </div>
+        
+        <div class="slider-container">
+          <div class="product-card">
+            <!-- Replace first product image with the new image path -->
+            <img src="assets/images/Mask Group.png" alt="Product 1">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 90</div>
+              <div class="price-container">
+                <div class="original-price">BDT 120</div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="brand-badge"> 
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Product 2">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 90</div>
+              <div class="price-container">
+                <div class="original-price">BDT 120</div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Product 3">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 90</div>
+              <div class="price-container">
+                <div class="original-price">BDT 120</div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add a few more product cards to ensure scrolling works -->
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Product 4">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 110</div>
+              <div class="price-container">
+                <div class="original-price">BDT 150</div>
+                <div class="discount-badge">27% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Product 5">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 75</div>
+              <div class="price-container">
+                <div class="original-price">BDT 100</div>
+                <div class="discount-badge">25% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Most Popular - IMPROVED -->
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-title">Most Popular</div>
+          <a href="#" class="see-all">
+            See All
+            <div class="arrow-icon">
+              <i class="fas fa-arrow-right text-xs"></i>
+            </div>
+          </a>
+        </div>
+        
+        <div class="slider-container">
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Popular Product 1">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 90</div>
+              <div class="price-container">
+                <div class="original-price">BDT 120</div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Popular Product 2">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 90</div>
+              <div class="price-container">
+                <div class="original-price">BDT 120</div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Popular Product 3">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 90</div>
+              <div class="price-container">
+                <div class="original-price">BDT 120</div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more product cards to ensure scrolling -->
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Popular Product 4">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 85</div>
+              <div class="price-container">
+                <div class="original-price">BDT 125</div>
+                <div class="discount-badge">32% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <img src="assets/images/Mask Group.png" alt="Popular Product 5">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="product-details">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="current-price">BDT 120</div>
+              <div class="price-container">
+                <div class="original-price">BDT 150</div>
+                <div class="discount-badge">20% OFF</div>
+              </div>
+              <div class="brand-badge">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flash Sale Section -->
+      <div class="section-container">
+        <div class="flash-sale-header">
+          <div class="flash-sale-title">Flash Sale</div>
+          <div class="flash-sale-timer">
+            <div class="timer-box">00</div>
+            <span class="timer-separator">:</span>
+            <div class="timer-box">36</div>
+            <span class="timer-separator">:</span>
+            <div class="timer-box">58</div>
+          </div>
+        </div>
+        
+        <div class="flash-sale-grid">
+          <div class="sale-card">
+            <span class="discount-tag">-20%</span>
+            <img src="assets/images/Mask Group.png" alt="Sale Product">
+          </div>
+          <div class="sale-card">
+            <span class="discount-tag">-20%</span>
+            <img src="assets/images/Mask Group.png" alt="Sale Product">
+          </div>
+          <div class="sale-card">
+            <span class="discount-tag">-20%</span>
+            <img src="assets/images/Mask Group.png" alt="Sale Product">
+          </div>
+          <div class="sale-card">
+            <span class="discount-tag">-20%</span>
+            <img src="assets/images/Mask Group.png" alt="Sale Product">
+          </div>
+          <div class="sale-card">
+            <span class="discount-tag">-20%</span>
+            <img src="assets/images/Mask Group.png" alt="Sale Product">
+          </div>
+          <div class="sale-card">
+            <span class="discount-tag">-20%</span>
+            <img src="assets/images/Mask Group.png" alt="Sale Product">
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Selling Section -->
+      <div class="top-selling-section">
+        <div class="top-selling-title">Top Selling</div>
+        <div class="top-selling-slider">
+          <div class="top-item">
+            <img src="assets/images/Mask Group.png" alt="Top Product" class="top-item-image">
+          </div>
+          <div class="top-item">
+            <img src="assets/images/Mask Group.png" alt="Top Product" class="top-item-image">
+          </div>
+          <div class="top-item">
+            <img src="assets/images/Mask Group.png" alt="Top Product" class="top-item-image">
+          </div>
+          <div class="top-item">
+            <img src="assets/images/Mask Group.png" alt="Top Product" class="top-item-image">
+          </div>
+          <div class="top-item">
+            <img src="assets/images/Mask Group.png" alt="Top Product" class="top-item-image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Just For You section -->
+      <div class="just-for-you">
+        <div class="just-for-you-header">
+          <div class="just-for-you-title">Just For You</div>
+          <a href="#" class="see-all">See All</a>
+        </div>
+        
+        <div class="just-for-you-grid">
+          <!-- Product 1 -->
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 120</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 2 -->
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 130</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 3 -->
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 120</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Product 4 -->
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 130</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional products as shown in the image -->
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 120</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 130</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 120</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-item">
+            <div class="wishlist-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <img src="assets/images/Mask Group.png" alt="Product">
+            <div class="product-item-content">
+              <div class="product-description">Lorem ipsum dolor...</div>
+              <div class="price-row">
+                <div class="price-info">
+                  <div class="current-price">BDT 90</div>
+                  <div class="original-price">BDT 130</div>
+                </div>
+                <div class="discount-badge">10% OFF</div>
+              </div>
+              <div class="action-row">
+                <div class="retailer-logo">
+                  <img src="assets/images/Apex.png" alt="Retailer">
+                </div>
+                <button class="add-btn">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Navigation -->
+  <div class="footer-nav">
+    <a href="#" class="nav-item active">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="far fa-heart"></i>
+      <span>Wishlist</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-shopping-basket"></i>
+      <span>Cart</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="far fa-comment-alt"></i>
+      <span>Messages</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="far fa-user"></i>
+      <span>Account</span>
+    </a>
+  </div>
+
+  <!-- Add JavaScript for better slider behavior -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sliders = document.querySelectorAll('.slider-container');
+      
+      // Optional: Add arrow navigation for sliders
+      sliders.forEach(slider => {
+        // Ensure enough items to make scrolling necessary
+        const items = slider.querySelectorAll('.product-card, .brand-logo');
+        const containerWidth = slider.clientWidth;
+        let totalWidth = 0;
+        
+        items.forEach(item => {
+          totalWidth += item.offsetWidth + 15; // 15px is the gap
+        });
+        
+        // Force overflow-x to be scroll only if content exceeds container
+        if (totalWidth > containerWidth) {
+          slider.style.overflowX = 'scroll';
+        } else {
+          slider.style.overflowX = 'hidden';
+        }
+      });
+    });
+  </script>
+
+  <!-- Add JavaScript for better slider behavior -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sliders = document.querySelectorAll('.slider-container');
+      
+      // Optional: Add arrow navigation for sliders
+      sliders.forEach(slider => {
+        // Ensure enough items to make scrolling necessary
+        const items = slider.querySelectorAll('.product-card, .brand-logo');
+        const containerWidth = slider.clientWidth;
+        let totalWidth = 0;
+        
+        items.forEach(item => {
+          totalWidth += item.offsetWidth + 15; // 15px is the gap
+        });
+        
+        // Force overflow-x to be scroll only if content exceeds container
+        if (totalWidth > containerWidth) {
+          slider.style.overflowX = 'scroll';
+        } else {
+          slider.style.overflowX = 'hidden';
+        }
+      });
+    });
+  </script>
+
+  <!-- Add script just before closing body tag -->
+  <script>
+    // Add wishlist icon click animation and toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // First get all existing functionality
+      const sliders = document.querySelectorAll('.slider-container');
+      
+      sliders.forEach(slider => {
+        const items = slider.querySelectorAll('.product-card, .brand-logo');
+        const containerWidth = slider.clientWidth;
+        let totalWidth = 0;
+        
+        items.forEach(item => {
+          totalWidth += item.offsetWidth + 15; // 15px is the gap
+        });
+        
+        if (totalWidth > containerWidth) {
+          slider.style.overflowX = 'scroll';
+        } else {
+          slider.style.overflowX = 'hidden';
+        }
+      });
+      
+      // Add wishlist functionality
+      const wishlistIcons = document.querySelectorAll('.wishlist-icon');
+      
+      wishlistIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+          // Toggle active state
+          this.classList.toggle('active');
+          
+          // Add animation class
+          this.classList.add('clicked');
+          
+          // Get the heart icon
+          const heartIcon = this.querySelector('i');
+          
+          // Toggle between filled and outline heart
+          if (this.classList.contains('active')) {
+            heartIcon.classList.remove('far');
+            heartIcon.classList.add('fas');
+          } else {
+            heartIcon.classList.remove('fas');
+            heartIcon.classList.add('far');
+          }
+          
+          // Remove animation class after animation completes
+          setTimeout(() => {
+            this.classList.remove('clicked');
+          }, 400);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
