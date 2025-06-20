@@ -1,38 +1,4 @@
-<?php
-session_start();
-$error = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $identifier = trim($_POST['identifier']);
-  $password = $_POST['password'];
-
-  $conn = new mysqli("localhost", "root", "", "demo");//change with the config file 
-
-  // Determine if input is email or phone
-  $field = filter_var($identifier, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
-
-  $stmt = $conn->prepare("SELECT id, name, password FROM cust WHERE $field = ?");
-  $stmt->bind_param("s", $identifier);
-  $stmt->execute();
-  $stmt->store_result();
-
-  if ($stmt->num_rows > 0) {
-    $stmt->bind_result($id, $name, $hashedPassword);
-    $stmt->fetch();
-
-    if (password_verify($password, $hashedPassword)) {
-      $_SESSION['user_id'] = $id;
-      $_SESSION['user_name'] = $name;
-      header("Location: ../index.php");
-      exit;
-    } else {
-      $error = "Incorrect password!";
-    }
-  } else {
-    $error = "User not found!";
-  }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login | BellaBuy</title>
-  <link rel="stylesheet" href="../assets/css/login.css" />
+  <link rel="stylesheet" href="../../assets/css/login.css" />
 </head>
 <body>
 
@@ -53,16 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <h1>Welcome back</h1>
 
-  <?php if ($error): ?>
-    <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
-  <?php endif; ?>
+ 
 
-  <form id="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+  <form id="login-form" ">
     <div class="input-wrapper">
       <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
       </svg>
-      <input type="text" id="email" name="email" placeholder="Enter your E-mail or Phone" required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+      <input type="text" id="email" name="email" placeholder="Enter your E-mail or Phone" >
     </div>
 
     <div class="input-wrapper" style="margin-top: 1.5rem;">
@@ -85,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="checkbox-group">
       <label>
-        <input type="checkbox" id="rememberMe" name="rememberMe" <?php if(isset($_POST['rememberMe'])) echo 'checked'; ?>> Remember me
+        <input type="checkbox" id="rememberMe" name="rememberMe" > Remember me
       </label>
       <a href="#">Forget password ?</a>
     </div>
@@ -127,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <div class="register">
     <span>Don't have an account? </span>
-    <a href=".">Register now</a>
+    <a href="./register.html">Register now</a>
   </div>
 </div>
 <script>

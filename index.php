@@ -200,7 +200,7 @@ else {
   </div>
 
   <div class="header-icons">
-    <a href="wishlist.php" class="wishlist-icon-container">
+    <a href="./user/wishlist.php" class="wishlist-icon-container">
       <i class="fas fa-heart"></i>
       <span class="wishlist-count"><?= $wishCount ?></span>
     </a>
