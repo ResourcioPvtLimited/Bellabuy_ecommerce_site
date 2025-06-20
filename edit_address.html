@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Location Form</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/edit_address.css" />
+</head>
+<body>
+  <div class="form-container">
+    <form>
+      <label for="country">Country</label>
+      <select id="country">
+        <option>Choose Your Country</option>
+      </select>
+
+      <label for="district">District</label>
+      <select id="district">
+        <option>Choose Your District</option>
+      </select>
+
+      <label for="town">Town/ Upazila</label>
+      <select id="town">
+        <option>Choose Your Town/ Upazila</option>
+      </select>
+
+      <label for="postal">Postal Code</label>
+      <input type="text" id="postal" placeholder="Enter your postal code">
+
+      <label for="address">Address</label>
+      <textarea id="address" placeholder="Enter your Address"></textarea>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="📞 Enter your Phone Number">
+
+      <label for="email">E-mail (Optional)</label>
+      <input type="email" id="email" placeholder="✉️ Enter your E-mail">
+
+      <div class="btn-container">
+        <button type="submit">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
