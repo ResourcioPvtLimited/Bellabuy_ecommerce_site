@@ -200,11 +200,11 @@ else {
   </div>
 
   <div class="header-icons">
-    <a href="./user/wishlist.php" class="wishlist-icon-container">
+    <a href="./user/wishlist.html" class="wishlist-icon-container">
       <i class="fas fa-heart"></i>
       <span class="wishlist-count"><?= $wishCount ?></span>
     </a>
-    <a href="cart.php" class="cart-icon-container">
+    <a href="./user/cart.html" class="cart-icon-container">
       <i class="fas fa-shopping-bag"></i>
       <span class="cart-count"><?= $cartCount ?></span>
     </a>
