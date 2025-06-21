@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Form</title>
+  <link rel="stylesheet" href="../assets/css/edit_address.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Raleway:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container" id="mainContent">
+    <div class="top-buttons">
+      <!-- Change Profile -->
+      <div class="icon-btn">
+        <img src="../assets/images/profile_update.png" alt="Change Profile Icon" class="big-icon" />
+        <div class="btn-text">Change<br />Profile</div>
+      </div>
+
+      <!-- Reset Password -->
+      <div class="icon-btn">
+        <img src="../assets/images/reset_password.png" alt="Reset Password Icon" />
+        <div class="btn-text">Reset<br />Password</div>
+      </div>
+    </div>
+
+    <form class="profile-form" onsubmit="showSuccessModal(event)">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" placeholder="Enter your First Name" />
+
+      <label for="lastName">Last Name (Optional)</label>
+      <input type="text" id="lastName" placeholder="Enter your Last Name" />
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" value="2007-07-14" />
+
+      <label for="gender">Gender</label>
+      <select id="gender">
+        <option>Choose Your Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="📞 Enter your phone number" />
+
+      <label for="email">E-mail (Optional)</label>
+      <input type="email" id="email" name="email" placeholder="📧 Enter your E-mail" />
+
+      <button type="submit" class="save-btn">Save Changes</button>
+    </form>
+  </div>
+
+  <!-- Popup Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <div class="check-icon">✔</div>
+      <p>Successfully Saved Your Information</p>
+      <button onclick="closeModal()">Go Back</button>
+    </div>
+  </div>
+
+  <script src="../js/edit_address.js"></script>
+</body>
+</html>

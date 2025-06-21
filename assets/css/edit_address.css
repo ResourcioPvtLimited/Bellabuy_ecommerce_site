@@ -1,81 +1,256 @@
+/* Reset + base */
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #f8f9fa;
-    padding: 40px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  min-height: 100vh;
+  font-size: 18px;
+}
+
+/* Blurred background when modal is active */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Container */
+.container {
+  width: 95%;
+  max-width: 500px;
+  transform: scale(1.05);
+}
+
+/* Top Buttons */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.icon-btn {
+  width: 110px;
+  height: 105px;
+  border: 1px dashed #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.icon-btn img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 6px;
+}
+.big-icon {
+  width: 55px;
+  height: 55px;
+}
+
+.btn-text {
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  line-height: 14px;
+}
+
+/* Form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-form label {
+  margin: 12px 0 6px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.profile-form input,
+.profile-form select {
+  padding: 14px;
+  background-color: #eff0f4;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.profile-form input[type="date"] {
+  color: #000;
+}
+
+::placeholder {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Save button */
+.save-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  width: 240px;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 30px auto 50px;
+  cursor: pointer;
+  display: block;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+/* Modal content box */
+.modal-content {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+/* Tick icon circle */
+.modal-content .check-icon {
+  position: absolute;
+  top: -60px;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.modal-content .check-icon::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #E5EBFC;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.modal-content .check-icon::after {
+  content: '✔';
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: #004CFF;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+
+/* Modal message */
+.modal-content p {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.4;
+}
+
+/* Go Back button */
+.modal-content button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  width: 100%;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding-top: 20px;
+    font-size: 16px;
   }
-  
-  .form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+
+  .container {
+    transform: scale(1);
+    width: 90%;
   }
-  
-  /* Larger labels using Nunito Sans */
-  form label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 17px;
-    font-family: 'Nunito Sans', sans-serif;
+
+  .icon-btn {
+    width: 90px;
+    height: 90px;
   }
-  
-  /* Larger inputs, selects, and textarea */
-  form select,
-  form input[type="text"],
-  form input[type="tel"],
-  form input[type="email"],
-  form textarea {
+
+  .icon-btn img,
+  .big-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .save-btn {
     width: 100%;
-    padding: 14px;
-    margin-top: 8px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background-color: #f1f2f6;
-    font-size: 16px;
-    box-sizing: border-box;
-    color: #333;
-    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    padding: 12px 0;
   }
-  
-  /* Placeholder emojis and text in Raleway and grey */
-  form input::placeholder,
-  form textarea::placeholder {
-    color: #888;
-    font-size: 16px;
-    font-family: 'Raleway', sans-serif;
+
+  .profile-form label {
+    font-size: 15px;
   }
-  
-  /* Bigger and smoother textarea */
-  form textarea {
-    resize: vertical;
-    min-height: 80px;
+
+  .profile-form input,
+  .profile-form select {
+    font-size: 15px;
+    padding: 12px;
   }
-  
-  /* Button container centered */
-  .btn-container {
-    margin-top: 35px;
-    display: flex;
-    justify-content: center;
+
+  ::placeholder {
+    font-size: 14px;
   }
-  
-  /* Bigger, rectangular button with Nunito Sans */
-  button {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    background-color: #000;
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-    white-space: nowrap;
-    font-family: 'Nunito Sans', sans-serif;
-    transition: background-color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #333;
-  }
-  
+}
