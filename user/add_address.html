@@ -7,43 +7,59 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Raleway:wght@400&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../assets/css/edit_address.css" />
+  <link rel="stylesheet" href="../assets/css/add_address.css" />
 </head>
 <body>
   <div class="form-container">
-    <form>
-      <label for="country">Country</label>
+    <form id="locationForm">
+      <label for="country">Country <span style="color: red">*</span></label>
       <select id="country">
-        <option>Choose Your Country</option>
+        <option value="">Choose Your Country</option>
+        <option>India</option>
+        <option>Bangladesh</option>
       </select>
 
-      <label for="district">District</label>
+      <label for="district">District <span style="color: red">*</span></label>
       <select id="district">
-        <option>Choose Your District</option>
+        <option value="">Choose Your District</option>
+        <option>Kolkata</option>
+        <option>Dhaka</option>
       </select>
 
-      <label for="town">Town/ Upazila</label>
+      <label for="town">Town/ Upazila <span style="color: red">*</span></label>
       <select id="town">
-        <option>Choose Your Town/ Upazila</option>
+        <option value="">Choose Your Town/ Upazila</option>
+        <option>Barrackpore</option>
+        <option>Mirpur</option>
       </select>
 
-      <label for="postal">Postal Code</label>
-      <input type="text" id="postal" placeholder="Enter your postal code">
+      <label for="postal">Postal Code <span style="color: red">*</span></label>
+      <input type="text" id="postal" placeholder="Enter your postal code" />
 
-      <label for="address">Address</label>
+      <label for="address">Address <span style="color: red">*</span></label>
       <textarea id="address" placeholder="Enter your Address"></textarea>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" placeholder="📞 Enter your Phone Number">
+      <label for="phone">Phone Number <span style="color: red">*</span></label>
+      <input type="tel" id="phone" placeholder="📞 Enter your Phone Number" />
 
       <label for="email">E-mail (Optional)</label>
-      <input type="email" id="email" placeholder="✉️ Enter your E-mail">
+      <input type="email" id="email" placeholder="✉️ Enter your E-mail" />
 
       <div class="btn-container">
         <button type="submit">Save Changes</button>
       </div>
     </form>
   </div>
+
+  <!-- Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <div class="check-icon"></div>
+      <h2>Successfully Saved to Address book</h2>
+      <button class="go-back-btn" onclick="closeModal()">Go Back</button>
+    </div>
+  </div>
+
+  <script src="../js/add_address.js"></script>
 </body>
 </html>
