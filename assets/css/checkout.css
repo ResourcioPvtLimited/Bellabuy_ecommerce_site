@@ -91,6 +91,16 @@ body {
     border-radius: 50%;
 }
 
+ .header-icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .header-icons i {
+      font-size: 20px;
+      color: var(--secondary);
+    }
+
 /* Progress Indicator */
 .progress-section {
     padding: 24px 16px;
@@ -378,8 +388,8 @@ body {
     line-height: 1.4;
 }
 
-.check-icon {
-    width: 24px;
+.edit-icon {
+    width: 24px;    
     height: 24px;
     background: #3b82f6;
     border-radius: 50%;
@@ -390,9 +400,6 @@ body {
     margin-left: 16px;
 }
 
-.address-item:not(.selected) .check-icon {
-    display: none;
-}
 
 /* Payment Methods */
 .payment-methods-section {
@@ -413,6 +420,7 @@ body {
 
 .payment-method {
     padding: 16px;
+
     border: 2px solid #e5e7eb;
     border-radius: 8px;
     cursor: pointer;
@@ -434,7 +442,7 @@ body {
     background: #dbeafe;
 }
 
-.payment-icon {
+/* .payment-icon {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -443,20 +451,15 @@ body {
     justify-content: center;
     font-size: 18px;
     color: white;
-}
+} */
 
-.payment-icon.bkash { background: #ec4899; }
-.payment-icon.nagad { background: #f97316; }
-.payment-icon.upay { background: #3b82f6; }
-.payment-icon.card { background: #2563eb; }
-.payment-icon.cod { background: #16a34a; }
 
 .payment-method span {
     font-size: 14px;
     font-weight: 500;
 }
 
-.payment-method .check-icon {
+/* .payment-method .check-icon {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -468,7 +471,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-}
+} */
 
 .payment-method:not(.selected) .check-icon {
     display: none;
@@ -529,133 +532,159 @@ body {
     background: #374151;
 }
 
+/* Add Address Button */
+.add-address-btn {
+    display: flex;
+    align-items: center;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    padding: 8px 18px 8px 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(59,130,246,0.08);
+    gap: 6px;
+}
+
+.add-address-btn:hover {
+    background: #1d4ed8;
+}
+
+.add-address-btn .add-address-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: none;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+.add-address-btn:hover .add-address-plus {
+    box-shadow: 0 2px 8px 0 rgba(59,130,246,0.12);
+    background: #1d4ed8;
+}
+
+.add-address-plus svg {
+    display: block;
+}
+
 /* Desktop Responsive */
 @media (min-width: 1024px) {
     .container {
         padding: 32px;
         align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     
     .payment-container {
-        max-width: 512px;
+        max-width: 1024px;
         min-height: auto;
-        border-radius: 8px;
+        border-radius: 12px;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    
-    .payment-header {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 24px;
         padding: 24px;
     }
     
-    .payment-header h1 {
-        font-size: 20px;
-    }
-    
-    .step-indicator {
-        width: 28px;
-        height: 28px;
+    .payment-header {
+        grid-column: 1 / -1;
+        padding: 0 0 24px 0;
     }
     
     .progress-section {
-        padding: 32px 24px;
+        grid-column: 1 / -1;
+        padding: 0 0 32px 0;
     }
     
-    .progress-step {
-        width: 56px;
-        height: 56px;
-    }
-    
-    .progress-step svg {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .items-section {
-        padding: 0 24px 32px;
-    }
-    
-    .section-header h2 {
-        font-size: 20px;
-    }
-    
-    .voucher-btn {
-        padding: 12px 24px;
-    }
-    
-    .item-image {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .item-details h3 {
-        font-size: 18px;
-    }
-    
-    .current-price {
-        font-size: 18px;
-    }
-    
-    .shipping-section {
-        padding: 0 24px 32px;
-    }
-    
-    .shipping-section h2 {
-        font-size: 20px;
-    }
-    
-    .address-item {
-        padding: 20px;
-    }
-    
-    .address-header h3 {
-        font-size: 18px;
-    }
-    
-    .address-item p {
-        font-size: 16px;
-    }
-    
+    .items-section,
+    .shipping-section,
     .payment-methods-section {
-        padding: 0 24px 32px;
+        grid-column: 1;
+        padding: 24px;
+        background: #f9fafb;
+        border-radius: 12px;
+        margin-bottom: 24px;
     }
     
-    .payment-methods-section h2 {
-        font-size: 20px;
+    .order-summary {
+        grid-column: 2;
+        grid-row: 3 / span 3;
+        margin: 0;
+        position: sticky;
+        top: 24px;
+        align-self: start;
+        background: #f9fafb;
+        padding: 24px;
+        height: fit-content;
     }
     
     .payment-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
+    .item {
+        padding: 16px;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 16px;
+    }
+    
+    .item-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .address-item {
+        background: white;
+    }
+    
     .payment-method {
-        padding: 20px;
+        background: white;
+        height: 120px;
     }
     
     .payment-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-    
-    .payment-method span {
-        font-size: 16px;
-    }
-    
-    .order-summary {
-        margin: 0 24px 24px;
-        padding: 24px;
-    }
-    
-    .summary-item {
-        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
     }
     
     .summary-total {
-        font-size: 20px;
+        font-size: 24px;
     }
     
     .pay-button {
+        margin-top: 24px;
         padding: 20px;
         font-size: 20px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .payment-container {
+        max-width: 1200px;
+        gap: 32px;
+        padding: 32px;
+    }
+    
+    .item-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .payment-method {
+        height: 140px;
     }
 }
