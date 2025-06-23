@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/all_review.css">
+</head>
+<body>
+    <div class="reviews-container">
+        <div class="page-header">
+            <h1 class="page-title">Reviews</h1>
+            <button class="AddReview" id="writeReviewBtn">Write a Review</button>
+        </div>
+        <div class="review-list">
+            <!-- Review 1 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="../assets/images/user.png" alt="Veronika">
+                    </div>
+                    <div class="reviewer-name">Veronika</div>
+                </div>
+                <div class="star-rating">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star">☆</span>
+                </div>
+                <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy euismod tincidunt ut
+                    labore et dolore magna aliquam erat, sed diam voluptua. At vero eos et accusam et justo
+                    dolores et ea rebum.
+                </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="../assets/images/user.png" alt="Veronika">
+                    </div>
+                    <div class="reviewer-name">Veronika</div>
+                </div>
+                <div class="star-rating">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star">☆</span>
+                </div>
+                <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy euismod tincidunt ut
+                    labore et dolore magna aliquam erat, sed diam voluptua. At vero eos et accusam et justo
+                    dolores et ea rebum.
+                </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="../assets/images/user.png" alt="Veronika">
+                    </div>
+                    <div class="reviewer-name">Veronika</div>
+                </div>
+                <div class="star-rating">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                </div>
+                <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy euismod tincidunt ut
+                    labore et dolore magna aliquam erat, sed diam voluptua. At vero eos et accusam et justo
+                    dolores et ea rebum.
+                </p>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="../assets/images/user.png" alt="Veronika">
+                    </div>
+                    <div class="reviewer-name">Veronika</div>
+                </div>
+                <div class="star-rating">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                </div>
+                <p class="review-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy euismod tincidunt ut
+                    labore et dolore magna aliquam erat, sed diam voluptua. At vero eos et accusam et justo
+                    dolores et ea rebum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="review-modal">
+        <div class="review-modal-content">
+            <span class="close-modal" id="closeReviewModal">&times;</span>
+            <div class="review-container">
+                <h2 class="review-header">Review</h2>
+                
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <img src="../assets/images/user.png" alt="User Avatar" id="user-avatar">
+                    </div>
+                    <div class="order-details">
+                        <p id="user-message">Lorem ipsum dolor sit amet consectetur.</p>
+                        <p class="order-id" id="order-id">Order #92287157</p>
+                    </div>
+                </div>
+        
+                <div class="star-rating-modal" id="star-rating">
+                    <span class="star-modal" data-value="1"></span>
+                    <span class="star-modal" data-value="2"></span>
+                    <span class="star-modal" data-value="3"></span>
+                    <span class="star-modal" data-value="4"></span>
+                    <span class="star-modal" data-value="5"></span>
+                </div>
+        
+                <textarea class="comment-box" placeholder="Your comment" id="review-comment"></textarea>
+                
+                <button class="submit-btn" id="submit-review">Say it!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 class="modal-title">Done!</h2>
+            <p class="modal-message">Thank you for your review</p>
+            <div class="star-display" id="star-display">
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+                <span class="star-filled">★</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Navigation -->
+    <div class="footer-nav">
+        <a href="#" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="far fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Cart</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="far fa-comment-alt"></i>
+            <span>Messages</span>
+        </a>
+        <a href="#" class="nav-item active">
+            <i class="far fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <script>
+        // Review Modal Functionality
+        const writeReviewBtn = document.getElementById('writeReviewBtn');
+        const reviewModal = document.getElementById('review-modal');
+        const closeReviewModal = document.getElementById('closeReviewModal');
+        const successModal = document.getElementById('success-modal');
+        const modalStars = document.querySelectorAll('.star-modal');
+        let rating = 0;
+        
+        // Open review modal when clicking "Write a Review"
+        writeReviewBtn.addEventListener('click', function() {
+            reviewModal.style.display = 'block';
+        });
+        
+        // Close review modal when clicking the X
+        closeReviewModal.addEventListener('click', function() {
+            reviewModal.style.display = 'none';
+        });
+        
+        // Close review modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === reviewModal) {
+                reviewModal.style.display = 'none';
+            }
+        });
+        
+        // Star rating functionality
+        modalStars.forEach(star => {
+            star.addEventListener('click', () => {
+                rating = parseInt(star.getAttribute('data-value'));
+                updateStars();
+            });
+            
+            star.addEventListener('mouseover', () => {
+                const hoverValue = parseInt(star.getAttribute('data-value'));
+                highlightStars(hoverValue);
+            });
+            
+            star.addEventListener('mouseout', () => {
+                updateStars();
+            });
+        });
+        
+        function highlightStars(count) {
+            modalStars.forEach(star => {
+                const starValue = parseInt(star.getAttribute('data-value'));
+                if (starValue <= count) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+        
+        function updateStars() {
+            highlightStars(rating);
+        }
+        
+        // Submit review handler
+        document.getElementById('submit-review').addEventListener('click', function() {
+            const reviewData = {
+                rating: rating,
+                comment: document.getElementById('review-comment').value,
+                orderId: document.getElementById('order-id').textContent.replace('Order #', '')
+            };
+            
+            // You can send the review data to your backend here
+            console.log('Review submitted:', reviewData);
+            
+            // Hide the review modal
+            reviewModal.style.display = 'none';
+            
+            // Show the success modal
+            successModal.classList.add('show');
+            
+            // Add the review to the page after a delay (optional)
+            setTimeout(function() {
+                // Hide success modal
+                successModal.classList.remove('show');
+                
+                // You could add the new review to the page here
+                // This is just a demonstration - you'd typically use the actual submitted data
+                addNewReview({
+                    name: 'You',
+                    avatar: '../assets/images/user.png',
+                    rating: rating,
+                    text: document.getElementById('review-comment').value
+                });
+                
+                // Reset the form
+                document.getElementById('review-comment').value = '';
+                rating = 0;
+                updateStars();
+            }, 500);
+        });
+        
+        // Function to add a new review to the page
+        function addNewReview(review) {
+            const reviewList = document.querySelector('.review-list');
+            
+            // Create new review element
+            const newReview = document.createElement('div');
+            newReview.className = 'review-item';
+            newReview.innerHTML = `
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="${review.avatar}" alt="${review.name}">
+                    </div>
+                    <div class="reviewer-name">${review.name}</div>
+                </div>
+                <div class="star-rating">
+                    ${Array(5).fill().map((_, i) => 
+                        `<span class="star ${i < review.rating ? 'filled' : ''}">${i < review.rating ? '★' : '☆'}</span>`
+                    ).join('')}
+                </div>
+                <p class="review-text">${review.text}</p>
+            `;
+            
+            // Add to the beginning of the list
+            reviewList.insertBefore(newReview, reviewList.firstChild);
+            
+            // Make it stand out briefly
+            newReview.style.backgroundColor = '#f0f8ff';
+            setTimeout(() => {
+                newReview.style.transition = 'background-color 1s';
+                newReview.style.backgroundColor = '';
+            }, 100);
+        }
+    </script>
+</body>
+</html>
