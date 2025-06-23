@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Chat UI</title>
+    <link rel="stylesheet" href="../assets/css/chat.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <img src="https://i.pravatar.cc/100" alt="Maggy" />
+            <div>
+                <div class="name">Maggy Lee</div>
+                <div class="role">Customer Care Service</div>
+            </div>
+        </div>
+        <div class="chat-body">
+            <div class="message from-agent">Hello, Amanatul. Welcome to Customer Care. Please tell us more about your
+                issue.</div>
+            <div class="message from-user">I didn't receive my parcel</div>
+            <div class="status">Order #9348257 | 3 Items<br />Standard Delivery<br /><b>Shipped</b></div>
+            <div class="message from-agent">Let me check it. One moment please...</div>
+            <div class="message from-agent">Thanks for waiting. Here is a voucher for the inconvenience.</div>
+            <div class="voucher-box">
+                Voucher: <b>WELCOME15</b><br />
+                15% off your next purchase<br />
+                <button>Collect</button>
+            </div>
+            <div class="message from-user">Thanks a lot!</div>
+            <div class="message from-agent">Is there anything else I can help with?</div>
+            <div class="message from-user">All good.</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Message..." />
+            <div class="icons">
+                <button aria-label="Send">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="rating-section">
+            <h4>Rate Our Service</h4>
+            <div class="stars">
+                <span class="active">★</span>
+                <span class="active">★</span>
+                <span class="active">★</span>
+                <span>★</span>
+                <span>★</span>
+            </div>
+            <textarea placeholder="Your comment..."></textarea>
+            <button>Next</button>
+        </div>
+    </div>
+</body>
+
+</html>
