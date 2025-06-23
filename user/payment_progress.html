@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment In Progress</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #f9fafb;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    }
+    .progress-modal {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 32px 28px 28px 28px;
+      width: 100%;
+      max-width: 340px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .progress-icon {
+      width: 56px;
+      height: 56px;
+      background: #f3f4f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -48px auto 18px auto;
+      border: 6px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      position: relative;
+      top: -28px;
+    }
+    .progress-spinner {
+      width: 32px;
+      height: 32px;
+      display: block;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    .progress-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 10px;
+      margin-top: -12px;
+    }
+    .progress-desc {
+      color: #6b7280;
+      font-size: 1.01rem;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-modal">
+    <div class="progress-icon">
+      <svg class="progress-spinner" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="16" stroke="#2563eb" stroke-width="4" opacity="0.15"/>
+        <path d="M36 20a16 16 0 1 1-8.5-14.2" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="progress-title">Payment is in progress</div>
+    <div class="progress-desc">Please, wait a few moments</div>
+  </div>
+</body>

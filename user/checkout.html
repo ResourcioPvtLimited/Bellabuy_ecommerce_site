@@ -43,7 +43,7 @@
             <div class="items-section">
                 <div class="section-header">
                     <h2>Items <span class="item-count">2</span></h2>
-                    <button class="voucher-btn" id="voucherBtn">Add Voucher</button>
+                    <button class="voucher-btn" id="voucherBtn" onclick="window.location.href='voucher.html'">Add Voucher</button>
                 </div>
 
                 <div class="items-list">
@@ -94,21 +94,34 @@
 
             <!-- Shipping Address Section -->
             <div class="shipping-section">
-                <h2>Select Shipping Address</h2>
+                <div class="shipping-section-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+                    <h2 style="margin: 0;">Select Shipping Address</h2>
+                    <button class="add-address-btn" onclick="window.location.href='add_address.html'" title="Add Address" style="background: none; border: none; padding: 0; cursor: pointer;">
+                        <span class="add-address-plus">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#2563eb">
+                                <circle cx="12" cy="12" r="12" fill="#2563eb"/>
+                                <path d="M12 8v8M8 12h8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
                 <div class="address-list">
                     <div class="address-item selected" data-address="0">
                         <div class="address-content">
                             <div class="address-header">
                                 <h3>Shipping Address</h3>
                                 <div class="radio-button selected"></div>
+
                             </div>
                             <p>Magadi Main Rd, next to Prasanna Theatre, Cholanpalya, Bengaluru, Karnataka 560023</p>
                         </div>
-                        <div class="check-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20,6 9,17 4,12"/>
+                        
+                        <a href="edit_address.html" title="Edit Address"  class="edit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#004BFE"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.7998 12.4594V14.3343H7.67477L13.2047 8.80444L11.3297 6.92947L5.7998 12.4594ZM14.6546 7.35447C14.8496 7.15947 14.8496 6.84447 14.6546 6.64948L13.4847 5.4795C13.2897 5.2845 12.9747 5.2845 12.7797 5.4795L11.8647 6.39448L13.7397 8.26945L14.6546 7.35447H14.6546Z" fill="white"/>
                             </svg>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="address-item" data-address="1">
@@ -119,6 +132,12 @@
                             </div>
                             <p>Magadi Main Rd, next to Prasanna Theatre, Cholanpalya, Bengaluru, Karnataka 560023</p>
                         </div>
+                        <a href="edit_address.html" title="Edit Address"  class="edit-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#004BFE"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.7998 12.4594V14.3343H7.67477L13.2047 8.80444L11.3297 6.92947L5.7998 12.4594ZM14.6546 7.35447C14.8496 7.15947 14.8496 6.84447 14.6546 6.64948L13.4847 5.4795C13.2897 5.2845 12.9747 5.2845 12.7797 5.4795L11.8647 6.39448L13.7397 8.26945L14.6546 7.35447H14.6546Z" fill="white"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -138,23 +157,47 @@
                     </div>
 
                     <div class="payment-method" data-payment="nagad">
-                        <div class="payment-icon nagad">🟠</div>
+                        <div class="payment-icon nagad">
+                                <img src="../assets/images/nagad.png" alt="Nagad" style="width:32px;height:32px;object-fit:contain;">
+                        </div>
                         <span>Nagad</span>
+                        <div class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                        </div>
                     </div>
 
                     <div class="payment-method" data-payment="upay">
                         <div class="payment-icon upay">🔵</div>
                         <span>Upay</span>
+                        <div class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                        </div>
                     </div>
 
                     <div class="payment-method" data-payment="card">
-                        <div class="payment-icon card">💳</div>
+                        <div class="payment-icon card">
+                                <img src="../assets/images/cod.png" alt="Nagad" style="width:32px;height:32px;object-fit:contain;">
+                        </div>
                         <span>Card</span>
+                        <div class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                        </div>
                     </div>
 
                     <div class="payment-method" data-payment="cod">
                         <div class="payment-icon cod">💵</div>
                         <span>Cash on Delivery</span>
+                        <div class="check-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,19 +228,12 @@
 
     <script>
       // Voucher functionality
-const voucherBtn = document.getElementById('voucherBtn');
-const voucherSection = document.getElementById('voucherSection');
-
-voucherBtn.addEventListener('click', () => {
-    if (voucherSection.style.display === 'none') {
-        voucherSection.style.display = 'block';
-        voucherBtn.textContent = 'Hide Voucher';
-    } else {
-        voucherSection.style.display = 'none';
-        voucherBtn.textContent = 'Add Voucher';
-    }
-});
-
+ const voucherBtn = document.getElementById('voucherBtn');
+  if (voucherBtn) {
+      voucherBtn.addEventListener('click', function (e) {
+          window.location.href = 'voucher.html';
+      });
+  }
 // Shipping address selection
 const addressItems = document.querySelectorAll('.address-item');
 
@@ -295,4 +331,3 @@ handleResize(); // Call on initial load
 </body>
 </html>
 
-  
