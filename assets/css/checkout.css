@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f9fafb;
+    background-color: var(--color-primary);
     color: #111827;
     line-height: 1.5;
 }
@@ -22,7 +22,7 @@ body {
 .payment-container {
     width: 100%;
     max-width: 448px;
-    background: white;
+    
     min-height: 100vh;
     box-shadow: none;
 }
@@ -34,7 +34,7 @@ body {
     align-items: center;
     padding: 16px;
     border-bottom: 1px solid #e5e7eb;
-    background: white;
+    
 }
 
 .header-left {
@@ -164,7 +164,7 @@ body {
 }
 
 .voucher-btn {
-    background: white;
+    
     border: 1px solid #d1d5db;
     padding: 8px 16px;
     border-radius: 9999px;
@@ -175,9 +175,7 @@ body {
     transition: background-color 0.2s;
 }
 
-.voucher-btn:hover {
-    background: #f9fafb;
-}
+
 
 .items-list {
     display: flex;
@@ -378,7 +376,7 @@ body {
     content: '';
     width: 8px;
     height: 8px;
-    background: white;
+    
     border-radius: 50%;
 }
 
@@ -419,44 +417,65 @@ body {
 }
 
 .payment-method {
-    padding: 16px;
-
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     gap: 8px;
+    padding: 10px 20px;
+    background: var(--color-buttongray);
+    border: none;
+    border-radius: 999px; /* pill shape */
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    color: #111827;
+    box-shadow: none;
     position: relative;
-}
-
-.payment-method:hover {
-    border-color: #d1d5db;
+    min-height: 44px;
+    transition: background 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
 }
 
 .payment-method.selected {
-    border-color: #3b82f6;
-    background: #dbeafe;
+    background: #f3f4f6;
+    border: 2px solid #2563eb;
+    box-shadow: 0 2px 8px 0 rgba(37,99,235,0.08);
 }
 
-/* .payment-icon {
-    width: 32px;
-    height: 32px;
+.payment-method .check-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    background: #2563eb;
+    color: #fff;
     border-radius: 50%;
+    width: 22px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    color: white;
-} */
+    font-size: 16px;
+}
 
+.payment-method:not(.selected) .check-icon {
+    display: none;
+}
+
+.payment-method img,
+.payment-method svg {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: none;
+}
 
 .payment-method span {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
+    color: #111827;
 }
 
 /* .payment-method .check-icon {
@@ -480,7 +499,7 @@ body {
 /* Order Summary */
 .order-summary {
     padding: 16px;
-    background: white;
+    
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     margin: 0 16px 24px;
@@ -586,7 +605,6 @@ body {
         max-width: 1024px;
         min-height: auto;
         border-radius: 12px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 24px;
@@ -608,7 +626,7 @@ body {
     .payment-methods-section {
         grid-column: 1;
         padding: 24px;
-        background: #f9fafb;
+        
         border-radius: 12px;
         margin-bottom: 24px;
     }
@@ -620,7 +638,7 @@ body {
         position: sticky;
         top: 24px;
         align-self: start;
-        background: #f9fafb;
+        
         padding: 24px;
         height: fit-content;
     }
@@ -631,7 +649,7 @@ body {
     
     .item {
         padding: 16px;
-        background: white;
+        
         border-radius: 8px;
         margin-bottom: 16px;
     }
@@ -641,14 +659,7 @@ body {
         height: 100px;
     }
     
-    .address-item {
-        background: white;
-    }
     
-    .payment-method {
-        background: white;
-        height: 120px;
-    }
     
     .payment-icon {
         width: 48px;
@@ -684,7 +695,5 @@ body {
         height: 120px;
     }
     
-    .payment-method {
-        height: 140px;
-    }
+   
 }
