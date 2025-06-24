@@ -1,0 +1,12 @@
+:root {
+  /* Color palette */
+  --color-primary: #FFFFFF;   /* White */
+  --color-secondary: #151414; /* Almost Black */
+  --color-buttongray:#f3f4f6;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}

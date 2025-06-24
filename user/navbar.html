@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar UI</title>
+  <style>
+    body {
+      margin: 0px;
+      font-family: Arial, sans-serif;
+      width:100%;
+      padding: 0px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background-color: white;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      font-family: serif;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      padding: 6px 10px;
+      margin: 0 20px;
+    }
+
+    .search-bar input {
+      border: none;
+      background: transparent;
+      outline: none;
+      margin-left: 6px;
+      font-size: 14px;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: space-between;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+      .navbar-content {
+        justify-content: flex-end;
+      }
+    }
+    .menu a:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-underline-offset: 4px; /* Optional: adds space between text and underline */
+}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">BB</div>
+    <div class="navbar-content">
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Beauty</a>
+        <a href="#">GenZ</a>
+        <a href="#">Vouchers</a>
+      </div>
+
+      <div class="search-bar">
+        🔍
+        <input type="text" placeholder="Search here" />
+      </div>
+
+      <div class="icons">
+        <span>👤</span>
+        <span>💗</span>
+        <span>🛍️</span>
+      </div>
+    </div>
+  </nav>
+
+</body>
+</html>

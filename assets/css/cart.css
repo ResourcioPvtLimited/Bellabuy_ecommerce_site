@@ -1,18 +1,4 @@
-:root {
-      --primary-color: #6C63FF;
-      --secondary-color: #4D44DB;
-      --accent-color: #FF6584;
-      --light-gray: #f7f7f7;
-      --medium-gray: #E0E0E0;
-      --dark-gray: #757575;
-      --text-dark: #212121;
-      --text-light: #424242;
-      --white: #FFFFFF;
-      --success-color: #4CAF50;
-      --warning-color: #FF9800;
-      --error-color: #F44336;
-      --discount-color: #FF3E6C;
-    }
+
 a {
     text-decoration: none;
     color: #333;
@@ -26,7 +12,7 @@ a {
     }
 
     body {
-      background-color: var(--light-gray);
+      background-color: var(--primary-color);
       padding-bottom: 120px;
       color: var(--text-dark);
       margin-bottom: 200px;
@@ -48,6 +34,7 @@ a {
       position: sticky;
       top: 0;
       z-index: 100;
+      width:100%;
     }
 
     .header-icons {
@@ -531,8 +518,8 @@ a {
     }
 
     .shop-now-btn {
-      background: var(--primary-color);
-      color: var(--white);
+      background: var(--color-secondary);
+      color: var(--color-primary);
       border: none;
       border-radius: 8px;
       padding: 12px 24px;
@@ -541,9 +528,7 @@ a {
       transition: background 0.3s;
     }
 
-    .shop-now-btn:hover {
-      background: var(--secondary-color);
-    }
+    
 
     /* Responsive Adjustments */
     @media (min-width: 768px) {
@@ -792,4 +777,18 @@ a {
   margin-top: -3px;
   margin-right: 4px;
   color: #fdc417;
+}
+/* Make shop-header full width on desktop */
+@media (min-width: 768px) {
+  .shop-header {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    max-width: 100vw;
+    transform: translateX(-50%);
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

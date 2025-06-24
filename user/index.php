@@ -1,181 +1,4 @@
-<?php
 
-include("config.php");
-
-// Initialize session cart and wishlist if not exists
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = [];
-}
-if (!isset($_SESSION['wishlist'])) {
-    $_SESSION['wishlist'] = [];
-}
-
-$uid = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
-
-// Handle AJAX for cart/wishlist
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header('Content-Type: application/json');
-    
-    if (isset($_POST['pid']) && isset($_POST['type'])) {
-        $pid = (int)$_POST['pid'];
-        $type = $_POST['type'];
-        $table = $type === 'wishlist' ? 'wishlist' : 'cart';
-        $response = ['status' => 'error'];
-        
-        // Check if user is logged in
-        if ($uid > 0) {
-            $exists = $conn->query("SELECT id FROM `$table` WHERE u_id=$uid AND p_id=$pid LIMIT 1");
-            if ($exists->num_rows > 0) {
-                $conn->query("DELETE FROM `$table` WHERE u_id=$uid AND p_id=$pid");
-                $status = 'removed';
-            } else {
-                $conn->query("INSERT INTO `$table` (u_id, p_id, qty) VALUES ($uid, $pid, 1)");
-                $status = 'added';
-            }
-            
-            $cartCount = $conn->query("SELECT COUNT(*) AS c FROM cart WHERE u_id=$uid")->fetch_assoc()['c'];
-            $wishCount = $conn->query("SELECT COUNT(*) AS c FROM wishlist WHERE u_id=$uid")->fetch_assoc()['c'];
-            
-            $response = ['status' => $status, 'cart' => $cartCount, 'wishlist' => $wishCount];
-        } 
-        // Handle guest users
-        else {
-            if ($type === 'cart') {
-                if (in_array($pid, $_SESSION['cart'])) {
-                    $_SESSION['cart'] = array_diff($_SESSION['cart'], [$pid]);
-                    $status = 'removed';
-                } else {
-                    $_SESSION['cart'][] = $pid;
-                    $status = 'added';
-                }
-                $cartCount = count($_SESSION['cart']);
-            } else {
-                if (in_array($pid, $_SESSION['wishlist'])) {
-                    $_SESSION['wishlist'] = array_diff($_SESSION['wishlist'], [$pid]);
-                    $status = 'removed';
-                } else {
-                    $_SESSION['wishlist'][] = $pid;
-                    $status = 'added';
-                }
-                $wishCount = count($_SESSION['wishlist']);
-            }
-            
-            $response = ['status' => $status, 'cart' => $cartCount, 'wishlist' => $wishCount];
-        }
-        
-        echo json_encode($response);
-        exit;
-    }
-    // Handle login requirement check
-    elseif (isset($_POST['check_login'])) {
-        echo json_encode(['logged_in' => ($uid > 0)]);
-        exit;
-    }
-    // Handle product filtering
-    elseif (isset($_POST['filter_gender'])) {
-        $gender = $_POST['filter_gender'];
-        
-        // Filter products
-        $filter = $gender ? "WHERE person='$gender'" : "";
-        $products = $conn->query("SELECT * FROM item $filter ORDER BY RAND()");
-        
-        // Filter categories
-        $catFilter = $gender ? "WHERE person='$gender'" : "";
-        $categories = $conn->query("SELECT * FROM cat $catFilter");
-        
-        // Filter brands
-        $brandFilter = $gender ? "WHERE person='$gender' AND tag='top_brands'" : "WHERE tag='top_brands'";
-        $brands = $conn->query("SELECT * FROM brands $brandFilter");
-        
-        // Generate products HTML
-        $productsHTML = '';
-        while ($item = $products->fetch_assoc()) {
-            $id = $item['id'];
-            $brand = $conn->query("SELECT name, logo FROM brands WHERE id={$item['brands_id']} LIMIT 1")->fetch_assoc();
-            
-            // Check if item is in cart/wishlist
-            $inCart = false;
-            $inWishlist = false;
-            
-            if ($uid > 0) {
-                $inCart = $conn->query("SELECT id FROM cart WHERE u_id=$uid AND p_id=$id")->num_rows > 0;
-                $inWishlist = $conn->query("SELECT id FROM wishlist WHERE u_id=$uid AND p_id=$id")->num_rows > 0;
-            } else {
-                $inCart = in_array($id, $_SESSION['cart']);
-                $inWishlist = in_array($id, $_SESSION['wishlist']);
-            }
-            
-            $productsHTML .= "<div class='product-card'>
-                <div class='product-image'>
-                    <img src='prod/{$item['img1']}' alt='{$item['name']}'>
-                    <div class='label-launch'>Just Launched</div>
-                    <div class='wishlist-icon wish-btn " . ($inWishlist ? 'added' : '') . "' data-id='{$id}' data-type='wishlist'>" . ($inWishlist ? '✓' : '+') . "</div>
-                    <div class='rating'><i class='fa fa-star'></i> {$item['star']}</div>
-                </div>
-                <div class='product-info'>
-                    <div class='product-name'>{$item['name']}</div>
-                    <div class='product-price'>BDT {$item['price']}</div>
-                    <div><span class='product-original'>BDT {$item['max_price']}</span> <span class='product-discount'>{$item['discount']}% OFF</span></div>
-                    <div class='brand'>
-                        <div class='brand-logo'>
-                            <img src='{$brand['logo']}' alt='" . htmlspecialchars($brand['name']) . "'>
-                        </div>
-                        <div class='add-to-cart'>
-                            <button class='cart-btn " . ($inCart ? 'added' : '') . "' 
-                                    data-id='{$id}' 
-                                    data-type='cart'>" .
-                                ($inCart ? 'Remove from Cart' : 'Add to Cart') .
-                            "</button>
-                        </div>
-                    </div>
-                </div>
-            </div>";
-        }
-        
-        // Generate categories HTML
-        $categoriesHTML = '';
-        while ($cat = $categories->fetch_assoc()) {
-            $categoriesHTML .= "<div class='category-slide'><a href='category.php?id={$cat['id']}'><img src='{$cat['logo']}' alt='{$cat['cat']}'><p>{$cat['cat']}</p></a></div>";
-        }
-        
-        // Generate brands HTML
-        $brandsHTML = '';
-        while ($brand = $brands->fetch_assoc()) {
-            $brandsHTML .= "<div class='brand-slide'><a href='brandsprofile.php?id={$brand['id']}'><img src='{$brand['logo']}' alt='{$brand['name']}'></a></div>";
-        }
-        
-        echo json_encode([
-            'products' => $productsHTML,
-            'categories' => $categoriesHTML,
-            'brands' => $brandsHTML
-        ]);
-        exit;
-    }
-}
-
-// Transfer guest cart to user after login
-if ($uid > 0 && !empty($_SESSION['guest_cart'])) {
-    foreach ($_SESSION['guest_cart'] as $pid) {
-        $conn->query("INSERT INTO cart (u_id, p_id, qty) VALUES ($uid, $pid, 1) 
-                     ON DUPLICATE KEY UPDATE qty = qty + 1");
-    }
-    unset($_SESSION['guest_cart']);
-    
-    // Update counts after transfer
-    $cartCount = $conn->query("SELECT COUNT(*) AS c FROM cart WHERE u_id=$uid")->fetch_assoc()['c'];
-    $wishCount = $conn->query("SELECT COUNT(*) AS c FROM wishlist WHERE u_id=$uid")->fetch_assoc()['c'];
-} 
-// Initialize counts
-else {
-    if ($uid > 0) {
-        $cartCount = $conn->query("SELECT COUNT(*) AS c FROM cart WHERE u_id=$uid")->fetch_assoc()['c'];
-        $wishCount = $conn->query("SELECT COUNT(*) AS c FROM wishlist WHERE u_id=$uid")->fetch_assoc()['c'];
-    } else {
-        $cartCount = count($_SESSION['cart']);
-        $wishCount = count($_SESSION['wishlist']);
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -289,26 +112,7 @@ else {
 <!-- Products -->
 <div class="section-title">Discover <span>Products</span></div>
 <div class="products" id="product-container">
-  <?php
-  $products = $conn->query("SELECT * FROM item ORDER BY RAND()");
-  
-  while ($item = $products->fetch_assoc()) {
-    $id = $item['id'];
-    $brand = $conn->query("SELECT name, logo FROM brands WHERE id={$item['brands_id']} LIMIT 1")->fetch_assoc();
-    
-    // Check if item is in cart/wishlist
-    $inCart = false;
-    $inWishlist = false;
-    
-    if ($uid > 0) {
-      $inCart = $conn->query("SELECT id FROM cart WHERE u_id=$uid AND p_id=$id")->num_rows > 0;
-      $inWishlist = $conn->query("SELECT id FROM wishlist WHERE u_id=$uid AND p_id=$id")->num_rows > 0;
-    } else {
-      $inCart = in_array($id, $_SESSION['cart']);
-      $inWishlist = in_array($id, $_SESSION['wishlist']);
-    }
-    
-    echo "<div class='product-card'>
+ <div class='product-card'>
             <div class='product-image'>
               <img src='prod/{$item['img1']}' alt='{$item['name']}'>
               <div class='label-launch'>Just Launched</div>
@@ -329,13 +133,10 @@ else {
           <button class='cart-btn " . ($inCart ? 'added' : '') . "' 
                   data-id='{$id}' 
                   data-type='cart'>" .
-            ($inCart ? 'Remove from Cart' : 'Add to Cart') .
-          "</button>
+            </button>
         </div>
       </div>
-        </div></div>";
-  }
-  ?>
+        </div></div>
 </div>
 
 <!-- Footer -->
