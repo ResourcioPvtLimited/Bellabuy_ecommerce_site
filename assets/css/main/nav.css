@@ -1,0 +1,157 @@
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-primary);
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 40px;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.new {
+  color: var(--color-accent);
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f5;
+  border-radius: 6px;
+  padding: 8px 12px;
+  max-width: 380px;
+  width: 100%;
+  margin: 10px;
+  flex-grow: 1;
+}
+
+.search-container input {
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-left: 10px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-label {
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.icon-label img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto 2px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  top: 40px;
+  right: 0;
+  min-width: 150px;
+  z-index: 100;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  color: var(--color-secondary);
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.show {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .search-container {
+    order: 3;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .icons {
+    order: 4;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
+  }
+}

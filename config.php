@@ -5,7 +5,7 @@ date_default_timezone_set("Asia/Kolkata");
 $servername = "localhost"; 
 $username = "root";
 $password = ""; 
-$db = "testing123"; 
+$db = "bellabuy"; 
 $conn = new mysqli($servername, $username, $password,$db);
 /********************************************************************/
 $mail_email = "contact@alokitoscouts.com"; // your business email
