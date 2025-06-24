@@ -31,6 +31,26 @@
 </head>
 <body>
 <div data-include="navbar.html"></div>
+<script>
+async function includeHTML() {
+  const elements = document.querySelectorAll('[data-include]');
+  for (const el of elements) {
+    const file = el.getAttribute("data-include");
+    const res = await fetch(file);
+    const html = await res.text();
+    el.innerHTML = html;
+  }
+  // Now load navbar.js and run setupNavbarDropdown
+  const script = document.createElement('script');
+  script.src = '../assets/js/navbar.js';
+  script.onload = function() {
+    if (typeof setupNavbarDropdown === 'function') setupNavbarDropdown();
+  };
+  document.body.appendChild(script);
+}
+
+window.addEventListener('DOMContentLoaded', includeHTML);
+</script>
   <div class="container">
   <div class="avatar">
     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="40" height="40">
