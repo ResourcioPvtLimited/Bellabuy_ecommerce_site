@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f9fafb;
+    background-color: var(--color-primary);
     color: #111827;
     line-height: 1.5;
 }
@@ -22,7 +22,7 @@ body {
 .payment-container {
     width: 100%;
     max-width: 448px;
-    background: white;
+    
     min-height: 100vh;
     box-shadow: none;
 }
@@ -34,7 +34,7 @@ body {
     align-items: center;
     padding: 16px;
     border-bottom: 1px solid #e5e7eb;
-    background: white;
+    
 }
 
 .header-left {
@@ -90,6 +90,16 @@ body {
     background: #dc2626;
     border-radius: 50%;
 }
+
+ .header-icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .header-icons i {
+      font-size: 20px;
+      color: var(--secondary);
+    }
 
 /* Progress Indicator */
 .progress-section {
@@ -154,7 +164,7 @@ body {
 }
 
 .voucher-btn {
-    background: white;
+    
     border: 1px solid #d1d5db;
     padding: 8px 16px;
     border-radius: 9999px;
@@ -165,9 +175,7 @@ body {
     transition: background-color 0.2s;
 }
 
-.voucher-btn:hover {
-    background: #f9fafb;
-}
+
 
 .items-list {
     display: flex;
@@ -368,7 +376,7 @@ body {
     content: '';
     width: 8px;
     height: 8px;
-    background: white;
+    
     border-radius: 50%;
 }
 
@@ -378,8 +386,8 @@ body {
     line-height: 1.4;
 }
 
-.check-icon {
-    width: 24px;
+.edit-icon {
+    width: 24px;    
     height: 24px;
     background: #3b82f6;
     border-radius: 50%;
@@ -390,9 +398,6 @@ body {
     margin-left: 16px;
 }
 
-.address-item:not(.selected) .check-icon {
-    display: none;
-}
 
 /* Payment Methods */
 .payment-methods-section {
@@ -412,51 +417,68 @@ body {
 }
 
 .payment-method {
-    padding: 16px;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     gap: 8px;
+    padding: 10px 20px;
+    background: var(--color-buttongray);
+    border: none;
+    border-radius: 999px; /* pill shape */
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    color: #111827;
+    box-shadow: none;
     position: relative;
-}
-
-.payment-method:hover {
-    border-color: #d1d5db;
+    min-height: 44px;
+    transition: background 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
 }
 
 .payment-method.selected {
-    border-color: #3b82f6;
-    background: #dbeafe;
-}
-
-.payment-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: white;
-}
-
-.payment-icon.bkash { background: #ec4899; }
-.payment-icon.nagad { background: #f97316; }
-.payment-icon.upay { background: #3b82f6; }
-.payment-icon.card { background: #2563eb; }
-.payment-icon.cod { background: #16a34a; }
-
-.payment-method span {
-    font-size: 14px;
-    font-weight: 500;
+    background: #f3f4f6;
+    border: 2px solid #2563eb;
+    box-shadow: 0 2px 8px 0 rgba(37,99,235,0.08);
 }
 
 .payment-method .check-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    background: #2563eb;
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.payment-method:not(.selected) .check-icon {
+    display: none;
+}
+
+.payment-method img,
+.payment-method svg {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: none;
+}
+
+.payment-method span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+}
+
+/* .payment-method .check-icon {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -468,7 +490,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-}
+} */
 
 .payment-method:not(.selected) .check-icon {
     display: none;
@@ -477,7 +499,7 @@ body {
 /* Order Summary */
 .order-summary {
     padding: 16px;
-    background: white;
+    
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     margin: 0 16px 24px;
@@ -529,133 +551,149 @@ body {
     background: #374151;
 }
 
+/* Add Address Button */
+.add-address-btn {
+    display: flex;
+    align-items: center;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    padding: 8px 18px 8px 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(59,130,246,0.08);
+    gap: 6px;
+}
+
+.add-address-btn:hover {
+    background: #1d4ed8;
+}
+
+.add-address-btn .add-address-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: none;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+.add-address-btn:hover .add-address-plus {
+    box-shadow: 0 2px 8px 0 rgba(59,130,246,0.12);
+    background: #1d4ed8;
+}
+
+.add-address-plus svg {
+    display: block;
+}
+
 /* Desktop Responsive */
 @media (min-width: 1024px) {
     .container {
         padding: 32px;
         align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     
     .payment-container {
-        max-width: 512px;
+        max-width: 1024px;
         min-height: auto;
-        border-radius: 8px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    
-    .payment-header {
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 24px;
         padding: 24px;
     }
     
-    .payment-header h1 {
-        font-size: 20px;
-    }
-    
-    .step-indicator {
-        width: 28px;
-        height: 28px;
+    .payment-header {
+        grid-column: 1 / -1;
+        padding: 0 0 24px 0;
     }
     
     .progress-section {
-        padding: 32px 24px;
+        grid-column: 1 / -1;
+        padding: 0 0 32px 0;
     }
     
-    .progress-step {
-        width: 56px;
-        height: 56px;
-    }
-    
-    .progress-step svg {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .items-section {
-        padding: 0 24px 32px;
-    }
-    
-    .section-header h2 {
-        font-size: 20px;
-    }
-    
-    .voucher-btn {
-        padding: 12px 24px;
-    }
-    
-    .item-image {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .item-details h3 {
-        font-size: 18px;
-    }
-    
-    .current-price {
-        font-size: 18px;
-    }
-    
-    .shipping-section {
-        padding: 0 24px 32px;
-    }
-    
-    .shipping-section h2 {
-        font-size: 20px;
-    }
-    
-    .address-item {
-        padding: 20px;
-    }
-    
-    .address-header h3 {
-        font-size: 18px;
-    }
-    
-    .address-item p {
-        font-size: 16px;
-    }
-    
+    .items-section,
+    .shipping-section,
     .payment-methods-section {
-        padding: 0 24px 32px;
+        grid-column: 1;
+        padding: 24px;
+        
+        border-radius: 12px;
+        margin-bottom: 24px;
     }
     
-    .payment-methods-section h2 {
-        font-size: 20px;
+    .order-summary {
+        grid-column: 2;
+        grid-row: 3 / span 3;
+        margin: 0;
+        position: sticky;
+        top: 24px;
+        align-self: start;
+        
+        padding: 24px;
+        height: fit-content;
     }
     
     .payment-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    .payment-method {
-        padding: 20px;
+    .item {
+        padding: 16px;
+        
+        border-radius: 8px;
+        margin-bottom: 16px;
     }
+    
+    .item-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    
     
     .payment-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-    
-    .payment-method span {
-        font-size: 16px;
-    }
-    
-    .order-summary {
-        margin: 0 24px 24px;
-        padding: 24px;
-    }
-    
-    .summary-item {
-        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
     }
     
     .summary-total {
-        font-size: 20px;
+        font-size: 24px;
     }
     
     .pay-button {
+        margin-top: 24px;
         padding: 20px;
         font-size: 20px;
     }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .payment-container {
+        max-width: 1200px;
+        gap: 32px;
+        padding: 32px;
+    }
+    
+    .item-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+   
 }

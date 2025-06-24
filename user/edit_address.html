@@ -1,65 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profile Form</title>
-  <link rel="stylesheet" href="../assets/css/edit_address.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Raleway:wght@700&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Address</title>
+    <link rel="stylesheet" href="../assets/css/checkout.css">
+    <link rel="stylesheet" href="../assets/css/add_address.css">
 </head>
 <body>
-  <div class="container" id="mainContent">
-    <div class="top-buttons">
-      <!-- Change Profile -->
-      <div class="icon-btn">
-        <img src="../assets/images/profile_update.png" alt="Change Profile Icon" class="big-icon" />
-        <div class="btn-text">Change<br />Profile</div>
-      </div>
+    <div class="checkout-preview">
+        <!-- Copy only the top part of checkout page -->
+        <div class="container">
+            <div class="payment-container">
+                <header class="payment-header">
+                    <div class="header-left">
+                        <svg class="back-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H6m6-7-7 7 7 7"/>
+                        </svg>
+                        <h1>Payment</h1>
+                    </div>
+                    <div class="header-right">
+                        <div class="step-indicator active">1</div>
+                        <div class="step-indicator">
+                            <div class="red-dot"></div>
+                        </div>
+                        <div class="step-indicator">3</div>
+                    </div>
+                </header>
 
-      <!-- Reset Password -->
-      <div class="icon-btn">
-        <img src="../assets/images/reset_password.png" alt="Reset Password Icon" />
-        <div class="btn-text">Reset<br />Password</div>
-      </div>
+                <!-- Progress Indicator -->
+                <div class="progress-section">
+                    <div class="progress-indicator">
+                        <div class="progress-step completed">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                               <path fill-rule="evenodd" d="M14 7h-4v3a1 1 0 0 1-2 0V7H6a1 1 0 0 0-.997.923l-.917 11.924A2 2 0 0 0 6.08 22h11.84a2 2 0 0 0 1.994-2.153l-.917-11.924A1 1 0 0 0 18 7h-2v3a1 1 0 1 1-2 0V7Zm-2-3a2 2 0 0 0-2 2v1H8V6a4 4 0 0 1 8 0v1h-2V6a2 2 0 0 0-2-2Z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step completed"></div>
+                    </div>
+                </div>
+
+                <!-- Items Section -->
+                <div class="items-section">
+                    <div class="section-header">
+                        <h2>Items <span class="item-count">2</span></h2>
+                        <button class="voucher-btn" id="voucherBtn">Add Voucher</button>
+                    </div>
+
+                    <div class="items-list">
+                        <div class="item">
+                            <div class="item-image-container">
+                                <img src="../assets/images/photo.png" alt="Item 1" class="item-image">
+                                <div class="item-number">1</div>
+                            </div>
+                            <div class="item-details">
+                                <h3>Lorem ipsum...</h3>
+                                <div class="item-attributes">
+                                    <span class="attribute color">Pink</span>
+                                    <span class="attribute size">M</span>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <div class="current-price">BDT 90</div>
+                                <div class="original-price">BDT 120</div>
+                                <div class="discount">10% OFF</div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item-image-container">
+                                <img src="../assets/images/photo.png" alt="Item 2" class="item-image">
+                                <div class="item-number">1</div>
+                            </div>
+                            <div class="item-details">
+                                <h3>Lorem ipsum...</h3>
+                                <div class="item-attributes">
+                                    <span class="attribute color">Pink</span>
+                                    <span class="attribute size">M</span>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <div class="current-price">BDT 90</div>
+                                <div class="original-price">BDT 120</div>
+                                <div class="discount">10% OFF</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voucher-section" id="voucherSection" style="display: none;">
+                        <input type="text" placeholder="Enter voucher code" class="voucher-input">
+                        <button class="apply-voucher-btn">Apply Voucher</button>
+                    </div>
+                </div>
+
+                <!-- Shipping Address Section -->
+                <div class="shipping-section">
+                    <h2>Select Shipping Address</h2>
+                    <div class="address-list">
+                        <div class="address-item selected" data-address="0">
+                            <div class="address-content">
+                                <div class="address-header">
+                                    <h3>Shipping Address</h3>
+                                    <div class="radio-button selected"></div>
+                                </div>
+                                <p>Magadi Main Rd, next to Prasanna Theatre, Cholanpalya, Bengaluru, Karnataka 560023</p>
+                            </div>
+                            <div class="check-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="address-item" data-address="1">
+                            <div class="address-content">
+                                <div class="address-header">
+                                    <h3>Shipping Address</h3>
+                                    <div class="radio-button"></div>
+                                </div>
+                                <p>Magadi Main Rd, next to Prasanna Theatre, Cholanpalya, Bengaluru, Karnataka 560023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods Section -->
+                <div class="payment-methods-section">
+                    <h2>Payment Method</h2>
+                    <div class="payment-grid">
+                        <div class="payment-method selected" data-payment="bkash">
+                            <div class="payment-icon bkash">💳</div>
+                            <span>Bkash</span>
+                            <div class="check-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20,6 9,17 4,12"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="payment-method" data-payment="nagad">
+                            <div class="payment-icon nagad">🟠</div>
+                            <span>Nagad</span>
+                        </div>
+
+                        <div class="payment-method" data-payment="upay">
+                            <div class="payment-icon upay">🔵</div>
+                            <span>Upay</span>
+                        </div>
+
+                        <div class="payment-method" data-payment="card">
+                            <div class="payment-icon card">💳</div>
+                            <span>Card</span>
+                        </div>
+
+                        <div class="payment-method" data-payment="cod">
+                            <div class="payment-icon cod">💵</div>
+                            <span>Cash on Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary Section -->
+                <div class="order-summary">
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span>180 BDT</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping Charge</span>
+                        <span>120 BDT</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Voucher</span>
+                        <span class="discount-amount">- 70 BDT</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>180 BDT</span>
+                    </div>
+                    <button class="pay-button">Pay</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <form class="profile-form" onsubmit="showSuccessModal(event)">
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" placeholder="Enter your First Name" />
+    <div class="modal-overlay">
+        <div class="address-popup">
+            <div class="popup-header">
+                <h2>Edit Shipping Address</h2>
+                <button class="save-btn">Save</button>
+            </div>
 
-      <label for="lastName">Last Name (Optional)</label>
-      <input type="text" id="lastName" placeholder="Enter your Last Name" />
+            <form class="address-form">
+                <div class="form-group">
+                    <label>Country</label>
+                    <select class="form-control">
+                        <option value="">Choose Your Country</option>
+                    </select>
+                </div>
 
-      <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" value="2007-07-14" />
+                <div class="form-group">
+                    <label>District</label>
+                    <select class="form-control">
+                        <option value="">Choose Your District</option>
+                    </select>
+                </div>
 
-      <label for="gender">Gender</label>
-      <select id="gender">
-        <option>Choose Your Gender</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-      </select>
+                <div class="form-group">
+                    <label>Town/Upazila</label>
+                    <select class="form-control">
+                        <option value="">Choose Your Town/Upazila</option>
+                    </select>
+                </div>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="📞 Enter your phone number" />
+                <div class="form-group">
+                    <label>Postal Code</label>
+                    <input type="text" class="form-control" placeholder="Enter your postal code">
+                </div>
 
-      <label for="email">E-mail (Optional)</label>
-      <input type="email" id="email" name="email" placeholder="📧 Enter your E-mail" />
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" placeholder="Enter your Address"  rows="3">
+                    
+                </div>
 
-      <button type="submit" class="save-btn">Save Changes</button>
-    </form>
-  </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <div class="phone-input">
+                        <span class="input-icon">📞</span>
+                        <input type="tel" class="form-control" placeholder="Enter your Phone Number">
+                    </div>
+                </div>
 
-  <!-- Popup Modal -->
-  <div class="modal" id="successModal">
-    <div class="modal-content">
-      <div class="check-icon">✔</div>
-      <p>Successfully Saved Your Information</p>
-      <button onclick="closeModal()">Go Back</button>
+                <div class="form-group">
+                    <label>E-mail (Optional)</label>
+                    <div class="email-input">
+                        <span class="input-icon">✉️</span>
+                        <input type="email" class="form-control" placeholder="Enter your E-mail">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
-
-  <script src="../js/edit_address.js"></script>
 </body>
 </html>
+
+  

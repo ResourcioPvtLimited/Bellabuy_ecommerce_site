@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/cart.css" />
+  <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
   <!-- Header Section -->
@@ -17,7 +18,7 @@
     <h1 class="page-title">My Bag</h1>
     <div style="width: 24px;"></div>
     <div class="header-icons">
-      <a href="wishlist.php" class="wishlist-icon-container">
+      <a href="wishlist.html" class="wishlist-icon-container">
         <i class="fas fa-heart"></i>
         <span class="wishlist-count"><?= $wishCount ?></span>
       </a>
@@ -31,7 +32,7 @@
   <!-- Main Content Area -->
   <div class="main-content">
     <!-- Progress Indicator -->
-    <div class="progress-indicator">
+    <!-- <div class="progress-indicator">
       <div class="progress-step">
         <div class="step-number"><i class="fa-solid fa-bag-shopping"></i></div>
         <div class="step-label"></div>
@@ -42,16 +43,16 @@
         <div class="step-number inactive"><i class="fa-solid fa-check-circle"></i></div>
         <div class="step-label inactive"></div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Cart Container -->
     <div class="cart-container">
       
-        <div class="select-all">
+        <!-- <div class="select-all">
           <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
           <label for="selectAll">Select all items</label>
           <span class="edit">Edit</span>
-        </div>
+        </div> -->
 
         <!-- Product Cards -->
         
@@ -94,14 +95,14 @@
           <i class="fas fa-shopping-bag"></i>
           <h3>Your bag is empty</h3>
           <p>Looks like you haven't added anything to your bag yet</p>
-          <button class="shop-now-btn" onclick="window.location.href='index.php'">Shop Now</button>
+          <button class="shop-now-btn" onclick="window.location.href='checkout.html'">Shop Now</button>
         </div>
       
     </div>
 
     
       <!-- Voucher Section -->
-      <div class="voucher-section">
+      <!-- <div class="voucher-section">
         <div class="voucher-header">
           <i class="fas fa-tag"></i>
           <h3>Apply Voucher Code</h3>
@@ -111,10 +112,10 @@
           <button class="voucher-btn" onclick="applyVoucher()">Apply</button>
         </div>
         <div id="voucherMessage" style="margin-top: 10px; font-size: 12px; color: var(--success-color); display: none;"></div>
-      </div>
+      </div> -->
 
       <!-- Order Summary -->
-      <div class="order-summary">
+      <!-- <div class="order-summary">
         <h3 class="summary-header">Order Summary</h3>
         <div class="summary-row">
           <span>Subtotal (<span id="itemCount">0</span> items)</span>
@@ -136,7 +137,7 @@
           <span>Total</span>
           <span class="summary-value total" id="total">BDT0</span>
         </div>
-      </div>
+      </div> -->
 
       <!-- Featured Products Section
       <div class="dropdown-product">
