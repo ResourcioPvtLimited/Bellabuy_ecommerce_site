@@ -3,356 +3,719 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Sell</title>
+    <title>Flash Sale</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/flash_sale.css">
 </head>
 <body>
-    <!-- Decorative Bubbles -->
-    <div class="bubble-bg">
-        <img src="../assets/images/bubble01.png" alt="" class="bubble bubble-1">
-        <img src="../assets/images/bubble02.png" alt="" class="bubble bubble-2">
+    <!-- Add container wrapper for desktop responsiveness -->
+    <div class="container-wrapper">
+        <!-- Decorative Bubbles -->
+        <div class="bubble-bg">
+            <img src="../assets/images/bubble01.png" alt="" class="bubble bubble-1">
+            <img src="../assets/images/bubble02.png" alt="" class="bubble bubble-2">
+        </div>
+        
+        <!-- Header - Updated to group back button and title together -->
+        <header class="flash-header">
+            <div class="header-left">
+                <div class="back-button">
+                    <a href="profile.html"><i class="fas fa-arrow-left"></i></a>
+                </div>
+                <div class="header-title">Flash Sale</div>
+            </div>
+            <div class="header-icons">
+                <a href="#"><i class="far fa-bell"></i></a>
+                <a href="#"><i class="far fa-heart"></i><span class="badge">2</span></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i><span class="badge">1</span></a>
+            </div>
+        </header>
+
+        <!-- Flash Sale Timer Section (Updated with clock image and rounded timer boxes) -->
+        <section class="flash-timer-section">
+            <div class="timer-content">
+                <div class="timer-text">
+                    <h2>Your Time!</h2>
+                    <p>Choose Your Discount</p>
+                </div>
+                <div class="countdown-container">
+                    <div class="timer-icon">
+                        <img src="../assets/images/clock.png" alt="Clock" class="clock-image">
+                    </div>
+                    <div class="timer-boxes">
+                        <div class="timer-box">
+                            <div class="timer-unit">00</div>
+                        </div>
+                        <div class="timer-separator">:</div>
+                        <div class="timer-box">
+                            <div class="timer-unit">36</div>
+                        </div>
+                        <div class="timer-separator">:</div>
+                        <div class="timer-box">
+                            <div class="timer-unit">58</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Discount Filter Tabs (Updated to match screenshot) -->
+            <div class="discount-filter">
+                <div class="filter-tabs">
+                    <button class="filter-tab" data-discount="all">All</button>
+                    <button class="filter-tab" data-discount="10">10%</button>
+                    <button class="filter-tab active" data-discount="20">20%</button>
+                    <button class="filter-tab" data-discount="30">30%</button>
+                    <button class="filter-tab" data-discount="40">40%</button>
+                    <button class="filter-tab" data-discount="50">50%</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Banner Slider - Updated with multiple banners and functional slider -->
+        <div class="banner-slider-container">
+            <div class="banner-slider" id="bannerSlider">
+                <!-- Banner 1 -->
+                <section class="featured-banner">
+                    <div class="banner-content">
+                        <div class="banner-text">
+                            <h2>Big Sale</h2>
+                            <p>Up to 50%</p>
+                            <div class="banner-status">Happening Now</div>
+                        </div>
+                        <div class="banner-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Big Sale">
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Banner 2 -->
+                <section class="featured-banner">
+                    <div class="banner-content">
+                        <div class="banner-text">
+                            <h2>Flash Deal</h2>
+                            <p>Up to 70%</p>
+                            <div class="banner-status">Limited Time</div>
+                        </div>
+                        <div class="banner-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Flash Deal">
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Banner 3 -->
+                <section class="featured-banner">
+                    <div class="banner-content">
+                        <div class="banner-text">
+                            <h2>Hot Offers</h2>
+                            <p>Premium Items</p>
+                            <div class="banner-status">New Arrivals</div>
+                        </div>
+                        <div class="banner-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Hot Offers">
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Banner 4 -->
+                <section class="featured-banner">
+                    <div class="banner-content">
+                        <div class="banner-text">
+                            <h2>Clearance</h2>
+                            <p>Last Chance</p>
+                            <div class="banner-status">Ending Soon</div>
+                        </div>
+                        <div class="banner-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Clearance">
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Slider Dots - Now outside the banner -->
+            <div class="banner-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+        </div>
+
+        <!-- Discount Title - Updated to match search page width -->
+        <section class="discount-title">
+            <h3>20% Discount</h3>
+            <div class="sort-icon">
+                <i class="fas fa-sort-amount-down"></i>
+            </div>
+        </section>
+
+        <!-- Product Grid - Ensure it's directly in the container for proper responsive behavior -->
+        <section class="product-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 2">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 (10% discount) -->
+            <div class="product-card" data-discount="10">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 3">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 108</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">10% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 (30% discount) -->
+            <div class="product-card" data-discount="30">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 4">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 84</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">30% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 5 (40% discount) -->
+            <div class="product-card" data-discount="40">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 5">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 72</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">40% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 6 (50% discount) -->
+            <div class="product-card" data-discount="50">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 6">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 60</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">50% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 7 (20% discount) -->
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 7">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 96</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">20% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-discount="20">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <div class="product-image">
+                    <img src="../assets/images/Mask Group.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <div class="product-description">Lorem ipsum dolor...</div>
+                    <div class="price-row">
+                        <div class="price-info">
+                            <div class="current-price">BDT 90</div>
+                            <div class="original-price">BDT 120</div>
+                        </div>
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="action-row">
+                        <div class="retailer-logo">
+                            <img src="../assets/images/Apex.png" alt="Retailer">
+                        </div>
+                        <button class="add-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
     </div>
     
-    <!-- Header - Updated to group back button and title together -->
-<header class="flash-header">
-    <div class="header-left">
-        <div class="back-button">
-            <a href="profile.html"><i class="fas fa-arrow-left"></i></a>
-        </div>
-        <div class="header-title">Flash Sell</div>
+    <!-- Footer Navigation - Updated to match search page -->
+    <div class="footer-nav">
+      <a href="#" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="far fa-heart"></i>
+        <span>Wishlist</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fas fa-shopping-basket"></i>
+        <span>Cart</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="far fa-comment-alt"></i>
+        <span>Messages</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="far fa-user"></i>
+        <span>Account</span>
+      </a>
     </div>
-    <div class="header-icons">
-        <a href="#"><i class="far fa-bell"></i></a>
-        <a href="#"><i class="far fa-heart"></i><span class="badge">2</span></a>
-        <a href="#"><i class="fas fa-shopping-cart"></i><span class="badge">1</span></a>
-    </div>
-</header>
-
-    <!-- Flash Sale Timer Section (Updated with clock image and rounded timer boxes) -->
-    <section class="flash-timer-section">
-        <div class="timer-content">
-            <div class="timer-text">
-                <h2>Your Time!</h2>
-                <p>Choose Your Discount</p>
-            </div>
-            <div class="countdown-container">
-                <div class="timer-icon">
-                    <img src="../assets/images/clock.png" alt="Clock" class="clock-image">
-                </div>
-                <div class="timer-boxes">
-                    <div class="timer-box">
-                        <div class="timer-unit">00</div>
-                    </div>
-                    <div class="timer-separator">:</div>
-                    <div class="timer-box">
-                        <div class="timer-unit">36</div>
-                    </div>
-                    <div class="timer-separator">:</div>
-                    <div class="timer-box">
-                        <div class="timer-unit">58</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Discount Filter Tabs (Updated to match screenshot) -->
-        <div class="discount-filter">
-            <div class="filter-tabs">
-                <button class="filter-tab" data-discount="all">All</button>
-                <button class="filter-tab" data-discount="10">10%</button>
-                <button class="filter-tab active" data-discount="20">20%</button>
-                <button class="filter-tab" data-discount="30">30%</button>
-                <button class="filter-tab" data-discount="40">40%</button>
-                <button class="filter-tab" data-discount="50">50%</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Banner Slider - Updated with multiple banners and functional slider -->
-    <div class="banner-slider-container">
-        <div class="banner-slider" id="bannerSlider">
-            <!-- Banner 1 -->
-            <section class="featured-banner">
-                <div class="banner-content">
-                    <div class="banner-text">
-                        <h2>Big Sale</h2>
-                        <p>Up to 50%</p>
-                        <div class="banner-status">Happening Now</div>
-                    </div>
-                    <div class="banner-image">
-                        <img src="../assets/images/SaleBanner.png" alt="Big Sale">
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Banner 2 -->
-            <section class="featured-banner">
-                <div class="banner-content">
-                    <div class="banner-text">
-                        <h2>Flash Deal</h2>
-                        <p>Up to 70%</p>
-                        <div class="banner-status">Limited Time</div>
-                    </div>
-                    <div class="banner-image">
-                        <img src="../assets/images/SaleBanner.png" alt="Flash Deal">
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Banner 3 -->
-            <section class="featured-banner">
-                <div class="banner-content">
-                    <div class="banner-text">
-                        <h2>Hot Offers</h2>
-                        <p>Premium Items</p>
-                        <div class="banner-status">New Arrivals</div>
-                    </div>
-                    <div class="banner-image">
-                        <img src="../assets/images/SaleBanner.png" alt="Hot Offers">
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Banner 4 -->
-            <section class="featured-banner">
-                <div class="banner-content">
-                    <div class="banner-text">
-                        <h2>Clearance</h2>
-                        <p>Last Chance</p>
-                        <div class="banner-status">Ending Soon</div>
-                    </div>
-                    <div class="banner-image">
-                        <img src="../assets/images/SaleBanner.png" alt="Clearance">
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <!-- Slider Dots - Now outside the banner -->
-        <div class="banner-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-            <span class="dot" data-slide="3"></span>
-        </div>
-    </div>
-
-    <!-- Discount Title -->
-    <section class="discount-title">
-        <h3>20% Discount</h3>
-        <div class="sort-icon">
-            <i class="fas fa-sort-amount-down"></i>
-        </div>
-    </section>
-
-    <!-- Product Grid - Updated to match profile page product design -->
-    <section class="product-grid">
-        <!-- Product Card 1 -->
-        <div class="product-card" data-discount="20">
-            <div class="wishlist-icon">
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="product-image">
-                <img src="../assets/images/Mask Group.png" alt="Product 1">
-            </div>
-            <div class="product-info">
-                <div class="product-description">Lorem ipsum dolor...</div>
-                <div class="price-row">
-                    <div class="price-info">
-                        <div class="current-price">BDT 90</div>
-                        <div class="original-price">BDT 120</div>
-                    </div>
-                    <div class="discount-badge">25% OFF</div>
-                </div>
-                <div class="action-row">
-                    <div class="retailer-logo">
-                        <img src="../assets/images/Apex.png" alt="Retailer">
-                    </div>
-                    <button class="add-btn">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Card 2 -->
-        <div class="product-card" data-discount="20">
-            <div class="wishlist-icon">
-                <i class="fas fa-heart"></i>
-            </div>
-            <div class="product-image">
-                <img src="../assets/images/Mask Group.png" alt="Product 2">
-            </div>
-            <div class="product-info">
-                <div class="product-description">Lorem ipsum dolor...</div>
-                <div class="price-row">
-                    <div class="price-info">
-                        <div class="current-price">BDT 90</div>
-                        <div class="original-price">BDT 120</div>
-                    </div>
-                    <div class="discount-badge">25% OFF</div>
-                </div>
-                <div class="action-row">
-                    <div class="retailer-logo">
-                        <img src="../assets/images/Apex.png" alt="Retailer">
-                    </div>
-                    <button class="add-btn">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Card 3 (10% discount) -->
-        <div class="product-card" data-discount="10">
-            <div class="wishlist-icon">
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="product-image">
-                <img src="../assets/images/Mask Group.png" alt="Product 3">
-            </div>
-            <div class="product-info">
-                <div class="product-description">Lorem ipsum dolor...</div>
-                <div class="price-row">
-                    <div class="price-info">
-                        <div class="current-price">BDT 108</div>
-                        <div class="original-price">BDT 120</div>
-                    </div>
-                    <div class="discount-badge">10% OFF</div>
-                </div>
-                <div class="action-row">
-                    <div class="retailer-logo">
-                        <img src="../assets/images/Apex.png" alt="Retailer">
-                    </div>
-                    <button class="add-btn">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Card 4 (30% discount) -->
-        <div class="product-card" data-discount="30">
-            <div class="wishlist-icon">
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="product-image">
-                <img src="../assets/images/Mask Group.png" alt="Product 4">
-            </div>
-            <div class="product-info">
-                <div class="product-description">Lorem ipsum dolor...</div>
-                <div class="price-row">
-                    <div class="price-info">
-                        <div class="current-price">BDT 84</div>
-                        <div class="original-price">BDT 120</div>
-                    </div>
-                    <div class="discount-badge">30% OFF</div>
-                </div>
-                <div class="action-row">
-                    <div class="retailer-logo">
-                        <img src="../assets/images/Apex.png" alt="Retailer">
-                    </div>
-                    <button class="add-btn">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Card 5 (40% discount) -->
-        <div class="product-card" data-discount="40">
-            <div class="wishlist-icon">
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="product-image">
-                <img src="../assets/images/Mask Group.png" alt="Product 5">
-            </div>
-            <div class="product-info">
-                <div class="product-description">Lorem ipsum dolor...</div>
-                <div class="price-row">
-                    <div class="price-info">
-                        <div class="current-price">BDT 72</div>
-                        <div class="original-price">BDT 120</div>
-                    </div>
-                    <div class="discount-badge">40% OFF</div>
-                </div>
-                <div class="action-row">
-                    <div class="retailer-logo">
-                        <img src="../assets/images/Apex.png" alt="Retailer">
-                    </div>
-                    <button class="add-btn">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Card 6 (50% discount) -->
-        <div class="product-card" data-discount="50">
-            <div class="wishlist-icon">
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="product-image">
-                <img src="../assets/images/Mask Group.png" alt="Product 6">
-            </div>
-            <div class="product-info">
-                <div class="product-description">Lorem ipsum dolor...</div>
-                <div class="price-row">
-                    <div class="price-info">
-                        <div class="current-price">BDT 60</div>
-                        <div class="original-price">BDT 120</div>
-                    </div>
-                    <div class="discount-badge">50% OFF</div>
-                </div>
-                <div class="action-row">
-                    <div class="retailer-logo">
-                        <img src="../assets/images/Apex.png" alt="Retailer">
-                    </div>
-                    <button class="add-btn">Add to cart</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Card 7 (20% discount) -->
-        <div class="product-card" data-discount="20">
-            <div class="wishlist-icon">
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="product-image">
-                <img src="../assets/images/Mask Group.png" alt="Product 7">
-            </div>
-            <div class="product-info">
-                <div class="product-description">Lorem ipsum dolor...</div>
-                <div class="price-row">
-                    <div class="price-info">
-                        <div class="current-price">BDT 96</div>
-                        <div class="original-price">BDT 120</div>
-                    </div>
-                    <div class="discount-badge">20% OFF</div>
-                </div>
-                <div class="action-row">
-                    <div class="retailer-logo">
-                        <img src="../assets/images/Apex.png" alt="Retailer">
-                    </div>
-                    <button class="add-btn">Add to cart</button>
-                </div>
-            </div>
-        </div>
-    </section>
-      <!-- Footer Navigation -->
-  <div class="footer-nav">
-    <a href="#" class="nav-item active">
-      <i class="fas fa-home"></i>
-      <span>Home</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="far fa-heart"></i>
-      <span>Wishlist</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="fas fa-shopping-basket"></i>
-      <span>Cart</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="far fa-comment-alt"></i>
-      <span>Messages</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="far fa-user"></i>
-      <span>Account</span>
-    </a>
-  </div>
 
     <script>
         // Filter products based on discount
