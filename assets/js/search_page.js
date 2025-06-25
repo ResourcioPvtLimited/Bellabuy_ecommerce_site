@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             currentPrice: Math.floor(Math.random() * 50) + 50, // Random price between 50-100
             originalPrice: Math.floor(Math.random() * 50) + 100, // Random price between 100-150
             discount: `${Math.floor(Math.random() * 40) + 10}% OFF`, // Random discount between 10-50%
-            image: index === 0 || index % 4 === 0 ? 
-                    "../assets/images/female_model.jpg" : 
-                    "../assets/images/Mask Group.png", // Use female model image every 4th product
+            image: "../assets/images/Mask Group.png", // Use the same image for every product
             retailerLogo: "../assets/images/Apex.png",
             timeFrame: ["today", "thisWeek", "lastWeek", "thisMonth", "topRated"][Math.floor(Math.random() * 5)] // Random timeframe
         }))
