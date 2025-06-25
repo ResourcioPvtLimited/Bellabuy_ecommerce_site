@@ -1,661 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="assets/css/tect.css">
-   <link rel="stylesheet" href="../assets/css/product.css"/>
-</head>
-<body>
-    <!--Header-->
-    <header id="mainHeader">
-    <div class="logo">SION</div>
-    <div class="search-bar">
-      <i class="fas fa-search"></i>
-      <input type="text" placeholder="Search for products...">
-    </div>
-    <div class="header-icons">
-      <div class="wishlist-icon-container">
-        <i class="fas fa-heart"></i>
-        <span class="wishlist-count">0</span>
-      </div>
-      <div class="cart-icon-container">
-        <i class="fas fa-shopping-bag"></i>
-        <span class="cart-count">0</span>
-      </div>
-    </div>
-  </header>
-    
-    <!-- Image Gallery -->
-    <!-- Replaced image gallery with slider -->
-    <div class="image-gallery fade-in">
-        <div class="slider-container-single" id="slider">
-            <div class="slide-single">
-                <img src="prod/img1.png" alt="Product Image">
-            </div>
-            <div class="slide-single">
-                <img src="prod/product.png" alt="Product Image">
-            </div>
-            <div class="slide-single">
-                <img src="prod/img1.png" alt="Product Image">
-            </div>
-            
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../assets/css/single_product2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>SION</h2>
+        <div class="search">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search your product"
+          />
         </div>
-        <div class="slider-dots-single" id="sliderDots">
-            <div class="slider-dot-single active"></div>
-            <div class="slider-dot-single"></div>
-            <div class="slider-dot-single"></div>
-        </div>
-        <div class="wishlist-icon-main" id="wishlistIcon">
-            <i class="far fa-heart"></i>
-            <div class="rating-container-main">
-                <div class="rating1">4.9 ★</div>
-            </div>    
-        </div>
-    </div>
-    
-    <!-- Product Info -->
-    <div class="product-info">
-      <div >
-          <span class="original-price">BDT 4,999</span>
-        <div class="price-container fade-in delay-2">
-              <span class="discount-price">BDT 1,999</span>
-              <span class="discount-percent">60% OFF</span>
-               <div class="tax-info">inclusive of all taxes</div>
+        <div class="icons">
+          <img src="../img/heart.svg" alt="" />
+          <img src="../img/shop.svg" alt="" />
         </div>
       </div>
-       
-        <p class="product-title fade-in delay-1">Appel radio - This is a premium quality product with<span class="more">read more...</span></p>
-        
-       
+
+      <section class="pdt-image-section">
+        <div class="pdt-image-container">
+          <img
+            src="../img/yellow-hoodie.png"
+            alt="Yellow Premium Hoodie"
+            class="pdt-image"
+          />
+          <div class="wishlist-btn"><img src="../img/heart.svg" alt="" /></div>
         </div>
-        
-        <div class="color-size">
-           <div class="option-section fade-in delay-2">
-    <details class="custom-dropdown">
-      <summary>
-        <span class="label-color">Colour:</span>
-        <span class="arrow">&#9662;</span>
-      </summary>
-      <div class="color-options">
-        <div class="color-swatch selected" style="background:#f5e1c8;" onclick="selectColor(this)"></div>
-        <div class="color-swatch" style="background:#b36aa0;" onclick="selectColor(this)"></div>
-        <div class="color-swatch" style="background:#c18585;" onclick="selectColor(this)"></div>
-        <div class="color-swatch" style="background:#5b3f3f;" onclick="selectColor(this)"></div>
+      </section>
+
+      <div class="main-price-section">
+        <span class="main-original-price">BDT 4,999</span>
+        <span class="main-current-price"
+          >BDT 1,999
+          <p class="main-discount">60% off</p></span
+        >
       </div>
-    </details>
-  </div>
-       
-  
 
-  <div class="option-section fade-in delay-3">
-  <div class="size-box">
-    <div class="size-label">Size:</div>
+      <h1 class="product-title">
+        Angel Jacket - This is a premium quality product with...
+        <button class="read-more">read more</button>
+      </h1>
 
-    <div class="size-group" onclick="selectSize(this)">
-      <div class="size-option"><div class="size-letter">S</div></div>
-      <div class="size-stock">6 left</div>
-    </div>
-
-    <div class="size-group" onclick="selectSize(this)">
-      <div class="size-option"><div class="size-letter">M</div></div>
-      <div class="size-stock">6 left</div>
-    </div>
-
-    <div class="size-group selected" onclick="selectSize(this)">
-      <div class="size-option"><div class="size-letter">L</div></div>
-      <div class="size-stock">6 left</div>
-    </div>
-
-    <div class="size-group" onclick="selectSize(this)">
-      <div class="size-option"><div class="size-letter">XL</div></div>
-      <div class="size-stock">6 left</div>
-    </div>
-    <div class="size-group" onclick="selectSize(this)">
-      <div class="size-option"><div class="size-letter">XXL</div></div>
-      <div class="size-stock">6 left</div>
-    </div>
-  </div>
-</div>
-
-
-
-        
+      <div class="color-section">
+        <label class="section-label">Colour:</label>
+        <div class="color-options">
+          <div class="color-option active" data-color="yellow"></div>
+          <div class="color-option" data-color="pink"></div>
+          <div class="color-option" data-color="brown"></div>
+          <div class="color-option" data-color="black"></div>
         </div>
-        
-        
-        
-        
-    </div>
-
-
-    <!--Brand Section-->
-
-    <div class=" seller-box-main">
-        <div class="seller-box">
-                <img src="prod/chanel.png" alt="">
-            <div class="name">SION Official Store</div>
-                <div class="verified"><i class="fas fa-check-circle"></i> Verified Seller | 98% Positive Ratings</div>
-                <button><i class="fas fa-user-plus"></i> Follow</button>
-                <button><i class="fas fa-store"></i> Visit Store</button>
-        </div>
-</div>
-<!--Lavel Section-->
-  <div class="labels fade-in delay-4">
-            <div class="label best-seller">BEST SELLER</div>
-            <div class="label fast-shipping">FAST SHIPPING</div>
-            <div class="label">PREMIUM</div>
-            <div class="label">TRENDING</div>
-        </div>
-
-
-
-
-        <!-- Details Sections -->
-    <div class="details-section fade-in delay-4">
-        <h3 class="section-title" style="margin-bottom: -10px;">Product Details</h3>
-        <p class="product-description">
-            Material: 100% Cotton<br>
-            Fit: Regular Fit<br>
-            Care Instructions: Machine Wash
-        </p>
-    </div>
-
-
-    
-    
-    <div class="details-section fade-in">
-        <h3 class="section-title">Ratings & Reviews <span class="see-all">See All</span></h3>
-       
-    
-  
-
-
-        <div class="review-card">
-<!-- Rating Section -->
-  <div class="rating-section">
-    <div class="rating-overview">
-      <div class="rating-score">
-        <div class="number">4.5</div>
-        <div class="stars">★★★★☆</div>
-        <div class="count">6.8k Ratings</div>
       </div>
-      
-      <div class="rating-bars">
-        <div class="rating-bar">
-          <div class="stars">5★</div>
-          <div class="bar-container">
-            <div class="bar" style="width: 80%;"></div>
+
+      <div class="size-section">
+        <label class="section-label">Size:</label>
+        <div class="size-options">
+          <div class="btn">
+            <button class="size-btn">S</button>
+            <p>1 left</p>
           </div>
-          <div class="count">4,782</div>
-        </div>
-        <div class="rating-bar">
-          <div class="stars">4★</div>
-          <div class="bar-container">
-            <div class="bar" style="width: 20%;"></div>
+
+          <div class="btn">
+            <button class="size-btn active">M</button>
+            <p>2 left</p>
           </div>
-          <div class="count">1,202</div>
-        </div>
-        <div class="rating-bar">
-          <div class="stars">3★</div>
-          <div class="bar-container">
-            <div class="bar" style="width: 6%;"></div>
+          <div class="btn">
+            <button class="size-btn">L</button>
+            <p>3 left</p>
           </div>
-          <div class="count">321</div>
-        </div>
-        <div class="rating-bar">
-          <div class="stars">2★</div>
-          <div class="bar-container">
-            <div class="bar" style="width: 3%;"></div>
+          <div class="btn">
+            <button class="size-btn">XL</button>
+            <p>5 left</p>
           </div>
-          <div class="count">147</div>
-        </div>
-        <div class="rating-bar">
-          <div class="stars">1★</div>
-          <div class="bar-container">
-            <div class="bar" style="width: 6%;"></div>
+          <div class="btn">
+            <button class="size-btn">XXL</button>
+            <p>1 left</p>
           </div>
-          <div class="count">350</div>
         </div>
       </div>
-    </div>
-    
-    </div>
 
-
-
-
-            <div>
-                <div class="review-user">
-                <div class="user-avatar">JD</div>
-                <div>
-                    <div class="user-name">John Doe</div>
-                    <div class="rating3">5 ★</div>
-                </div>
+      <div class="store-info">
+        <div class="store-header">
+          <span class="store-name">SION Official Store</span>
+          <span class="verified-badge">
+            <img src="../img/Check.png" alt="" />
+            <div class="verify-text">
+              Verified Seller | 90% Positive Ratings
             </div>
-            <p class="review-text">This product exceeded my expectations. The quality is amazing and it fits perfectly.</p>
-            </div>
-
-            <div>
-                <div class="review-user">
-                <div class="user-avatar">JD</div>
-                <div>
-                    <div class="user-name">John Doe</div>
-                    <div class="rating3">5 ★</div>
-                </div>
-            </div>
-            <p class="review-text">This product exceeded my expectations. The quality is amazing and it fits perfectly.</p>
-            </div>
-
-            <div>
-                <div class="review-user">
-                <div class="user-avatar">JD</div>
-                <div>
-                    <div class="user-name">John Doe</div>
-                    <div class="rating3">5 ★</div>
-                </div>
-            </div>
-            <p class="review-text">This product exceeded my expectations. The quality is amazing and it fits perfectly.</p>
-            </div>
-            
+          </span>
         </div>
-    </div>
-
-    <div class="details-section fade-in delay-4">
-  <details class="product-details">
-    <summary class="summary-toggle">
-      <div>
-        <h3 class="section-title-description">Product Description</h3>
-        <p class="description-preview">
-          <div class="product-description-grid">
-      <div class="desc-block">
-        <div class="desc-title">Fit</div>
-        <div class="desc-value">Regular Fit</div>
+        <div class="store-actions">
+          <button class="follow-btn">Follow</button>
+          <button class="visit-store-btn">Visit Store</button>
+        </div>
       </div>
-      <div class="desc-block">
-        <div class="desc-title">Sport</div>
-        <div class="desc-value">Training or Gym</div>
+
+      <div class="tags">
+        <p class="primary">Scalable</p>
+        <p class="secondary">Current</p>
+        <p>Value</p>
+        <p>Authentic</p>
       </div>
-    </div>
-        </p>
+
+      <div class="product-details">
+        <h4>PRODUCT DETAILS</h4>
+        <p>Material: 100% Cotton</p>
+        <p>Fit: Regular Fit</p>
+        <p>Care Instructions: Machine Wash</p>
       </div>
-      <span class="icon-toggle">&#9662;</span>
-    </summary>
 
-    
+      <div class="ratings-container">
+        <div class="rating-header">
+          <h2>Ratings & Reviews</h2>
+          <a href="#" class="see-all">See All</a>
+        </div>
 
-    <div class="product-description-text">
-      Step into effortless style with our Premium Cotton T-Shirt, the ultimate fusion of comfort, durability, and modern minimalism. Crafted for those who value both everyday functionality and bold self-expression, this t-shirt is your go-to wardrobe essential that never goes out of style.<br><br>
+        <div class="rating-summary">
+          <div class="rating-score">
+            <div class="score-number">4.5</div>
+            <div class="stars">★★★★★</div>
+            <div class="rating-count">218 Ratings</div>
+          </div>
 
-      Made with 100% breathable cotton, the fabric feels incredibly soft against the skin while offering superior moisture absorption to keep you cool and confident all day long. Whether you’re heading out with friends, running errands, or just lounging at home, this tee adapts to your lifestyle with ease.
-    </div>
-  </details>
-</div>
+          <div class="rating-breakdown">
+            <div class="rating-row">
+              <span class="star-label">5★</span>
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 75%"></div>
+              </div>
+              <span class="rating-number">164</span>
+            </div>
+            <div class="rating-row">
+              <span class="star-label">4★</span>
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 20%"></div>
+              </div>
+              <span class="rating-number">32</span>
+            </div>
+            <div class="rating-row">
+              <span class="star-label">3★</span>
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 8%"></div>
+              </div>
+              <span class="rating-number">14</span>
+            </div>
+            <div class="rating-row">
+              <span class="star-label">2★</span>
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 3%"></div>
+              </div>
+              <span class="rating-number">5</span>
+            </div>
+            <div class="rating-row">
+              <span class="star-label">1★</span>
+              <div class="rating-bar">
+                <div class="rating-fill" style="width: 1%"></div>
+              </div>
+              <span class="rating-number">3</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="reviews-list">
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-avatar">JD</div>
+              <span class="reviewer-name">John Doe</span>
+              <span class="review-rating">5.0</span>
+            </div>
+            <div class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis, fugiat.
+            </div>
+          </div>
 
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-avatar">JD</div>
+              <span class="reviewer-name">Jane Doe</span>
+              <span class="review-rating">4.0</span>
+            </div>
+            <div class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis, fugiat.
+            </div>
+          </div>
 
-    <!-- Recommendations -->
-     <div class="slider-wrapper">
-    <div><p class="top-brand-title">Top Brand</p></div>
-    <div class="brand-slider">
-      <div class="brand-slide">
-        <img src="https://logo.clearbit.com/nike.com" alt="Nike">
+          <div class="review-item">
+            <div class="review-header">
+              <div class="reviewer-avatar">JD</div>
+              <span class="reviewer-name">John Doe</span>
+              <span class="review-rating">5.0</span>
+            </div>
+            <div class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis, fugiat.
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="brand-slide">
-        <img src="https://logo.clearbit.com/adidas.com" alt="Adidas">
-      </div>
-      <div class="brand-slide">
-        <img src="https://logo.clearbit.com/puma.com" alt="Puma">
-      </div>
-      <div class="brand-slide">
-        <img src="https://logo.clearbit.com/zara.com" alt="Zara">
-      </div>
-      <div class="brand-slide">
-        <img src="https://logo.clearbit.com/hm.com" alt="H&M">
-      </div>
-      <div class="brand-slide">
-        <img src="https://logo.clearbit.com/levi.com" alt="Levi's">
-      </div>
-      <div class="brand-slide">
-        <img src="https://logo.clearbit.com/gucci.com" alt="Gucci">
-      </div>
-    </div>
-  </div>
 
+      <div class="product-description-container">
+        <div class="product-header">
+          <h2>Product Description</h2>
+          <span class="expand-icon">−</span>
+        </div>
 
+        <div class="product-info">
+          <div class="info-column">
+            <div class="info-item">
+              <div class="info-label">Fit</div>
+              <div class="info-value">Regular Fit</div>
+            </div>
+          </div>
+          <div class="info-column">
+            <div class="info-item">
+              <div class="info-label">Sport</div>
+              <div class="info-value">Training or Gym</div>
+            </div>
+          </div>
+        </div>
 
+        <div class="description-text">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
+          distinctio doloremque, impedit expedita quasi optio doloribus aliquam?
+          Quo odit enim iusto perferendis numquam ea minima culpa sed aut
+          aspernatur molestias reiciendis dicta veritatis et illum natus in
+          impedit ad nihil nam ipsum error, obcaecati tempora.
+        </div>
 
-    <div class="recommendations-section fade-in">
+        <div class="description-text">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+          laudantium nulla beatae aliquid reprehenderit ea praesentium vitae
+          illum! Alias nemo fugiat consectetur culpa magni dolore ipsum nihil,
+          placeat numquam reprehenderit accusantium, doloremque ullam optio,
+          eaque temporibus quos? Dolorum aspernatur doloremque
+        </div>
+      </div>
+
+      <div class="brands-container">
+        <h2 class="brands-title">Top Brands</h2>
+
+        <div class="brands-grid">
+          <div class="brand-logo">
+            <img src="../img/adidas.svg" alt="puma" />
+            <img src="../img/nike.svg" alt="nike" />
+            <img src="../img/adidas.svg" alt="adidas" />
+            <img src="../img/adidas.svg" alt="levis" />
+            <img src="../img/adidas.svg" alt="chanel" />
+          </div>
+        </div>
+      </div>
+
+      <div class="recommended-container">
         <h2 class="section-title">Recommended For You</h2>
-<div class="products">
-    <div class="product-card" data-id="1">
-      <div class="product-image">
-        <img src="prod/img1.png" alt="Printed Polo Collar T-shirt">
-        <div class="label-launch">Just Launched</div>
-        <div class="wishlist-icon">♡</div>
-        <div class="rating"><i class="far fa-star"></i><p>4.9/5</p></div>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Printed Polo Collar T-shirt</div>
-        <span class="product-price">BDT 420</span>
-        <div>
-          <span class="product-original">BDT 600</span>
-          <span class="product-discount">30% OFF</span>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/yellow-hoodie.png" alt="" />
+              <span class="discount-badge">Limited Stock</span>
+              <div class="wishlist-btn"><img src="../img/heart.svg" alt="" /></div>
+              <div class="rating-badge">★ 4.5/5</div>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Printed Polo Collar...</div>
+              <div class="price-section">
+                <span class="original-price">BDT 540</span>
+                <div class="price">
+                  <span class="current-price">BDT 420</span>
+                  <span class="discount-percent">22% OFF</span>
+                </div>
+              </div>
+              <div class="product-actions">
+                <div class="item-logo">
+                  <img src="../img/adidas.svg" alt="" />
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/yellow-hoodie.png" alt="" />
+              <span class="discount-badge">Limited Stock</span>
+              <div class="wishlist-btn"><img src="../img/heart.svg" alt="" /></div>
+              <div class="rating-badge">★ 4.5/5</div>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Printed Polo Collar...</div>
+              <div class="price-section">
+                <span class="original-price">BDT 540</span>
+                <div class="price">
+                  <span class="current-price">BDT 420</span>
+                  <span class="discount-percent">22% OFF</span>
+                </div>
+              </div>
+              <div class="product-actions">
+                <div class="item-logo">
+                  <img src="../img/adidas.svg" alt="" />
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/yellow-hoodie.png" alt="" />
+              <span class="discount-badge">Limited Stock</span>
+              <div class="wishlist-btn"><img src="../img/heart.svg" alt="" /></div>
+              <div class="rating-badge">★ 4.5/5</div>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Printed Polo Collar...</div>
+              <div class="price-section">
+                <span class="original-price">BDT 540</span>
+                <div class="price">
+                  <span class="current-price">BDT 420</span>
+                  <span class="discount-percent">22% OFF</span>
+                </div>
+              </div>
+              <div class="product-actions">
+                <div class="item-logo">
+                  <img src="../img/adidas.svg" alt="" />
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/yellow-hoodie.png" alt="" />
+              <span class="discount-badge">Limited Stock</span>
+              <div class="wishlist-btn"><img src="../img/heart.svg" alt="" /></div>
+              <div class="rating-badge">★ 4.5/5</div>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Printed Polo Collar...</div>
+              <div class="price-section">
+                <span class="original-price">BDT 540</span>
+                <div class="price">
+                  <span class="current-price">BDT 420</span>
+                  <span class="discount-percent">22% OFF</span>
+                </div>
+              </div>
+              <div class="product-actions">
+                <div class="item-logo">
+                  <img src="../img/adidas.svg" alt="" />
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="brand">
-          <div class="product-brand"><img src="prod/shop.png" alt=""></div>
-          <div class="add-to-cart">
-            <button>Add To Cart</button>
+        <div class="bottom-button-container">
+          <div class="button-group">
+            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="buy-now-btn">Buy Now</button>
           </div>
         </div>
       </div>
     </div>
-     <div class="product-card" data-id="1">
-      <div class="product-image">
-        <img src="prod/img1.png" alt="Printed Polo Collar T-shirt">
-        <div class="label-launch">Just Launched</div>
-        <div class="wishlist-icon">♡</div>
-        <div class="rating"><i class="far fa-star"></i><p>4.9/5</p></div>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Printed Polo Collar T-shirt</div>
-        <span class="product-price">BDT 420</span>
-        <div>
-          <span class="product-original">BDT 600</span>
-          <span class="product-discount">30% OFF</span>
-        </div>
-        <div class="brand">
-          <div class="product-brand"><img src="prod/shop.png" alt=""></div>
-          <div class="add-to-cart">
-            <button>Add To Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-     <div class="product-card" data-id="1">
-      <div class="product-image">
-        <img src="prod/img1.png" alt="Printed Polo Collar T-shirt">
-        <div class="label-launch">Just Launched</div>
-        <div class="wishlist-icon">♡</div>
-        <div class="rating"><i class="far fa-star"></i><p>4.9/5</p></div>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Printed Polo Collar T-shirt</div>
-        <span class="product-price">BDT 420</span>
-        <div>
-          <span class="product-original">BDT 600</span>
-          <span class="product-discount">30% OFF</span>
-        </div>
-        <div class="brand">
-          <div class="product-brand"><img src="prod/shop.png" alt=""></div>
-          <div class="add-to-cart">
-            <button>Add To Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-     <div class="product-card" data-id="1">
-      <div class="product-image">
-        <img src="prod/img1.png" alt="Printed Polo Collar T-shirt">
-        <div class="label-launch">Just Launched</div>
-        <div class="wishlist-icon">♡</div>
-        <div class="rating"><i class="far fa-star"></i><p>4.9/5</p></div>
-      </div>
-      <div class="product-info">
-        <div class="product-name">Printed Polo Collar T-shirt</div>
-        <span class="product-price">BDT 420</span>
-        <div>
-          <span class="product-original">BDT 600</span>
-          <span class="product-discount">30% OFF</span>
-        </div>
-        <div class="brand">
-          <div class="product-brand"><img src="prod/shop.png" alt=""></div>
-          <div class="add-to-cart">
-            <button>Add To Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-    
-    <!-- Bottom spacing for fixed buttons -->
-    <div class="content-bottom-spacing"></div>
-    
-    <!-- Action Buttons -->
-   <div class="action-buttons">
-  <button class="add-to-cart-btn">Add to Cart</button>
-  <button class="buy-now-btn">Buy Now</button>
-</div>
-
-    
-    <script>
-        // Change main image when thumbnail is clicked
-        function changeImage(element, newSrc) {
-            // Remove active class from all thumbnails
-            document.querySelectorAll('.thumbnail').forEach(thumb => {
-                thumb.classList.remove('active');
-            });
-            
-            // Add active class to clicked thumbnail
-            element.classList.add('active');
-            
-            // Change main image with fade effect
-            const mainImage = document.getElementById('mainImage');
-            mainImage.style.opacity = 0;
-            
-            setTimeout(() => {
-                mainImage.src = newSrc;
-                mainImage.style.opacity = 1;
-            }, 200);
-            
-            // Update dot indicators
-            updateDots();
-        }
-        
-        // Select color swatch
-        function selectColor(element) {
-            document.querySelectorAll('.color-swatch').forEach(swatch => {
-                swatch.classList.remove('selected');
-            });
-            element.classList.add('selected');
-        }
-        
-        // Select size option
-        function selectSize(element) {
-            if (!element.classList.contains('unavailable')) {
-                document.querySelectorAll('.size-option').forEach(size => {
-                    size.classList.remove('selected');
-                });
-                element.classList.add('selected');
-            }
-        }
-        
-        // Toggle wishlist
-        const wishlistIcon = document.getElementById('wishlistIcon');
-        const wishlistBtn = document.querySelector('.wishlist-btn');
-        const wishlistIcons = document.querySelectorAll('.product-card-wishlist i');
-        
-        function toggleWishlist(icon) {
-            icon.classList.toggle('far');
-            icon.classList.toggle('fas');
-            icon.classList.toggle('active');
-            
-            if (icon.classList.contains('fas')) {
-                // Heart filled - item added to wishlist
-                icon.style.color = 'var(--primary)';
-            } else {
-                // Heart outline - item removed from wishlist
-                icon.style.color = '';
-            }
-        }
-        
-        wishlistIcon.addEventListener('click', function() {
-            toggleWishlist(this.querySelector('i'));
-        });
-        
-        wishlistBtn.addEventListener('click', function() {
-            toggleWishlist(this.querySelector('i'));
-        });
-        
-        wishlistIcons.forEach(icon => {
-            icon.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleWishlist(this);
-            });
-        });
-        
-        // Update dot indicators based on active thumbnail
-        function updateDots() {
-            const thumbnails = document.querySelectorAll('.thumbnail');
-            const dots = document.querySelectorAll('.dot');
-            
-            thumbnails.forEach((thumb, index) => {
-                if (thumb.classList.contains('active')) {
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    dots[index].classList.add('active');
-                }
-            });
-        }
-        
-        // Show more/less for product title
-        const moreBtn = document.querySelector('.more');
-        const productTitle = document.querySelector('.product-title');
-        
-        moreBtn.addEventListener('click', function() {
-            if (productTitle.style.webkitLineClamp) {
-                productTitle.style.webkitLineClamp = 'unset';
-                moreBtn.textContent = 'less...';
-            } else {
-                productTitle.style.webkitLineClamp = '2';
-                moreBtn.textContent = 'more...';
-            }
-        });
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
-    <script>
-    // New slider functionality
-    const slider = document.querySelector('.slider-container-single');
-    const dots = document.querySelectorAll('.slider-dot-single');
-    let currentSlide = 0;
-    const slideCount = document.querySelectorAll('.slide-single').length;
-    let slideInterval;
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID;
-
-    function goToSlide(index) {
-        currentSlide = index;
-        updateSliderPosition();
-        updateDots();
-    }
-
-    function updateSliderPosition() {
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slideCount;
-        updateSliderPosition();
-        updateDots();
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-        updateSliderPosition();
-        updateDots();
-    }
-
-    function updateDots() {
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentSlide].classList.add('active');
-    }
-
-    function startSlider() {
-        slideInterval = setInterval(nextSlide, 3000);
-    }
-
-    function stopSlider() {
-        clearInterval(slideInterval);
-    }
-
-    // Touch and mouse events
-    function handleTouchStart(e) {
-        isDragging = true;
-        stopSlider();
-        startPos = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        prevTranslate = currentSlide * -100;
-        slider.style.transition = 'none';
-        cancelAnimationFrame(animationID);
-    }
-
-    function handleTouchMove(e) {
-        if (!isDragging) return;
-        const currentPosition = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-        const diff = currentPosition - startPos;
-        currentTranslate = prevTranslate + (diff / window.innerWidth) * 100;
-        slider.style.transform = `translateX(${currentTranslate}%)`;
-    }
-
-    function handleTouchEnd() {
-        if (!isDragging) return;
-        isDragging = false;
-        slider.style.transition = 'transform 0.5s ease';
-        
-        const movedBy = currentTranslate - prevTranslate;
-        
-        if (movedBy < -10 && currentSlide < slideCount - 1) {
-            nextSlide();
-        } else if (movedBy > 10 && currentSlide > 0) {
-            prevSlide();
-        } else {
-            updateSliderPosition();
-        }
-        
-        startSlider();
-    }
-
-    // Event listeners
-    slider.addEventListener('touchstart', handleTouchStart, { passive: true });
-    slider.addEventListener('mousedown', handleTouchStart);
-    
-    slider.addEventListener('touchmove', handleTouchMove, { passive: true });
-    slider.addEventListener('mousemove', handleTouchMove);
-    
-    slider.addEventListener('touchend', handleTouchEnd, { passive: true });
-    slider.addEventListener('mouseup', handleTouchEnd);
-    slider.addEventListener('mouseleave', handleTouchEnd);
-
-    // Click on dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            stopSlider();
-            goToSlide(index);
-            startSlider();
-        });
-    });
-
-    // Prevent image drag
-    document.querySelectorAll('.slide-single img').forEach(img => {
-        img.addEventListener('dragstart', (e) => e.preventDefault());
-    });
-
-    // Initialize slider
-    startSlider();
-</script>
-</body>
+  </body>
 </html>

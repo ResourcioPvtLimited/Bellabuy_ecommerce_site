@@ -1,18 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
-}
-
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-primary);
-  padding: 10px 20px;
+  padding-inline: 20px;
   border-bottom: 1px solid #ddd;
   position: relative;
   min-height: 60px;
@@ -56,7 +47,12 @@
   color: var(--color-secondary);
   font-weight: 600;
   font-size: 14px;
-  transition: color 0.3s ease;
+}
+
+.new {
+  color: var(--color-accent);
+  font-size: 10px;
+  margin-left: 4px;
 }
 
 .search-container {
@@ -71,7 +67,7 @@
   margin: 0 20px;
 }
 
-.search-container input {
+.search-container .input-wrap {
   border: none;
   background: transparent;
   outline: none;
@@ -227,16 +223,9 @@
   }
 
   .search-container {
-    padding: 6px 8px;
-    min-width: 100px;
-  }
-
-  .search-container input {
-    font-size: 12px;
-  }
-
-  .search-container input::placeholder {
-    font-size: 11px;
+    order: 3;
+    width: 100%;
+    margin: 10px 0;
   }
 
   .icons {

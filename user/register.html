@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register | BellaBuy</title>
-    <link rel="stylesheet" href="../assets/css/register.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-      // Function to include HTML content
-      function includeHTML() {
-        document.querySelectorAll("[data-include]").forEach(async (el) => {
-          const file = el.getAttribute("data-include");
-          const res = await fetch(file);
-          const html = await res.text();
-          el.innerHTML = html;
-        });
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | BellaBuy</title>
+  <link rel="stylesheet" href="../../assets/css/register.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/main/nav.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Function to include HTML content
+    function includeHTML() {
+      document.querySelectorAll('[data-include]').forEach(async el => {
+        const file = el.getAttribute("data-include");
+        const res = await fetch(file);
+        const html = await res.text();
+        el.innerHTML = html;
+      });
+    }
 
       window.addEventListener("DOMContentLoaded", includeHTML);
       window.addEventListener("DOMContentLoaded", includeHTML);
@@ -49,26 +46,14 @@
         document.body.appendChild(script);
       }
 
-      window.addEventListener("DOMContentLoaded", includeHTML);
-    </script>
-    <div class="container">
-      <div class="avatar">
-        <img
-          src="../assets/images/logo.svg"
-          alt="BellaBuy Logo"
-          width="120"
-          height="120"
-        />
-      </div>
-      <h1>BELLABUY</h1>
-
-      <!-- Toggle buttons for Email/Phone -->
-      <div class="toggle-buttons">
-        <button type="button" class="toggle-btn active" id="emailBtn">
-          By email
-        </button>
-        <button type="button" class="toggle-btn" id="phoneBtn">By phone</button>
-      </div>
+window.addEventListener('DOMContentLoaded', includeHTML);
+</script>
+  <div class="container">
+    <div class="avatar">
+       <img src="../../assets/images/mainlogo.svg" alt="BellaBuy Logo" width="120" height="120">
+    </div>
+    <h1>BELLABUY</h1>
+    
 
       <form id="register-form">
         <div class="input-wrapper">
