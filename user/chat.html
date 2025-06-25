@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customer Chat UI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Page</title>
     <link rel="stylesheet" href="../assets/css/chat.css">
 </head>
 
 <body>
     <div class="chat-container">
+
+        <!-- header -->
         <div class="header">
             <img src="https://i.pravatar.cc/100" alt="Maggy" />
             <div>
@@ -17,45 +19,165 @@
                 <div class="role">Customer Care Service</div>
             </div>
         </div>
+
+        <!-- chat body  -->
         <div class="chat-body">
-            <div class="message from-agent">Hello, Amanatul. Welcome to Customer Care. Please tell us more about your
-                issue.</div>
-            <div class="message from-user">I didn't receive my parcel</div>
-            <div class="status">Order #9348257 | 3 Items<br />Standard Delivery<br /><b>Shipped</b></div>
-            <div class="message from-agent">Let me check it. One moment please...</div>
-            <div class="message from-agent">Thanks for waiting. Here is a voucher for the inconvenience.</div>
-            <div class="voucher-box">
-                Voucher: <b>WELCOME15</b><br />
-                15% off your next purchase<br />
-                <button>Collect</button>
+
+            <!-- from agent  -->
+            <div class="message from-agent">
+                Hello, Amanatul. Welcome to Customer Care. Please tell us more about your issue.
             </div>
-            <div class="message from-user">Thanks a lot!</div>
-            <div class="message from-agent">Is there anything else I can help with?</div>
-            <div class="message from-user">All good.</div>
+
+
+            <!-- from user  -->
+            <div class="chat-quick-replies">
+                <div class="quick-reply from-user">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="2" fill="none" />
+                            <path d="M6.5 10.5L9 13L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    Order Issues
+                </div>
+                <img class="user-avatar" src="https://i.pravatar.cc/60?img=5" alt="User" />
+            </div>
+            <div class="chat-quick-replies">
+                <div class="quick-reply from-user">
+                    <span class="icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#fff" stroke-width="2" fill="none" />
+                            <path d="M6.5 10.5L9 13L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                    I didn't recieve my parcel
+                </div>
+                <img class="user-avatar hide" src="https://i.pravatar.cc/60?img=5" alt="User" />
+            </div>
+
+            <!-- order summary -->
+            <div class="order-summary-box">
+                <div class="order-summary-images">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=facearea&w=64&h=64"
+                        alt="Product 1" />
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=64&h=64"
+                        alt="Product 2" />
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=64&h=64"
+                        alt="Product 3" />
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=64&h=64"
+                        alt="Product 4" />
+                </div>
+                <div class="order-summary-details">
+                    <div>
+                        <span class="order-number"><b>Order #92287157</b></span>
+                        <span class="item-count">3 items</span>
+                    </div>
+                    <div class="delivery-type">Standard Delivery</div>
+                    <div class="order-status"><b>Shipped</b></div>
+                </div>
+            </div>
+
+            <div class="typing-indicator">
+                Typing...
+            </div>
+
+            <!-- from agent  -->
+            <div class="message from-agent bg-blue">
+                Hello, Amanda! I'm Maggy, your personal assistant from Customer Care Service. Let me go through your
+                order and
+                check its current status. Wait a moment please.
+            </div>
+
+
+            <!-- from user  -->
+            <div class="message from-user">Hello, Maggy! Sure!</div>
+
+            <!-- from agent  -->
+            <div class="message from-agent bg-blue">
+                Thank you for waiting Amanda! I just checked your order status and seems like there was a problem on our
+                end. We
+                are really sorry about that. You will receive your parcel within 2 days.
+            </div>
+
+            <!-- from agent  -->
+            <div class="message from-agent bg-blue">
+                We would like to give you a small gift. 15% off for your next purchase.
+            </div>
+
+
+            <!-- Voucher  -->
+            <div class="voucher">
+                <div class="voucher-header">
+                    <div>Voucher</div>
+                    <div class="valid">Valid Until 6.20.20</div>
+                </div>
+
+                <div class="dotted-line"></div>
+
+                <div class="discount">15% off your next purchase</div>
+
+                <button class="collect-btn">Collect</button>
+            </div>
+
+            <!-- from user  -->
+            <div class="message from-user">Wow! Thanks a lot, Maggy!</div>
+
+            <!-- from agent  -->
+            <div class="message from-agent bg-blue">
+                Is there anything else I can help you with?
+            </div>
+
+            <!-- from user  -->
+            <div class="message from-user">Nope, all good</div>
+
+            <!-- from agent  -->
+            <div class="message from-agent bg-blue">
+                Great! Have a nice day! Was happy to help you.
+            </div>
+
         </div>
-        <div class="chat-footer">
-            <input type="text" placeholder="Message..." />
+
+        <!-- message bar -->
+
+        <div class="input-container">
+            <div class="placeholder">Message</div>
+
             <div class="icons">
-                <button aria-label="Send">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                    </svg>
-                </button>
+                <img src="../assets/images/chatPage/image-icon.png" alt="Image Icon">
+                <img src="../assets/images/chatPage/menu-icon.png" alt="Menu Icon">
             </div>
+
+            <div class="home-indicator"></div>
         </div>
-        <div class="rating-section">
-            <h4>Rate Our Service</h4>
+
+
+        <!-- rating box -->
+        <div class="rating-box">
+            <h3>Rate Our Service</h3>
+
+            <div class="profile">
+                <img src="https://i.pravatar.cc/36?img=10" alt="Maggy Lee">
+                <div class="profile-info">
+                    <span class="name">Maggy Lee</span>
+                    <span class="title">Customer Care Service</span>
+                </div>
+            </div>
+
             <div class="stars">
-                <span class="active">★</span>
-                <span class="active">★</span>
-                <span class="active">★</span>
-                <span>★</span>
-                <span>★</span>
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
-            <textarea placeholder="Your comment..."></textarea>
-            <button>Next</button>
+
+            <textarea class="comment-box" placeholder="Your comment"></textarea>
+
+            <div class="footer">
+                <button class="next-btn">Next</button>
+                <button class="cancel-btn">&times;</button>
+            </div>
         </div>
+
+
     </div>
 </body>
 

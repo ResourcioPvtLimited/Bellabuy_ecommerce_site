@@ -64,7 +64,7 @@
   flex-grow: 1;
 }
 
-.search-container input {
+.search-container .input-wrap {
   border: none;
   background: transparent;
   outline: none;
@@ -159,3 +159,25 @@
     margin-top: 10px;
   }
 }
+.dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      z-index: 9999;
+      right: 0;
+      top: 100%;
+      border-radius: 0 0 8px 8px;
+      padding: 0.5rem 0;
+    }
+    .dropdown-content.show {
+      display: block !important;
+    }
+    .dropdown {
+      position: relative;
+      overflow: visible;
+    }
+    .icon-label {
+      cursor: pointer;
+    }

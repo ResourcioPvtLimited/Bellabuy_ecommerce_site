@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/filter.css">
+</head>
+<body>
+    <!-- Simple header -->
+    <header class="page-header">
+        <h1>Product Filters</h1>
+    </header>
+
+    <!-- Filter button -->
+    <div class="button-container">
+        <button id="openFilterBtn" class="filter-btn">
+            <i class="fas fa-filter"></i> Open Filter Options
+        </button>
+    </div>
+
+    <!-- The Filter Modal -->
+    <div id="filterModal" class="filter-modal">
+        <div class="filter-modal-content">
+            <div class="filter-header">
+                <h2>Filter</h2>
+                <button class="close-btn" id="closeFilterBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Product Categories -->
+            <div class="filter-section">
+                <div class="category-container">
+                    <div class="category-item">
+                        <div class="category-circle selected">
+                            <img src="../assets/images/category-dress.jpg" alt="Dresses">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Dresses</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle selected">
+                            <img src="../assets/images/category-pants.jpg" alt="Pants">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Pants</div>
+                    </div>
+                    
+                    <!-- Add check icons to all other options -->
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../assets/images/category-skirts.jpg" alt="Skirts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Skirts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../assets/images/category-shorts.jpg" alt="Shorts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Shorts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../assets/images/category-jackets.jpg" alt="Jackets">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Jackets</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../assets/images/category-hoodies.jpg" alt="Hoodies">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Hoodies</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../assets/images/category-shirts.jpg" alt="Shirts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Shirts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../assets/images/category-polo.jpg" alt="Polo">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Polo</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle selected">
+                            <img src="../assets/images/category-tshirts.jpg" alt="T-shirts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">T-shirts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../assets/images/category-tunics.jpg" alt="Tunics">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Tunics</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Size Filter -->
+            <div class="filter-section">
+                <h3>Size</h3>
+                <div class="size-options">
+                    <div class="size-option">XS</div>
+                    <div class="size-option">S</div>
+                    <div class="size-option selected">M</div>
+                    <div class="size-option">L</div>
+                    <div class="size-option">XL</div>
+                    <div class="size-option">2XL</div>
+                </div>
+            </div>
+            
+            <!-- Color Filter -->
+            <div class="filter-section">
+                <h3>Color</h3>
+                <div class="color-options">
+                    <div class="color-option white"></div>
+                    <div class="color-option black"></div>
+                    <div class="color-option blue"></div>
+                    <div class="color-option red"></div>
+                    <div class="color-option teal"></div>
+                    <div class="color-option gold"></div>
+                    <div class="color-option purple"></div>
+                </div>
+            </div>
+            
+            <!-- Price Filter -->
+            <div class="filter-section">
+                <h3>Price</h3>
+                <div class="price-range">
+                    <div class="price-display">
+                        <span>৳10</span>
+                        <span>—</span>
+                        <span>৳150</span>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-track"></div>
+                        <input type="range" min="10" max="150" value="10" class="range-slider" id="min-price">
+                        <input type="range" min="10" max="150" value="150" class="range-slider" id="max-price">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sort Options - Updated to match the provided design -->
+            <div class="filter-section">
+                <h3>Sort by</h3>
+                <div class="sort-options-grid">
+                    <div class="sort-option selected">
+                        <span>Popular</span>
+                    </div>
+                    <div class="sort-option">
+                        <span>Newest</span>
+                    </div>
+                    <div class="sort-option">
+                        <span>Price High to Low</span>
+                    </div>
+                    <div class="sort-option">
+                        <span>Price Low to High</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filter Action Buttons -->
+            <div class="filter-actions">
+                <button class="clear-btn" id="clearFilters">Clear</button>
+                <button class="apply-btn" id="applyFilters">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/filter.js"></script>
+</body>
+</html>
+
