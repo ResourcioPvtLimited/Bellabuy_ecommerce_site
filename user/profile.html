@@ -665,17 +665,11 @@
       const wishlistIcons = document.querySelectorAll('.wishlist-icon');
       
       wishlistIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
-          // Toggle active state
+        icon.addEventListener('click', function(e) {
+          e.stopPropagation(); // Prevent card click
           this.classList.toggle('active');
-          
-          // Add animation class
           this.classList.add('clicked');
-          
-          // Get the heart icon
           const heartIcon = this.querySelector('i');
-          
-          // Toggle between filled and outline heart
           if (this.classList.contains('active')) {
             heartIcon.classList.remove('far');
             heartIcon.classList.add('fas');
@@ -683,11 +677,17 @@
             heartIcon.classList.remove('fas');
             heartIcon.classList.add('far');
           }
-          
-          // Remove animation class after animation completes
           setTimeout(() => {
             this.classList.remove('clicked');
           }, 400);
+        });
+      });
+      
+      // Add click event to product cards
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(card => {
+        card.addEventListener('click', function() {
+          window.location.href = './single_product.html';
         });
       });
     });

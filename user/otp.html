@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="../assets/css/main/nav.css" />
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script>
@@ -30,6 +30,26 @@
 </head>
 <body class="w-full h-full">
   <div data-include="navbar.html"></div>
+  <script>
+async function includeHTML() {
+  const elements = document.querySelectorAll('[data-include]');
+  for (const el of elements) {
+    const file = el.getAttribute("data-include");
+    const res = await fetch(file);
+    const html = await res.text();
+    el.innerHTML = html;
+  }
+  // Now load navbar.js and run setupNavbarDropdown
+  const script = document.createElement('script');
+  script.src = '../assets/js/navbar.js';
+  script.onload = function() {
+    if (typeof setupNavbarDropdown === 'function') setupNavbarDropdown();
+  };
+  document.body.appendChild(script);
+}
+
+window.addEventListener('DOMContentLoaded', includeHTML);
+</script>
   <div class="min-h-screen max-w-7xl mx-auto px-4 sm:py-10 py-20 flex flex-col items-center">
     <!-- Header Section -->
     <div class="text-center">
@@ -63,13 +83,23 @@
 
    
     <div class="sm:mt-10 mt-15 w-full max-w-xs">
-      <button class="w-full cursor-pointer flex justify-center items-center gap-2 px-6 py-3 bg-[#151414] text-white text-xl font-bold rounded-lg transition-colors" aria-label="Verify OTP">
+      <button id="verifyBtn" class="w-full cursor-pointer flex justify-center items-center gap-2 px-6 py-3 bg-[#151414] text-white text-xl font-bold rounded-lg transition-colors" aria-label="Verify OTP">
         Verify
         <img src="../../img/arrow.svg" alt="Arrow Icon" class="mt-1" />
       </button>
     </div>
   </div>
 
- 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var verifyBtn = document.getElementById('verifyBtn');
+      if (verifyBtn) {
+        verifyBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.location.href = '../index.php';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
