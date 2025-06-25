@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/search_page.css">
+</head>
+<body>
+    <!-- Header with search and filters - Restructured for better layout -->
+    <header class="search-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="back-button">
+                    <a href="profile.html"><i class="fas fa-arrow-left"></i></a>
+                </div>
+                <div class="header-logo">
+                    <img src="../assets/images/mainlogo.svg" alt="Bellabuy" class="logo-image">
+                </div>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search products..." id="searchInput">
+                <button class="clear-search" id="clearSearch"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="header-icons">
+                <a href="#" class="filter-button" id="filterButton">
+                    <i class="fas fa-filter"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tab Navigation - Added All filter -->
+    <div class="tab-navigation">
+        <div class="tab" data-tab="all">All</div>
+        <div class="tab active" data-tab="today">Today</div>
+        <div class="tab" data-tab="thisWeek">This Week</div>
+        <div class="tab" data-tab="lastWeek">Last Week</div>
+        <div class="tab" data-tab="thisMonth">This Month</div>
+        <div class="tab" data-tab="topRated">Top Rated</div>
+    </div>
+
+    <!-- Product Grid - Adding demo products directly in HTML for initial rendering -->
+    <section class="product-grid" id="productGrid">
+        <!-- This content will be overwritten by JS but serves as a fallback -->
+    </section>
+
+    <!-- The Filter Modal - Added from filter.html -->
+     <!-- The Filter Modal -->
+    <div id="filterModal" class="filter-modal">
+        <div class="filter-modal-content">
+            <div class="filter-header">
+                <h2>Filter</h2>
+                <button class="close-btn" id="closeFilterBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Product Categories -->
+            <div class="filter-section">
+                <div class="category-container">
+                    <div class="category-item">
+                        <div class="category-circle selected">
+                            <img src="../img/Boot.png" alt="Dresses">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Dresses</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle selected">
+                            <img src="../img/Boot.png" alt="Pants">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Pants</div>
+                    </div>
+                    
+                    <!-- Add check icons to all other options -->
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../img/Boot.png" alt="Skirts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Skirts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../img/Boot.png" alt="Shorts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Shorts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../img/Boot.png" alt="Jackets">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Jackets</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../img/Boot.png" alt="Hoodies">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Hoodies</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../img/Boot.png" alt="Shirts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Shirts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../img/Boot.png" alt="Polo">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Polo</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle selected">
+                            <img src="../img/Boot.png" alt="T-shirts">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">T-shirts</div>
+                    </div>
+                    
+                    <div class="category-item">
+                        <div class="category-circle">
+                            <img src="../img/Boot.png" alt="Tunics">
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div class="category-name">Tunics</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Size Filter -->
+            <div class="filter-section">
+                <h3>Size</h3>
+                <div class="size-options">
+                    <div class="size-option">XS</div>
+                    <div class="size-option">S</div>
+                    <div class="size-option selected">M</div>
+                    <div class="size-option">L</div>
+                    <div class="size-option">XL</div>
+                    <div class="size-option">2XL</div>
+                </div>
+            </div>
+            
+            <!-- Color Filter -->
+            <div class="filter-section">
+                <h3>Color</h3>
+                <div class="color-options">
+                    <div class="color-option white"></div>
+                    <div class="color-option black"></div>
+                    <div class="color-option blue"></div>
+                    <div class="color-option red"></div>
+                    <div class="color-option teal"></div>
+                    <div class="color-option gold"></div>
+                    <div class="color-option purple"></div>
+                </div>
+            </div>
+            
+            <!-- Price Filter -->
+            <div class="filter-section">
+                <h3>Price</h3>
+                <div class="price-range">
+                    <div class="price-display">
+                        <span>৳10</span>
+                        <span>—</span>
+                        <span>৳150</span>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slider-track"></div>
+                        <input type="range" min="10" max="150" value="10" class="range-slider" id="min-price">
+                        <input type="range" min="10" max="150" value="150" class="range-slider" id="max-price">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sort Options - Updated to match the screenshot design exactly -->
+            <div class="filter-section">
+                <h3>Sort by</h3>
+                <div class="sort-options-grid">
+                    <div class="sort-option pill-button selected">
+                        <span>Popular</span>
+                        <div class="check-icon"></div>
+                    </div>
+                    <div class="sort-option pill-button">
+                        <span>Newest</span>
+                    </div>
+                    <div class="sort-option pill-button">
+                        <span>Price High to Low</span>
+                    </div>
+                    <div class="sort-option pill-button">
+                        <span>Price Low to High</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filter Action Buttons -->
+            <div class="filter-actions">
+                <button class="clear-btn" id="clearFilters">Clear</button>
+                <button class="apply-btn" id="applyFilters">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Navigation -->
+    <div class="footer-nav">
+        <a href="#" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="far fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Cart</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="far fa-comment-alt"></i>
+            <span>Messages</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="far fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <script src="../assets/js/search_page.js"></script>
+</body>
+</html>
