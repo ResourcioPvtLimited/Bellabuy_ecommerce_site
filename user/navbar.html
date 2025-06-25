@@ -1,5 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="../assets/css/main/nav.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background: #fff;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        right: 0;
+        top: 100%;
+        border-radius: 0 0 8px 8px;
+        padding: 0.5rem 0;
+      }
+      .dropdown-content.show {
+        display: block !important;
+      }
+      .dropdown {
+        position: relative;
+        overflow: visible;
+      }
+      .icon-label {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <img src="../assets/images/mainlogo.svg" alt="Logo" class="logo" />
+      </div>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,78 +52,87 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="navbar-left">
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <img src="../assets/images/mainlogo.svg" alt="Logo" class="logo">
-    </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MEN</a></li>
+        <li><a href="#">WOMEN</a></li>
+        <li><a href="#">KIDS</a></li>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">MEN</a></li>
-      <li><a href="#">WOMEN</a></li>
-      <li><a href="#">KIDS</a></li>
-      
-      <li><a href="#">BEAUTY</a></li>
-      <li><a href="#">VOUCHERS</a></li>
-     
-    </ul>
+        <li><a href="#">BEAUTY</a></li>
+        <li><a href="#">VOUCHERS</a></li>
+      </ul>
 
+      <div class="search-container">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/54/54481.png"
+          alt="search"
+          class="search-icon"
+        />
+        <input type="text" placeholder="Search for products, brands and more" />
+      </div>
     <div class="search-container">
       <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search" class="search-icon" />
       <input class="input-wrap" type="text" placeholder="Search for products, brands and more">
     </div>
 
-    <div class="icons">
-      <div class="dropdown">
-        <div class="icon-label" id="profileDropdownToggle">
-          <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="Profile Icon">
-          <span>Profile</span>
-        </div>
-        <div class="dropdown-content" id="profileDropdown">
-          <a href="#">Login</a>
-          <a href="#">Signup</a>
-          <a href="./reset-password.html">Reset Password</a>
+      <div class="icons">
+        <div class="dropdown">
+          <div class="icon-label" id="profileDropdownToggle">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png"
+              alt="Profile Icon"
+            />
+            <span>Profile</span>
+          </div>
+          <div class="dropdown-content" id="profileDropdown">
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+            <a href="./reset-password.html">Reset Password</a>
             <a href="./profile.html">My Account</a>
+          </div>
+        </div>
+        <div class="icon-label">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/833/833472.png"
+            alt="Wishlist"
+          />
+          <span>Wishlist</span>
+        </div>
+        <div class="icon-label">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/263/263142.png"
+            alt="Bag"
+          />
+          <span>Bag</span>
         </div>
       </div>
-      <div class="icon-label">
-        <img src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="Wishlist">
-        <span>Wishlist</span>
-      </div>
-      <div class="icon-label">
-        <img src="https://cdn-icons-png.flaticon.com/128/263/263142.png" alt="Bag">
-        <span>Bag</span>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <script>
-    // Hamburger menu toggle
-    document.getElementById('hamburger').onclick = () => {
-      document.getElementById('navLinks').classList.toggle('active');
-    };
+    <script>
+      // Hamburger menu toggle
+      document.getElementById("hamburger").onclick = () => {
+        document.getElementById("navLinks").classList.toggle("active");
+      };
 
-  
-  const toggleBtn = document.getElementById('profileDropdownToggle');
-  const dropdown = document.getElementById('profileDropdown');
+      const toggleBtn = document.getElementById("profileDropdownToggle");
+      const dropdown = document.getElementById("profileDropdown");
 
-  // Toggle dropdown on click
-  toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // prevent bubbling
-    dropdown.classList.toggle('show');
-  });
+      // Toggle dropdown on click
+      toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent bubbling
+        dropdown.classList.toggle("show");
+      });
 
-  // Close dropdown on clicking outside
-  document.addEventListener('click', (e) => {
-    if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.remove('show');
-    }
-  });
-// Prevent dropdown from closing when clicking inside the dropdown-content
-dropdown.addEventListener('click', (e) => {
-  e.stopPropagation();
-});
-  </script>
-</body>
+      // Close dropdown on clicking outside
+      document.addEventListener("click", (e) => {
+        if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.remove("show");
+        }
+      });
+      // Prevent dropdown from closing when clicking inside the dropdown-content
+      dropdown.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    </script>
+  </body>
 </html>
