@@ -181,3 +181,90 @@ body {
 .bottom-nav img{
     width: 20px;
 }
+
+@media (min-width: 900px) {
+  body {
+    background: #f7f7f7;
+  }
+  .container {
+    max-width: 700px;
+    min-height: 100vh;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    margin: 40px auto 0 auto;
+    padding: 90px 32px 90px 32px;
+    position: relative;
+  }
+  .header {
+    max-width: 700px;
+    border-radius: 18px 18px 0 0;
+    padding: 18px 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .profile {
+    width: 60px;
+    height: 60px;
+  }
+  .profile-info h2 {
+    font-size: 1.4rem;
+  }
+  .profile-info p {
+    font-size: 1.05rem;
+  }
+  .icons {
+    gap: 28px;
+    font-size: 26px;
+  }
+  .icon img {
+    width: 26px;
+    height: 26px;
+  }
+  .orders {
+    margin-top: 32px;
+  }
+  .order {
+    gap: 18px;
+    padding: 18px 0;
+  }
+  .order .images {
+    width: 90px;
+    height: 90px;
+  }
+  .order .images img {
+    max-height: 44px;
+  }
+  .order-info p {
+    font-size: 1.08rem;
+  }
+  .status {
+    font-size: 1.08rem;
+  }
+  .delivered img {
+    width: 22px;
+    height: 22px;
+  }
+  .right {
+    gap: 14px;
+  }
+  .noi {
+    font-size: 1.05rem;
+    padding: 3px 7px;
+  }
+  .btn {
+    width: 90px;
+    height: 32px;
+    font-size: 1rem;
+    margin-top: 6px;
+  }
+  .bottom-nav {
+    max-width: 700px;
+    height: 70px;
+    font-size: 28px;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.06);
+  }
+  .bottom-nav img {
+    width: 28px;
+  }
+}
