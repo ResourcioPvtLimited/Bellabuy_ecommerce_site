@@ -88,13 +88,12 @@ body::before {
 }
 
 .voucher-card {
-    background: #f3f4f6;
-    border-radius: 8px;
-    padding: 16px;
-    border-left: 4px solid #3b82f6;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    background: url('../assets/images/Subtraction.png') center/cover no-repeat;
+    
+    border-radius: 14px;
+    padding: 0 0 0 0;
+    
+    overflow: hidden;
     position: relative;
 }
 
@@ -242,7 +241,7 @@ body::before {
 
 /* Voucher Card */
 .voucher-card {
-  background: #fff;
+  background: url('../assets/images/SaleBanner.png') center/cover no-repeat, #fff;
   border: 2px solid #222;
   border-radius: 14px;
   padding: 0 0 0 0;
@@ -343,6 +342,7 @@ body::before {
 
 /* Pink Variant */
 .voucher-card-pink {
+  background: url('../assets/images/bubble01.png') center/cover no-repeat, #fff;
   border-color: #e11d8a;
 }
 
