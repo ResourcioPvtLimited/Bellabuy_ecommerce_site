@@ -5,25 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SION Fashion</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="../assets/css/index.css"/>
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <script>
-    // Function to include HTML content
-    function includeHTML() {
-      document.querySelectorAll('[data-include]').forEach(async el => {
-        const file = el.getAttribute("data-include");
-        const res = await fetch(file);
-        const html = await res.text();
-        el.innerHTML = html;
-      });
-    }
-
-    window.addEventListener('DOMContentLoaded', includeHTML);
-    document.getElementById('loginBtn').onclick = function(e) {
-  e.preventDefault(); // Prevent form submission
-  window.location.href = 'otp.html'; // Redirect to otp.html
-};
-  </script>
+  <link rel="stylesheet" href="assets/css/tect.css"/>
   <style>
     /* ...existing styles from index.php... */
     .category-slider, .brand-slider { display: flex; overflow-x: auto; scroll-behavior: smooth; }
@@ -35,28 +17,26 @@
   </style>
 </head>
 <body>
-  <div data-include="navbar.html"></div>
-<script>
-async function includeHTML() {
-  const elements = document.querySelectorAll('[data-include]');
-  for (const el of elements) {
-    const file = el.getAttribute("data-include");
-    const res = await fetch(file);
-    const html = await res.text();
-    el.innerHTML = html;
-  }
-  // Now load navbar.js and run setupNavbarDropdown
-  const script = document.createElement('script');
-  script.src = '../assets/js/navbar.js';
-  script.onload = function() {
-    if (typeof setupNavbarDropdown === 'function') setupNavbarDropdown();
-  };
-  document.body.appendChild(script);
-}
-
-window.addEventListener('DOMContentLoaded', includeHTML);
-</script>
-
+<!-- Header -->
+<!-- <header>
+  <div class="logo">SION</div>
+  <div class="search-bar">
+    <form action="#" method="GET">
+      <input type="text" name="search" placeholder="Search for products..." required>
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+  <div class="header-icons">
+    <a href="#" class="wishlist-icon-container">
+      <i class="fas fa-heart"></i>
+      <span class="wishlist-count">2</span>
+    </a>
+    <a href="#" class="cart-icon-container">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-count">3</span>
+    </a>
+  </div>
+</header> -->
 <!-- Gender Filter -->
 <div class="gender-filter gender-buttons">
   <button class="gender-btn" data-gender="men">Men</button>
@@ -64,16 +44,16 @@ window.addEventListener('DOMContentLoaded', includeHTML);
 </div>
 <!-- Categories -->
 <div class="categories category-slider" id="category-container">
-  <div class='category-slide'><a href='#'><img src='../assets/images/zara.png' alt='Zara'><p>Zara</p></a></div>
-  <div class='category-slide'><a href='#'><img src='../assets/images/Apex.png' alt='Apex'><p>Apex</p></a></div>
-  <div class='category-slide'><a href='#'><img src='../assets/images/trending.png' alt='Trending'><p>Trending</p></a></div>
-  <div class='category-slide'><a href='#'><img src='../assets/images/supportt.png' alt='Support'><p>Support</p></a></div>
+  <div class='category-slide'><a href='#'><img src='assets/images/zara.png' alt='Zara'><p>Zara</p></a></div>
+  <div class='category-slide'><a href='#'><img src='assets/images/Apex.png' alt='Apex'><p>Apex</p></a></div>
+  <div class='category-slide'><a href='#'><img src='assets/images/trending.png' alt='Trending'><p>Trending</p></a></div>
+  <div class='category-slide'><a href='#'><img src='assets/images/supportt.png' alt='Support'><p>Support</p></a></div>
 </div>
 <!-- Banners -->
 <div class="slider-container">
   <div class="banner-slider">
-    <div class='banner-slide'><a href='./flash_sale.html'><img src='../assets/images/SaleBanner.png' alt='Sale'><div class='banner-content'><h2>Big Sale</h2><h1>Up to 50% Off</h1><button class='banner-btn'>SHOP NOW</button></div></a></div>
-    <div class='banner-slide'><a href='#'><img src='../assets/images/page-header-bg.jpg' alt='New Arrivals'><div class='banner-content'><h2>New Arrivals</h2><h1>Summer Collection</h1><button class='banner-btn'>SHOP NOW</button></div></a></div>
+    <div class='banner-slide'><a href='#'><img src='assets/images/SaleBanner.png' alt='Sale'><div class='banner-content'><h2>Big Sale</h2><h1>Up to 50% Off</h1><button class='banner-btn'>SHOP NOW</button></div></a></div>
+    <div class='banner-slide'><a href='#'><img src='assets/images/page-header-bg.jpg' alt='New Arrivals'><div class='banner-content'><h2>New Arrivals</h2><h1>Summer Collection</h1><button class='banner-btn'>SHOP NOW</button></div></a></div>
   </div>
   <div class="banner-nav">
     <button class="banner-nav-btn prev-banner"><i class="fas fa-chevron-left"></i></button>
@@ -88,10 +68,10 @@ window.addEventListener('DOMContentLoaded', includeHTML);
 <div class="section-title">Top <span>Brands</span></div>
 <div class="slider-wrapper">
   <div class="brand-slider" id="brand-container">
-    <div class='brand-slide'><a href='#'><img src='../assets/images/zara.png' alt='Zara'></a></div>
-    <div class='brand-slide'><a href='#'><img src='../assets/images/Apex.png' alt='Apex'></a></div>
-    <div class='brand-slide'><a href='#'><img src='../assets/images/trending.png' alt='Trending'></a></div>
-    <div class='brand-slide'><a href='#'><img src='../assets/images/supportt.png' alt='Support'></a></div>
+    <div class='brand-slide'><a href='#'><img src='assets/images/zara.png' alt='Zara'></a></div>
+    <div class='brand-slide'><a href='#'><img src='assets/images/Apex.png' alt='Apex'></a></div>
+    <div class='brand-slide'><a href='#'><img src='assets/images/trending.png' alt='Trending'></a></div>
+    <div class='brand-slide'><a href='#'><img src='assets/images/supportt.png' alt='Support'></a></div>
   </div>
 </div>
 <!-- Big Deals -->
