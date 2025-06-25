@@ -1,20 +1,5 @@
 /* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
 
-body {
-    background-color: #f5f5f5;
-    color: #333;
-    padding-bottom: 70px; /* Space for footer */
-    max-width: 500px; /* Match profile page width */
-    margin: 0 auto; /* Center the content */
-    position: relative;
-    overflow-x: hidden;
-}
 
 /* Header Styles - Updated to match search page */
 .flash-header {
@@ -380,7 +365,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     padding: 15px;
-    background-color: #f5f5f5;
+    
 }
 
 .product-card {

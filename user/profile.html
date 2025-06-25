@@ -7,11 +7,50 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="../assets/css/profile.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script>
+    // Function to include HTML content
+    function includeHTML() {
+      document.querySelectorAll('[data-include]').forEach(async el => {
+        const file = el.getAttribute("data-include");
+        const res = await fetch(file);
+        const html = await res.text();
+        el.innerHTML = html;
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', includeHTML);
+    document.getElementById('loginBtn').onclick = function(e) {
+  e.preventDefault(); // Prevent form submission
+  window.location.href = 'otp.html'; // Redirect to otp.html
+};
+  </script>
 </head>
 <body>
+  <div data-include="navbar.html"></div>
+<script>
+async function includeHTML() {
+  const elements = document.querySelectorAll('[data-include]');
+  for (const el of elements) {
+    const file = el.getAttribute("data-include");
+    const res = await fetch(file);
+    const html = await res.text();
+    el.innerHTML = html;
+  }
+  // Now load navbar.js and run setupNavbarDropdown
+  const script = document.createElement('script');
+  script.src = '../assets/js/navbar.js';
+  script.onload = function() {
+    if (typeof setupNavbarDropdown === 'function') setupNavbarDropdown();
+  };
+  document.body.appendChild(script);
+}
+
+window.addEventListener('DOMContentLoaded', includeHTML);
+</script>
   <div class="page-container">
     <!-- UPDATED Profile Header Section -->
-    <div class="profile-header">
+    <!-- <div class="profile-header">
       <div class="avatar-section">
         <div class="avatar-container">
           <img src="https://i.pravatar.cc/150?img=32" alt="Profile Picture" class="avatar">
@@ -32,7 +71,7 @@
           <span class="notification-count">5</span>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <h1 class="greeting-text">Hello, <span class="name-highlight">Romina!</span></h1>
     <div class="mb-6">
@@ -560,6 +599,7 @@
         </div>
       </div>
     </div>
+    
   </div>
 
   <!-- Footer Navigation -->
@@ -585,7 +625,7 @@
       <span>Account</span>
     </a>
   </div> -->
-
+<div data-include="footer.html"></div>
   <!-- Add JavaScript for better slider behavior -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {

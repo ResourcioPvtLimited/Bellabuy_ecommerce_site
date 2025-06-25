@@ -1,0 +1,102 @@
+.container {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  
+  height: 100vh;
+  width:100%;
+}
+
+.otp-container {
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  padding: 32px 32px 24px 32px;
+  background: #fff;
+  
+  border-radius: 16px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 14px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.otp-label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.otp-inputs input {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.otp-inputs input:focus {
+  border-color: red;
+}
+
+.timer {
+  font-size: 18px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.otp-image {
+  width: 80px;
+  height: auto;
+  margin: 10px 0;
+}
+
+.resend-text {
+  font-size: 14px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.resend-text a {
+  color: red;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.verify-btn {
+  margin-top: 20px;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.verify-btn:hover {
+  background-color: #333;
+}

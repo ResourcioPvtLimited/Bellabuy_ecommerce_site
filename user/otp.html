@@ -2,14 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register | BellaBuy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/main/nav.css" />
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OTP Verification</title>
+  <link rel="stylesheet" href="../assets/css/otp.css" />
   <script>
     // Function to include HTML content
     function includeHTML() {
@@ -24,13 +19,13 @@
     window.addEventListener('DOMContentLoaded', includeHTML);
     document.getElementById('loginBtn').onclick = function(e) {
   e.preventDefault(); // Prevent form submission
-  window.location.href = 'index.html'; // Redirect to otp.html
+  window.location.href = 'otp.html'; // Redirect to otp.html
 };
   </script>
 </head>
-<body class="w-full h-full">
+<body>
   <div data-include="navbar.html"></div>
-  <script>
+<script>
 async function includeHTML() {
   const elements = document.querySelectorAll('[data-include]');
   for (const el of elements) {
@@ -50,56 +45,31 @@ async function includeHTML() {
 
 window.addEventListener('DOMContentLoaded', includeHTML);
 </script>
-  <div class="min-h-screen max-w-7xl mx-auto px-4 sm:py-10 py-20 flex flex-col items-center">
-    <!-- Header Section -->
-    <div class="text-center">
-      <h1 class="text-4xl font-bold">You are Almost Done!</h1>
-      <div class="mt-4 space-y-1">
-        <p class="text-lg text-gray-600">An 4 digit code has been sent to your</p>
-        <p class="text-lg text-gray-600 font-medium">E-mail: mypc***@gmail.com</p>
-      </div>
+<div class="container">
+  <div class="otp-container">
+    <h1>You are All most<br><span>Done!</span></h1>
+    <p>An 4 digit code has been sent to your <br>
+      <strong>E-mail: mypc***@gmail.com</strong></p>
+
+    <label for="otp" class="otp-label">Enter OTP</label>
+    <div class="otp-inputs">
+      <input type="text" maxlength="1" />
+      <input type="text" maxlength="1" />
+      <input type="text" maxlength="1" />
+      <input type="text" maxlength="1" />
     </div>
 
-   
-    <div class="mt-10 w-full max-w-xs">
-      <h2 class="text-2xl font-semibold text-center">Enter OTP</h2>
-      <div class="mt-4 flex justify-center space-x-4" id="otpContainer">
-        <input type="text" class="w-16 h-16 border-2 border-gray-300 rounded-lg text-center text-2xl focus:border-red-500 transition-colors" maxlength="1" id="otp1" aria-label="OTP digit 1">
-        <input type="text" class="w-16 h-16 border-2 border-gray-300 rounded-lg text-center text-2xl focus:border-red-500 transition-colors" maxlength="1" id="otp2" aria-label="OTP digit 2">
-        <input type="text" class="w-16 h-16 border-2 border-gray-300 rounded-lg text-center text-2xl focus:border-red-500 transition-colors" maxlength="1" id="otp3" aria-label="OTP digit 3">
-        <input type="text" class="w-16 h-16 border-2 border-gray-300 rounded-lg text-center text-2xl focus:border-red-500 transition-colors" maxlength="1" id="otp4" aria-label="OTP digit 4">
-      </div>
-    </div>
+    <div class="timer">04:49</div>
 
-   
-    <div class="mt-10 text-center">
-      <h3 class="text-2xl font-semibold">04:49</h3>
-      <img src="../../img/otp.svg" alt="OTP Timer Icon" class="mt-4 mx-auto" />
-      <p class="mt-6 text-lg text-gray-600">
-        Didn’t receive the OTP? 
-        <a href="#" class="text-red-500 font-medium hover:underline">Resend OTP</a>
-      </p>
-    </div>
+    <img src="https://cdn-icons-png.flaticon.com/512/1161/1161790.png" alt="OTP Icon" class="otp-image">
 
-   
-    <div class="sm:mt-10 mt-15 w-full max-w-xs">
-      <button id="verifyBtn" class="w-full cursor-pointer flex justify-center items-center gap-2 px-6 py-3 bg-[#151414] text-white text-xl font-bold rounded-lg transition-colors" aria-label="Verify OTP">
-        Verify
-        <img src="../../img/arrow.svg" alt="Arrow Icon" class="mt-1" />
-      </button>
-    </div>
+    <p class="resend-text">
+      Didn't receive the OTP?
+      <a href="#">Resend OTP</a>
+    </p>
+
+    <button class="verify-btn">Verify ➤</button>
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var verifyBtn = document.getElementById('verifyBtn');
-      if (verifyBtn) {
-        verifyBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          window.location.href = '../index.php';
-        });
-      }
-    });
-  </script>
+  </div>
 </body>
 </html>
