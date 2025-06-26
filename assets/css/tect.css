@@ -93,68 +93,7 @@
       justify-content: center;
       font-weight: bold;
     }
-  </style>
-</head>
-<body>
-
-<header>
-  <div class="logo">SION</div>
-
-  <div class="search-bar">
-    <form action="inc/search.php" method="GET">
-      <input type="text" name="search" placeholder="Search for products..." required>
-      <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
-  </div>
-
-  <div class="header-icons">
-    <a href="wishlist.html" class="wishlist-icon-container">
-      <i class="fas fa-heart"></i>
-      <span class="wishlist-count"><?= $wishCount ?></span>
-    </a>
-    <a href="cart.php" class="cart-icon-container">
-      <i class="fas fa-shopping-bag"></i>
-      <span class="cart-count"><?= $cartCount ?></span>
-    </a>
-  </div>
-</header>
-
-</body>
-</html>
-🔧 Notes:
-The layout and spacing are matched exactly as in your screenshot.
-
-Use <?= $wishCount ?> and <?= $cartCount ?> from PHP for dynamic badge counts.
-
-The color of the badge is #ff6b01 to match the screenshot.
-
-Let me know if you want this to be mobile responsive, sticky, or embedded in your existing site layout.
-
-
-
-
-
-
-
-
-You said:
-dont change the class
-
-
-ChatGPT said:
-Thanks! Here's the updated header design that matches your image without changing any of your existing class names (logo, search-bar, wishlist-icon-container, cart-icon-container, etc.).
-
-✅ Final HTML + CSS (Only Styling, Class Names Unchanged)
-html
-Copy
-Edit
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SION Header</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+  
     * {
       box-sizing: border-box;
       margin: 0;
@@ -244,19 +183,19 @@ Edit
       padding: 15px 0;
       background-color: white;
       width: 100%;
-      justify-content: center;
       align-items: center;
       
     }
     
     .gender-btn {
-      padding: 8px 25px;
+      padding: 10px 40px; /* Increased padding for wider buttons */
       border-radius: 20px;
       border: 2px solid var(--secondary);
       background: white;
       font-weight: bold;
       cursor: pointer;
-      width: 45%;
+      min-width: 180px;   /* Ensures button is wider */
+      font-size: 1.1rem;
     }
     
     .gender-btn.active {
@@ -339,18 +278,19 @@ Edit
     }
     
     .section-title {
-      padding: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      
-      text-align: center;
-     
-    }
-    
-    .section-title span {
-      color: var(--primary);
-      font-size: 14px;
-    }
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;      /* Centers the text inside */
+    margin: 0 auto;          /* Centers the block itself if it's not full width */
+    width: fit-content;      /* Shrinks the block to its content */
+}
+
+.section-title span {
+    color: var(--primary);
+    font-size: 14px;
+}
+
     
     .slider-wrapper {
       position: relative;
@@ -359,33 +299,37 @@ Edit
     }
     
     .category-slider {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    
-    .category-slide {
-      min-width: 70px;
-      text-align: center;
-      padding: 0px;
-      
-      
-    }
-    
-    .category-slide img{
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 5px;
-      background-color: #f4f6f6;
-      padding: 10px;
-      border-radius: 50%;
-    }
-    
-    .category-slide p {
-      font-size: 12px;
-      font-weight: bold;
-    }
-    
+    display: flex;
+    justify-content: center;       /* Center the slides inside */
+    align-items: center;           /* Vertically center items if needed */
+    margin: 0 auto;                /* Center the whole slider in its parent */
+    width: fit-content;            /* Shrink to fit content */
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.06);
+    padding: 18px 4vw 24px 4vw;
+    gap: 18px;
+}
+
+.category-slide {
+    min-width: 70px;
+    text-align: center;
+}
+
+.category-slide img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    background-color: #f4f6f6;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.category-slide p {
+    font-size: 12px;
+    font-weight: bold;
+}
 
    .brand-slider {
       display: flex;
@@ -817,3 +761,135 @@ Edit
         margin: auto;
       }
     }
+
+
+    
+    /* --- DESKTOP ENHANCEMENTS --- */
+@media (min-width: 1024px) {
+  /* Make headings bolder and larger for desktop */
+  .section-title,
+  .big-deals-title,
+  .big-deals-subtitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 36px 0 16px 4vw;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+
+  .section-title span {
+    font-size: 2rem;
+  }
+
+  .big-deals-title {
+    font-size: 2.2rem;
+    margin-left: 32px;
+    color: #ff9900;
+    animation: none;
+  }
+
+  .big-deals-subtitle {
+    font-size: 1.2rem;
+    margin-left: 32px;
+    margin-bottom: 18px;
+    color: #222;
+    font-weight: 500;
+  }
+
+  /* Product grid: 4 columns on desktop, larger gap */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 28px 6vw 48px 6vw;
+  }
+
+  /* Product card: more padding, larger image, subtle hover effect */
+  .product-card {
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(231,76,60,0.10);
+    transition: box-shadow 0.25s, transform 0.22s;
+    min-height: 420px;
+    background: #fff;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 12px 32px rgba(231,76,60,0.18);
+    transform: translateY(-8px) scale(1.035);
+  }
+
+  /* Product image: bigger for desktop */
+  .product-image {
+    height: 220px;
+    background: #f3f3f3;
+  }
+
+  .product-image img {
+    max-width: 92%;
+    max-height: 92%;
+    border-radius: 14px;
+  }
+
+  /* Product info: more spacing, larger font */
+  .product-info {
+    padding: 22px 18px 18px 18px;
+    gap: 10px;
+  }
+
+  .product-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .product-price {
+    font-size: 1.15rem;
+  }
+
+  .product-original {
+    font-size: 1rem;
+  }
+
+  .product-discount {
+    font-size: 1rem;
+  }
+
+  /* Brand logo: bigger */
+  .brand-logo img,
+  .brand img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  /* Add to cart button: larger, more padding */
+  .add-to-cart button,
+  .add-to-cart .cart-btn {
+    font-size: 1.05rem;
+    padding: 8px 26px;
+    border-radius: 24px;
+  }
+
+  /* Deals grid: 4 columns, more gap */
+  .deals-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 18px 32px 0 32px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* Banner: larger text for desktop */
+  .banner-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .banner-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .banner-btn {
+    font-size: 1.15rem;
+    padding: 10px 32px;
+  }
+}
+
+/* ...existing code... */
