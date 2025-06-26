@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Bag</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/cart.css" />
-  <link rel="stylesheet" href="../assets/css/main.css">
-</head>
-<body>
-  <!-- Header Section -->
-  <div class="shop-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bag</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/cart.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <!-- <div class="shop-header">
     <a href="index.php" class="back-button">
       <i class="fas fa-arrow-left"></i>
     </a>
@@ -27,12 +33,14 @@
         <span class="cart-count"><?= $cartCount ?></span>
       </a>
     </div>
-  </div>
+  </div> -->
 
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <!-- Progress Indicator -->
-    <!-- <div class="progress-indicator">
+    <div id="navbar"></div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Progress Indicator -->
+      <!-- <div class="progress-indicator">
       <div class="progress-step">
         <div class="step-number"><i class="fa-solid fa-bag-shopping"></i></div>
         <div class="step-label"></div>
@@ -45,156 +53,316 @@
       </div>
     </div> -->
 
-    <!-- Cart Container -->
-    <div class="cart-container">
-      
+      <!-- Cart Container -->
+      <div class="cart-container">
         <!-- <div class="select-all">
-          <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
-          <label for="selectAll">Select all items</label>
-          <span class="edit">Edit</span>
-        </div> -->
+        <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+        <label for="selectAll">Select all items</label>
+        <span class="edit">Edit</span>
+      </div> -->
 
         <!-- Product Cards -->
-        
-          <!-- <div class="cart-card" data-price="<?= $item['price'] ?>" data-original-price="<?= $item['max_price'] ?>" data-id="<?= $item['id'] ?>">
-            <div class="product-image-main">
-              <img src="prod/<?= $item['img1'] ?>" alt="<?= $item['name'] ?>" class="product-image">
+
+        <!-- <div class="cart-card" data-price="<?= $item['price'] ?>" data-original-price="<?= $item['max_price'] ?>" data-id="<?= $item['id'] ?>">
+        <div class="product-image-main">
+          <img src="prod/<?= $item['img1'] ?>" alt="<?= $item['name'] ?>" class="product-image">
+        </div>
+        <div class="card-info">
+          <span class="product-badge new">NEW</span>
+          <h3 class="product-title"><?= $item['name'] ?></h3>
+          <p class="product-seller">Brand: <?= $item['brand_name'] ?></p>
+          <div class="product-options">
+            <select class="size" onchange="updateCartSummary()">
+              <?php foreach($sizes as $size): ?>
+              <option value="<?= trim($size) ?>">Size: <?= trim($size) ?></option>
+              <?php endforeach; ?>
+            </select>
+            <select class="color" onchange="updateCartSummary()">
+              <?php foreach($colors as $color): ?>
+              <option value="<?= trim($color) ?>"><?= trim($color) ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          <div class="product-price-container">
+            <div class="product-price">BDT<?= $item['price'] ?> <span class="original-price">BDT<?= $item['max_price'] ?></span></div>
+            <div class="quantity-control">
+              <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
+              <span class="quantity-value"><?= $uid > 0 ? $item['qty'] : 1 ?></span>
+              <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
             </div>
-            <div class="card-info">
-              <span class="product-badge new">NEW</span>
-              <h3 class="product-title"><?= $item['name'] ?></h3>
-              <p class="product-seller">Brand: <?= $item['brand_name'] ?></p>
-              <div class="product-options">
-                <select class="size" onchange="updateCartSummary()">
-                  <?php foreach($sizes as $size): ?>
-                    <option value="<?= trim($size) ?>">Size: <?= trim($size) ?></option>
-                  <?php endforeach; ?>
-                </select>
-                <select class="color" onchange="updateCartSummary()">
-                  <?php foreach($colors as $color): ?>
-                    <option value="<?= trim($color) ?>"><?= trim($color) ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-              <div class="product-price-container">
-                <div class="product-price">BDT<?= $item['price'] ?> <span class="original-price">BDT<?= $item['max_price'] ?></span></div>
-                <div class="quantity-control">
-                  <button class="quantity-btn minus" onclick="adjustQuantity(this, -1)">-</button>
-                  <span class="quantity-value"><?= $uid > 0 ? $item['qty'] : 1 ?></span>
-                  <button class="quantity-btn plus" onclick="adjustQuantity(this, 1)">+</button>
-                </div>
-                <input type="checkbox" class="product-select" onchange="updateCartSummary()" checked>
-              </div>
-            </div>
-            <div class="card-actions">
-              <i class="fas fa-trash" onclick="removeProduct(this, <?= $item['id'] ?>)"></i>
-            </div>
-          </div> -->
-       
+            <input type="checkbox" class="product-select" onchange="updateCartSummary()" checked>
+          </div>
+        </div>
+        <div class="card-actions">
+          <i class="fas fa-trash" onclick="removeProduct(this, <?= $item['id'] ?>)"></i>
+        </div>
+      </div> -->
+
         <div class="empty-cart">
           <i class="fas fa-shopping-bag"></i>
+          <img src="../assets/images/cart1.svg" class="item item1" alt="Shirt" />
+          <img src="../assets/images/cart2.svg" class="item item2" alt="T-Shirt" />
+          <img src="../assets/images/cart3.svg" class="item item3" alt="Jeans" />
+          <img src="../assets/images/cart4.svg" class="item item4" alt="Shorts" />
+          <img src="../assets/images/cart5.svg" class="item item5" alt="Slippers" />
+          <img src="../assets/images/cart6.svg" class="item item6" alt="Trackpant" />
+          <img src="../assets/images/cart4.svg" class="item item7" alt="Shorts" />
+          <img src="../assets/images/cart3.svg" class="item item8" alt="Jeans" />
           <h3>Your bag is empty</h3>
           <p>Looks like you haven't added anything to your bag yet</p>
-          <button class="shop-now-btn" onclick="window.location.href='checkout.html'">Shop Now</button>
+          <button
+            class="shop-now-btn"
+            onclick="window.location.href='checkout.html'"
+          >
+            Shop Now
+          </button>
         </div>
-      
-    </div>
+      </div>
 
-    
       <!-- Voucher Section -->
       <!-- <div class="voucher-section">
-        <div class="voucher-header">
-          <i class="fas fa-tag"></i>
-          <h3>Apply Voucher Code</h3>
-        </div>
-        <div class="voucher-input-group">
-          <input type="text" class="voucher-input" id="voucherCode" placeholder="Enter voucher code">
-          <button class="voucher-btn" onclick="applyVoucher()">Apply</button>
-        </div>
-        <div id="voucherMessage" style="margin-top: 10px; font-size: 12px; color: var(--success-color); display: none;"></div>
-      </div> -->
+      <div class="voucher-header">
+        <i class="fas fa-tag"></i>
+        <h3>Apply Voucher Code</h3>
+      </div>
+      <div class="voucher-input-group">
+        <input type="text" class="voucher-input" id="voucherCode" placeholder="Enter voucher code">
+        <button class="voucher-btn" onclick="applyVoucher()">Apply</button>
+      </div>
+      <div id="voucherMessage" style="margin-top: 10px; font-size: 12px; color: var(--success-color); display: none;"></div>
+    </div> -->
 
       <!-- Order Summary -->
       <!-- <div class="order-summary">
-        <h3 class="summary-header">Order Summary</h3>
-        <div class="summary-row">
-          <span>Subtotal (<span id="itemCount">0</span> items)</span>
-          <span class="summary-value" id="subtotal">BDT0</span>
-        </div>
-        <div class="summary-row">
-          <span>Delivery Fee</span>
-          <span class="summary-value" id="deliveryFee">BDT0</span>
-        </div>
-        <div class="summary-row">
-          <span>Discount</span>
-          <span class="summary-value" id="discount">-BDT0</span>
-        </div>
-        <div class="summary-row">
-          <span>Voucher Discount</span>
-          <span class="summary-value" id="voucherDiscount">-BDT0</span>
-        </div>
-        <div class="summary-row total">
-          <span>Total</span>
-          <span class="summary-value total" id="total">BDT0</span>
-        </div>
-      </div> -->
+      <h3 class="summary-header">Order Summary</h3>
+      <div class="summary-row">
+        <span>Subtotal (<span id="itemCount">0</span> items)</span>
+        <span class="summary-value" id="subtotal">BDT0</span>
+      </div>
+      <div class="summary-row">
+        <span>Delivery Fee</span>
+        <span class="summary-value" id="deliveryFee">BDT0</span>
+      </div>
+      <div class="summary-row">
+        <span>Discount</span>
+        <span class="summary-value" id="discount">-BDT0</span>
+      </div>
+      <div class="summary-row">
+        <span>Voucher Discount</span>
+        <span class="summary-value" id="voucherDiscount">-BDT0</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span class="summary-value total" id="total">BDT0</span>
+      </div>
+    </div> -->
 
-      <!-- Featured Products Section
+      <!-- Featured Products Section -->
       <div class="dropdown-product">
         <details class="dropdown-section">
-          <summary class="Featured-title">Featured Product</summary>
+          <summary class="Featured-title">Continue Shopping For</summary>
           <div class="products">
-           
-              <div class="product-card" data-id="<?= $product['id'] ?>">
-                <div class="product-image">
-                  <img src="prod/<?= $product['img1'] ?>" alt="<?= $product['name'] ?>">
-                  <div class="label-launch">Just Launched</div>
-                  <div class="wishlist-icon wish-btn <?= $inWishlist ? 'added' : '' ?>" 
-                       data-id="<?= $product['id'] ?>" 
-                       data-type="wishlist">
-                    <?= $inWishlist ? '♥' : '♡' ?>
-                  </div>
-                  <div class="rating"><i class="fa fa-star"></i> <?= $product['star'] ?></div>
+            <!-- Product Card 1 -->
+            <div class="product-card" data-id="1">
+              <div class="product-image">
+                <img src="prod/sample1.jpg" alt="Stylish Jacket" />
+                <div class="label-launch">Just Launched</div>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="1"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
                 </div>
-                <div class="product-info">
-                  <div class="product-name"><?= $product['name'] ?></div>
-                  <span class="product-price">BDT <?= $product['price'] ?></span>
-                  <div>
-                    <span class="product-original">BDT <?= $product['max_price'] ?></span>
-                    <span class="product-discount"><?= $discount ?>% OFF</span>
+                <div class="rating"><i class="fa fa-star"></i> 4.5</div>
+              </div>
+              <div class="product-info">
+                <div class="product-name">Stylish Jacket</div>
+                <span class="product-price">BDT 89.99</span>
+                <div>
+                  <span class="product-original">BDT 120.00</span>
+                  <span class="product-discount">25% OFF</span>
+                </div>
+                <div class="brand">
+                  <div class="product-brand">
+                    <img src="brand/logo1.png" alt="Brand Name" />
                   </div>
-                  <div class="brand">
-                    <div class="product-brand"><img src="<?= $brand['logo'] ?>" alt="<?= $brand['name'] ?>"></div>
-                    <div class="add-to-cart">
-                      <button class="cart-btn <?= $inCart ? 'added' : '' ?>" 
-                              data-id="<?= $product['id'] ?>" 
-                              data-type="cart">
-                        <?= $inCart ? 'Remove' : 'Add To Cart' ?>
-                      </button>
-                    </div>
+                  <div class="add-to-cart">
+                    <button
+                      class="cart-btn"
+                      data-id="1"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
+                    </button>
                   </div>
                 </div>
               </div>
-            
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card" data-id="2">
+              <div class="product-image">
+                <img src="prod/sample2.jpg" alt="Modern Sneakers" />
+                <div class="label-launch">Just Launched</div>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="2"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
+                </div>
+                <div class="rating"><i class="fa fa-star"></i> 4.8</div>
+              </div>
+              <div class="product-info">
+                <div class="product-name">Modern Sneakers</div>
+                <span class="product-price">BDT 59.99</span>
+                <div>
+                  <span class="product-original">BDT 80.00</span>
+                  <span class="product-discount">25% OFF</span>
+                </div>
+                <div class="brand">
+                  <div class="product-brand">
+                    <img src="brand/logo2.png" alt="Brand Name" />
+                  </div>
+                  <div class="add-to-cart">
+                    <button
+                      class="cart-btn"
+                      data-id="2"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card" data-id="2">
+              <div class="product-image">
+                <img src="prod/sample2.jpg" alt="Modern Sneakers" />
+                <div class="label-launch">Just Launched</div>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="2"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
+                </div>
+                <div class="rating"><i class="fa fa-star"></i> 4.8</div>
+              </div>
+              <div class="product-info">
+                <div class="product-name">Modern Sneakers</div>
+                <span class="product-price">BDT 59.99</span>
+                <div>
+                  <span class="product-original">BDT 80.00</span>
+                  <span class="product-discount">25% OFF</span>
+                </div>
+                <div class="brand">
+                  <div class="product-brand">
+                    <img src="brand/logo2.png" alt="Brand Name" />
+                  </div>
+                  <div class="add-to-cart">
+                    <button
+                      class="cart-btn"
+                      data-id="2"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card" data-id="2">
+              <div class="product-image">
+                <img src="prod/sample2.jpg" alt="Modern Sneakers" />
+                <div class="label-launch">Just Launched</div>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="2"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
+                </div>
+                <div class="rating"><i class="fa fa-star"></i> 4.8</div>
+              </div>
+              <div class="product-info">
+                <div class="product-name">Modern Sneakers</div>
+                <span class="product-price">BDT 59.99</span>
+                <div>
+                  <span class="product-original">BDT 80.00</span>
+                  <span class="product-discount">25% OFF</span>
+                </div>
+                <div class="brand">
+                  <div class="product-brand">
+                    <img src="brand/logo2.png" alt="Brand Name" />
+                  </div>
+                  <div class="add-to-cart">
+                    <button
+                      class="cart-btn"
+                      data-id="2"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </details>
       </div>
-    -->
-  </div>
 
-  
     <!-- Action Buttons -->
     <!-- <div class="action-buttons">
-      <div class="selection-summary">
-        <span><span class="selected-count">0</span> item(s) selected</span>
-        <span>Total: <span class="total-price">BDT0</span></span>
-      </div>
-      <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
-    </div> -->
-  
+    <div class="selection-summary">
+      <span><span class="selected-count">0</span> item(s) selected</span>
+      <span>Total: <span class="total-price">BDT0</span></span>
+    </div>
+    <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+  </div> -->
 
+    <div id="footer"></div>
+</div>
 
+    <script>
+      function loadHTML(id, file) {
+        fetch(file)
+          .then((res) => res.text())
+          .then((data) => {
+            const container = document.getElementById(id);
+            container.innerHTML = data;
 
+            // Execute scripts inside the included HTML
+            const scripts = container.querySelectorAll("script");
+            scripts.forEach((oldScript) => {
+              const newScript = document.createElement("script");
+              if (oldScript.src) {
+                newScript.src = oldScript.src;
+              } else {
+                newScript.textContent = oldScript.textContent;
+              }
+              document.body.appendChild(newScript);
+            });
+          });
+      }
 
-</body>
+      loadHTML("navbar", "navbar.html");
+      loadHTML("footer", "footer.html");
+    </script>
+  </body>
 </html>
