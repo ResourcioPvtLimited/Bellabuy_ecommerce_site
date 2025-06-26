@@ -267,7 +267,11 @@
     height: 16px;
   }
 }
-
+.icons a {
+  text-decoration: none !important;
+  text-underline-offset: unset !important;
+  text-decoration-color: unset !important;
+}
 /* Large Screen Optimization */
 @media (min-width: 1200px) {
   .navbar {
@@ -301,3 +305,5 @@
     .icon-label {
       cursor: pointer;
     }
+
+

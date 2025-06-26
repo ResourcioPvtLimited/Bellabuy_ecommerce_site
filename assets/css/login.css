@@ -41,7 +41,7 @@ body {
       margin-bottom: 2rem;
       font-family: 'Mulish', sans-serif;
     }
-    input {
+  .login-form  input {
       width: 100%;
       padding: 1rem 3rem 1rem 3rem;
       border: 1px solid #e5e7eb;

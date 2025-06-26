@@ -1,18 +1,4 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-  overflow-x: hidden;
-}
 
-body {
-  background-color: var(--color-primary, #f3f4f6);
-  display: block;
-}
 
 .container {
   background: white;
@@ -81,7 +67,7 @@ h1 {
 }
 
 
-input {
+.register-form input {
   width: 100%;
   padding: 1rem 3rem 1rem 3rem;
   border: 1px solid #e5e7eb;
@@ -253,4 +239,9 @@ input[type="password"] {
 span,
 a {
   font-size: 14px;
+}
+.icons a {
+  text-decoration: none !important;
+  text-underline-offset: unset !important;
+  text-decoration-color: unset !important;
 }
