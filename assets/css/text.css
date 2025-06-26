@@ -23,7 +23,7 @@
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(255, 255, 255, 0.07);
-    max-width: 1200px;
+    
     margin-left: auto;
     margin-right: auto;
 }
@@ -43,7 +43,7 @@
 .banner-slide img {
     width: 100%;
     display: block;
-    border-radius: 18px;
+    
     max-height: 340px;
     object-fit: cover;
 }
