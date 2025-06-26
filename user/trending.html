@@ -3,340 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SION - Fashion Store</title>
+    <title>Trending | Bellabuy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/trending.css"/>
-</head>
-<body>
-    <!-- Header -->
-    <div class="header">
-        <div class="logo">SION<span>.</span></div>
-        <div class="header-icons">
-            <div class="header-icon">
-                <i class="far fa-heart"></i>
-            </div>
-            <div class="header-icon">
-                <i class="far fa-bell"></i>
-                <div class="cart-badge">3</div>
-            </div>
-            <div class="header-icon">
-                <i class="fas fa-shopping-bag"></i>
-                <div class="cart-badge">5</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Header -->
-    <div class="nav-header">
-        <div class="back-btn"><i class="fas fa-arrow-left"></i></div>
-        <div class="nav-title">TRENDING COLLECTION</div>
-    </div>
-
-    <!-- Search Bar -->
-    <div class="search-container">
-        <div class="search-bar">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" placeholder="Search for shirts, dresses, accessories...">
-        </div>
-    </div>
-
-    <!-- Discount Banner -->
-    <div class="discount-banner animate" style="animation-delay: 0.1s">
-        <div class="discount-content">
-            <div class="discount-text">FLAT ₹500 OFF</div>
-            <div class="discount-subtext">+ FREE SHIPPING ON ALL ORDERS</div>
-        </div>
-        <div class="discount-code">SION500</div>
-        <div class="discount-icon"><i class="fas fa-percentage"></i></div>
-    </div>
-
-    <!-- Main Slider -->
-    <div class="slider-section animate" style="animation-delay: 0.2s">
-        <div class="slider-container">
-            <div class="slider-slide active slide-1">
-                <div class="slide-title">Up to</div>
-                <div class="slide-subtitle">50% Off</div>
-                <button class="shop-now-btn">Shop Now</button>
-            </div>
-            <div class="slider-slide slide-2">
-                <div class="slide-title">Summer</div>
-                <div class="slide-subtitle">Collection</div>
-                <button class="shop-now-btn">Explore</button>
-            </div>
-            <div class="slider-slide slide-3">
-                <div class="slide-title">New</div>
-                <div class="slide-subtitle">Arrivals</div>
-                <button class="shop-now-btn">Discover</button>
-            </div>
-        </div>
-        <div class="slider-indicators">
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-        </div>
-    </div>
-
-    <!-- Office Shirts Section -->
-    <div class="office-shirts animate" style="animation-delay: 0.3s">
-        <div class="office-header">
-            <div class="office-title">OFFICE<br>SHIRTS</div>
-            <div class="main-shirt-display">
-                <div id="mainShirtImage" class="main-shirt-image" style="background-image: url('https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=200&h=250&fit=crop')"></div>
-                <div class="thumbnail-slider">
-                    <div class="thumbnail-container" id="thumbnailContainer">
-                        <div class="thumbnail active" data-image="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=200&h=250&fit=crop">
-                            <div class="thumbnail-image" style="background-image: url('https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=70&fit=crop')"></div>
-                            <div class="thumbnail-price">₹ 990</div>
-                        </div>
-                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1603252109360-909baaf261c7?w=200&h=250&fit=crop">
-                            <div class="thumbnail-image" style="background-image: url('https://images.unsplash.com/photo-1603252109360-909baaf261c7?w=80&h=70&fit=crop')"></div>
-                            <div class="thumbnail-price">₹ 835</div>
-                        </div>
-                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=200&h=250&fit=crop">
-                            <div class="thumbnail-image" style="background-image: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=80&h=70&fit=crop')"></div>
-                            <div class="thumbnail-price">₹ 899</div>
-                        </div>
-                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=200&h=250&fit=crop">
-                            <div class="thumbnail-image" style="background-image: url('https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=80&h=70&fit=crop')"></div>
-                            <div class="thumbnail-price">₹ 879</div>
-                        </div>
-                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=200&h=250&fit=crop">
-                            <div class="thumbnail-image" style="background-image: url('https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=80&h=70&fit=crop')"></div>
-                            <div class="thumbnail-price">₹ 920</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="view-products-btn">VIEW 200 PRODUCTS</button>
-        </div>
-    </div>
-
-    <!-- Now Trending - Women -->
-    <div class="section-title-container animate" style="animation-delay: 0.4s">
-        <div class="section-title">Women's Collection</div>
-        <div class="view-all">View All</div>
-    </div>
-    <div class="trending-grid">
-        <div class="trending-card animate" style="animation-delay: 0.45s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=150&h=180&fit=crop')">
-                <div class="card-label">PRINTED CO-ORD SETS</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Floral Print Co-ord Set</div>
-                <div class="card-price">₹ 1,499</div>
-            </div>
-        </div>
-        <div class="trending-card animate" style="animation-delay: 0.5s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=150&h=180&fit=crop')">
-                <div class="card-label">MINIMALIST JEWELRY</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Gold Plated Necklace</div>
-                <div class="card-price">₹ 799</div>
-            </div>
-        </div>
-        <div class="trending-card animate" style="animation-delay: 0.55s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=150&h=180&fit=crop')">
-                <div class="card-label">FUSION WEAR</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Silk Blend Kurta</div>
-                <div class="card-price">₹ 2,199</div>
-            </div>
-        </div>
-        <div class="trending-card animate" style="animation-delay: 0.6s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=150&h=180&fit=crop')">
-                <div class="card-label">SUMMER DRESSES</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Floral Maxi Dress</div>
-                <div class="card-price">₹ 1,899</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Now Trending - Men -->
-    <div class="section-title-container animate" style="animation-delay: 0.65s">
-        <div class="section-title">Men's Collection</div>
-        <div class="view-all">View All</div>
-    </div>
-    <div class="trending-grid">
-        <div class="trending-card animate" style="animation-delay: 0.7s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=150&h=180&fit=crop')">
-                <div class="card-label">PRINTED SHIRTS</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Casual Floral Shirt</div>
-                <div class="card-price">₹ 1,299</div>
-            </div>
-        </div>
-        <div class="trending-card animate" style="animation-delay: 0.75s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=150&h=180&fit=crop')">
-                <div class="card-label">MINIMALIST WATCHES</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Classic Leather Watch</div>
-                <div class="card-price">₹ 2,499</div>
-            </div>
-        </div>
-        <div class="trending-card animate" style="animation-delay: 0.8s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1603252109360-909baaf261c7?w=150&h=180&fit=crop')">
-                <div class="card-label">FUSION WEAR</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Linen Kurta Set</div>
-                <div class="card-price">₹ 2,599</div>
-            </div>
-        </div>
-        <div class="trending-card animate" style="animation-delay: 0.85s">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=150&h=180&fit=crop')">
-                <div class="card-label">CASUAL T-SHIRTS</div>
-            </div>
-            <div class="card-info">
-                <div class="card-name">Cotton Plain T-Shirt</div>
-                <div class="card-price">₹ 599</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bottom Navigation -->
-    <div class="bottom-nav">
-        <a href="#" class="nav-item">
-            <i class="fas fa-percentage nav-icon"></i>
-            Offers
-        </a>
-        <a href="#" class="nav-item active">
-            <i class="fas fa-fire nav-icon"></i>
-            Trending
-        </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-home nav-icon"></i>
-            Home
-        </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-comment nav-icon"></i>
-            Messages
-        </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-user nav-icon"></i>
-            Profile
-        </a>
-    </div>
-
-    <script>
-        // Thumbnail slider functionality
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        const mainShirtImage = document.getElementById('mainShirtImage');
-
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', function() {
-                // Remove active class from all thumbnails
-                thumbnails.forEach(t => t.classList.remove('active'));
-                
-                // Add active class to clicked thumbnail
-                this.classList.add('active');
-                
-                // Get the image URL from data attribute
-                const imageUrl = this.getAttribute('data-image');
-                
-                // Update main image with smooth transition
-                mainShirtImage.style.opacity = '0';
-                setTimeout(() => {
-                    mainShirtImage.style.backgroundImage = `url('${imageUrl}')`;
-                    mainShirtImage.style.opacity = '1';
-                }, 200);
-            });
-        });
-
-        // Main slider functionality
-        const slides = document.querySelectorAll('.slider-slide');
-        const indicators = document.querySelectorAll('.indicator');
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-            // Hide all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(ind => ind.classList.remove('active'));
-            
-            // Show the selected slide
-            slides[index].classList.add('active');
-            indicators[index].classList.add('active');
-            currentSlide = index;
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/trending.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main/nav.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <style>
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background: #fff;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        right: 0;
+        top: 100%;
+        border-radius: 0 0 8px 8px;
+        padding: 0.5rem 0;
+      }
+      .dropdown-content.show {
+        display: block !important;
+      }
+      .dropdown {
+        position: relative;
+        overflow: visible;
+      }
+      .icon-label {
+        cursor: pointer;
+      }
+      
+      /* Adjust content padding for navbar */
+      .content-wrapper {
+        padding-top: 20px; /* Reduce padding as the header will be positioned properly */
+      }
+      
+      /* Fixed navbar positioning */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1100;
+        width: 100%;
+      }
+      
+      /* Mobile header positioning */
+      .trending-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+      
+      /* Container wrapper spacing */
+      .container-wrapper {
+        padding-top: 60px; /* Space for mobile header */
+      }
+      
+      /* Media queries for responsive design */
+      @media (min-width: 769px) {
+        .trending-header {
+          display: none; /* Hide mobile header on desktop */
         }
         
-        // Set up indicators
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => showSlide(index));
-        });
+        .container-wrapper {
+          padding-top: 80px; /* Space for desktop navbar */
+        }
         
-        // Auto-rotate slides
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }, 5000);
+        .content-wrapper {
+          padding-top: 0; /* No additional padding needed */
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .navbar {
+          display: none; /* Hide navbar on mobile */
+        }
         
-        // Initialize the first slide
-        showSlide(0);
+        .footer {
+          display: none; /* Hide footer on mobile */
+        }
+      }
+      
+      /* Update mobile footer nav to match search page */
+      .footer-nav {
+        background-color: white;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      }
+      
+      .footer-nav .nav-item {
+        color: #777; /* Default color */
+      }
+      
+      .footer-nav .nav-item.active {
+        color: #0066FF; /* Active item color */
+      }
+    </style>
+</head>
+<body>
+    <!-- Navbar (desktop only) -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <img src="../assets/images/mainlogo.svg" alt="Logo" class="logo" />
+      </div>
 
-        // Add ripple effect to buttons
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Create ripple effect
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255,255,255,0.3)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.pointerEvents = 'none';
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
-        });
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MEN</a></li>
+        <li><a href="#">WOMEN</a></li>
+        <li><a href="#">KIDS</a></li>
+        <li><a href="#">BEAUTY</a></li>
+        <li><a href="#">VOUCHERS</a></li>
+      </ul>
 
-        // Add ripple animation keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
+      <div class="search-container">
+        <img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search" class="search-icon" />
+        <input type="text" placeholder="Search for products, brands and more" />
+      </div>
 
-        // Animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+      <div class="icons">
+        <div class="dropdown">
+          <div class="icon-label" id="profileDropdownToggle">
+            <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="Profile Icon" />
+            <span>Profile</span>
+          </div>
+          <div class="dropdown-content" id="profileDropdown">
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+            <a href="./reset-password.html">Reset Password</a>
+            <a href="./profile.html">My Account</a>
+          </div>
+        </div>
+        <div class="icon-label">
+          <img src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="Wishlist" />
+          <span>Wishlist</span>
+        </div>
+        <div class="icon-label">
+          <img src="https://cdn-icons-png.flaticon.com/128/263/263142.png" alt="Bag" />
+          <span>Bag</span>
+        </div>
+      </div>
+    </nav>
 
-        document.querySelectorAll('.animate').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
-        });
+    <div class="container-wrapper">
+        <!-- Mobile Header (only visible on mobile) -->
+        <header class="trending-header">
+            <div class="header-left">
+                <a href="javascript:history.back()" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <h1 class="page-title">TRENDING</h1>
+            </div>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="far fa-heart"></i></a>
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="badge">2</span></a>
+            </div>
+        </header>
+
+        <main class="content-wrapper">
+            <!-- Flat Offer Banner -->
+            <section class="offer-banner">
+                <div class="offer-text">
+                    <strong>FLAT ₹500 OFF</strong>
+                    <span>+ FREE SHIPPING ON ALL ORDERS</span>
+                </div>
+                <div class="offer-code">
+                    <span>USE CODE</span>
+                    <strong>"SIGN70"</strong>
+                </div>
+                <div class="offer-percent">%</div>
+            </section>
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Up to<br>50% Off</h2>
+                    <button class="shop-now-btn">Shop Now</button>
+                </div>
+            </section>
+
+            <!-- Office Shirts Section -->
+            <section class="category-showcase">
+                <div class="category-header">
+                    <h2>OFFICE SHIRTS</h2>
+                </div>
+                <div class="product-scroll">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="../assets/images/Mask Group.png" alt="Office Shirt">
+                        </div>
+                        <div class="product-price">₹ 1,250 <span>990</span></div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="../assets/images/Mask Group.png" alt="Office Shirt">
+                        </div>
+                        <div class="product-price">₹ 1,290 <span>839</span></div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="../assets/images/Mask Group.png" alt="Office Shirt">
+                        </div>
+                        <div class="product-price">₹ 1,350 <span>899</span></div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="../assets/images/Mask Group.png" alt="Office Shirt">
+                        </div>
+                        <div class="product-price">₹ 1,690 <span>879</span></div>
+                    </div>
+                </div>
+                <div class="view-all-btn">VIEW 200 PRODUCTS</div>
+            </section>
+
+            <!-- Women's Trending Section -->
+            <section class="trending-section">
+                <h2 class="section-title">Now Trending</h2>
+                <div class="trending-grid">
+                    <a href="#" class="trending-card">
+                        <div class="card-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Co-ord Sets">
+                        </div>
+                        <div class="card-label">PRINTED CO-ORD SETS</div>
+                    </a>
+                    <a href="#" class="trending-card">
+                        <div class="card-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Jewelry">
+                        </div>
+                        <div class="card-label">MINIMALIST JEWELRY</div>
+                    </a>
+                    <a href="#" class="trending-card">
+                        <div class="card-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Fusion Wear">
+                        </div>
+                        <div class="card-label">FUSION WEAR</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Men's Trending Section -->
+            <section class="trending-section">
+                <h2 class="section-title">Now Trending</h2>
+                <div class="trending-grid">
+                    <a href="#" class="trending-card">
+                        <div class="card-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Printed Shirts">
+                        </div>
+                        <div class="card-label">PRINTED SHIRTS</div>
+                    </a>
+                    <a href="#" class="trending-card">
+                        <div class="card-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Watches">
+                        </div>
+                        <div class="card-label">MINIMALIST WATCHES</div>
+                    </a>
+                    <a href="#" class="trending-card">
+                        <div class="card-image">
+                            <img src="../assets/images/SaleBanner.png" alt="Fusion Wear">
+                        </div>
+                        <div class="card-label">FUSION WEAR</div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer (desktop only) -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-left">
+          <div class="logo-social">
+            <img src="../assets/images/bellabuy_logo.png" alt="BellaBuy Logo" class="logo-img" />
+            <div class="social-icons">
+              <a href="#"><img src="../assets/images/x.png" alt="X" /></a>
+              <a href="#"><img src="../assets/images/facebook.png" alt="Facebook" /></a>
+              <a href="#"><img src="../assets/images/instagram.png" alt="Instagram" /></a>
+              <a href="#"><img src="../assets/images/linkedin.png" alt="LinkedIn" /></a>
+            </div>
+          </div>
+          <p class="tagline">Its is Your Time!</p>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-links">
+            <div class="column">
+              <h4>ONLINE SHOPPING</h4>
+              <ul>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Beauty</a></li>
+                <li><a href="#">GenZ</a></li>
+                <li><a href="#">Vouchers</a></li>
+              </ul>
+            </div>
+            <div class="column">
+              <h4>CUSTOMER POLICIES</h4>
+              <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">T & C</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Cancellation</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© BellaBuy. All Rights Reserved.</p>
+        <div class="bottom-links">
+          <a href="#">Cookies Settings</a>
+          <a href="#">Terms & Condition</a>
+          <a href="#">Privacy policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Footer Navigation (only visible on mobile) -->
+    <div class="footer-nav">
+        <a href="#" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="far fa-heart"></i>
+            <span>Wishlist</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Cart</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="far fa-comment-alt"></i>
+            <span>Messages</span>
+        </a>
+        <a href="#" class="nav-item active">
+            <i class="far fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Navbar dropdown functionality
+      document.getElementById("hamburger").onclick = () => {
+        document.getElementById("navLinks").classList.toggle("active");
+      };
+
+      const toggleBtn = document.getElementById("profileDropdownToggle");
+      const dropdown = document.getElementById("profileDropdown");
+
+      // Toggle dropdown on click
+      toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle("show");
+      });
+
+      // Close dropdown on clicking outside
+      document.addEventListener("click", (e) => {
+        if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.remove("show");
+        }
+      });
+      
+      // Prevent dropdown from closing when clicking inside the dropdown-content
+      dropdown.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
     </script>
 </body>
 </html>
