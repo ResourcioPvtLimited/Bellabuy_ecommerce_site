@@ -5,8 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Available Vouchers</title>
     <link rel="stylesheet" href="../assets/css/voucher.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script>
+    // Function to include HTML content
+    function includeHTML() {
+      document.querySelectorAll('[data-include]').forEach(async el => {
+        const file = el.getAttribute("data-include");
+        const res = await fetch(file);
+        const html = await res.text();
+        el.innerHTML = html;
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', includeHTML);
+    document.getElementById('loginBtn').onclick = function(e) {
+  e.preventDefault(); // Prevent form submission
+  window.location.href = 'otp.html'; // Redirect to otp.html
+};
+  </script>
 </head>
 <body>
+  <div data-include="navbar.html"></div>
+<script>
+async function includeHTML() {
+  const elements = document.querySelectorAll('[data-include]');
+  for (const el of elements) {
+    const file = el.getAttribute("data-include");
+    const res = await fetch(file);
+    const html = await res.text();
+    el.innerHTML = html;
+  }
+  // Now load navbar.js and run setupNavbarDropdown
+  const script = document.createElement('script');
+  script.src = '../assets/js/navbar.js';
+  script.onload = function() {
+    if (typeof setupNavbarDropdown === 'function') setupNavbarDropdown();
+  };
+  document.body.appendChild(script);
+}
+
+window.addEventListener('DOMContentLoaded', includeHTML);
+</script>
     <!-- Voucher Popup HTML -->
     <div class="voucher-popup-overlay">
       <div class="voucher-popup-modal">

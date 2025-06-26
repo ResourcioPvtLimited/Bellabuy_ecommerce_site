@@ -7,8 +7,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/flash_sale.css">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    // Function to include HTML content
+    function includeHTML() {
+      document.querySelectorAll('[data-include]').forEach(async el => {
+        const file = el.getAttribute("data-include");
+        const res = await fetch(file);
+        const html = await res.text();
+        el.innerHTML = html;
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', includeHTML);
+    window.addEventListener('DOMContentLoaded', includeHTML);
+    
+  </script>
 </head>
 <body>
+      <div data-include="navbar.html"></div>
+  <script>
+async function includeHTML() {
+  const elements = document.querySelectorAll('[data-include]');
+  for (const el of elements) {
+    const file = el.getAttribute("data-include");
+    const res = await fetch(file);
+    const html = await res.text();
+    el.innerHTML = html;
+  }
+  // Now load navbar.js and run setupNavbarDropdown
+  const script = document.createElement('script');
+  script.src = '../assets/js/navbar.js';
+  script.onload = function() {
+    if (typeof setupNavbarDropdown === 'function') setupNavbarDropdown();
+  };
+  document.body.appendChild(script);
+}
+
+window.addEventListener('DOMContentLoaded', includeHTML);
+</script>
     <!-- Add container wrapper for desktop responsiveness -->
     <div class="container-wrapper">
         <!-- Decorative Bubbles -->
@@ -18,7 +57,7 @@
         </div>
         
         <!-- Header - Updated to group back button and title together -->
-        <header class="flash-header">
+        <!-- <header class="flash-header">
             <div class="header-left">
                 <div class="back-button">
                     <a href="profile.html"><i class="fas fa-arrow-left"></i></a>
@@ -30,7 +69,7 @@
                 <a href="#"><i class="far fa-heart"></i><span class="badge">2</span></a>
                 <a href="#"><i class="fas fa-shopping-cart"></i><span class="badge">1</span></a>
             </div>
-        </header>
+        </header> -->
 
         <!-- Flash Sale Timer Section (Updated with clock image and rounded timer boxes) -->
         <section class="flash-timer-section">
@@ -695,7 +734,7 @@
     </div>
     
     <!-- Footer Navigation - Updated to match search page -->
-    <div class="footer-nav">
+    <!-- <div class="footer-nav">
       <a href="#" class="nav-item active">
         <i class="fas fa-home"></i>
         <span>Home</span>
@@ -716,7 +755,7 @@
         <i class="far fa-user"></i>
         <span>Account</span>
       </a>
-    </div>
+    </div> -->
 
     <script>
         // Filter products based on discount
@@ -878,5 +917,6 @@
             });
         });
     </script>
+    <div data-include="footer.html"></div>
 </body>
 </html>

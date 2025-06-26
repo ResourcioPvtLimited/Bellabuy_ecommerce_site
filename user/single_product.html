@@ -5,10 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Details</title>
     <link rel="stylesheet" href="../assets/css/single_product2.css" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+  <script>
+    // Function to include HTML content
+    function includeHTML() {
+      document.querySelectorAll('[data-include]').forEach(async el => {
+        const file = el.getAttribute("data-include");
+        const res = await fetch(file);
+        const html = await res.text();
+        el.innerHTML = html;
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', includeHTML);
+    document.getElementById('loginBtn').onclick = function(e) {
+  e.preventDefault(); // Prevent form submission
+  window.location.href = 'otp.html'; // Redirect to otp.html
+};
+  </script>
   </head>
   <body>
+    <div data-include="navbar.html"></div>
+<script>
+async function includeHTML() {
+  const elements = document.querySelectorAll('[data-include]');
+  for (const el of elements) {
+    const file = el.getAttribute("data-include");
+    const res = await fetch(file);
+    const html = await res.text();
+    el.innerHTML = html;
+  }
+  // Now load navbar.js and run setupNavbarDropdown
+  const script = document.createElement('script');
+  script.src = '../assets/js/navbar.js';
+  script.onload = function() {
+    if (typeof setupNavbarDropdown === 'function') setupNavbarDropdown();
+  };
+  document.body.appendChild(script);
+}
+
+window.addEventListener('DOMContentLoaded', includeHTML);
+</script>
     <div class="container">
-      <div class="header">
+      <!-- <div class="header">
         <h2>SION</h2>
         <div class="search">
           <input
@@ -22,99 +61,111 @@
           <img src="../img/heart.svg" alt="" />
           <img src="../img/shop.svg" alt="" />
         </div>
-      </div>
+      </div> -->
 
-      <section class="pdt-image-section">
-        <div class="pdt-image-container">
-          <img
-            src="../img/yellow-hoodie.png"
-            alt="Yellow Premium Hoodie"
-            class="pdt-image"
-          />
-          <div class="wishlist-btn"><img src="../img/heart.svg" alt="" /></div>
-        </div>
-      </section>
-
-      <div class="main-price-section">
-        <span class="main-original-price">BDT 4,999</span>
-        <span class="main-current-price"
-          >BDT 1,999
-          <p class="main-discount">60% off</p></span
-        >
-      </div>
-
-      <h1 class="product-title">
-        Angel Jacket - This is a premium quality product with...
-        <button class="read-more">read more</button>
-      </h1>
-
-      <div class="color-section">
-        <label class="section-label">Colour:</label>
-        <div class="color-options">
-          <div class="color-option active" data-color="yellow"></div>
-          <div class="color-option" data-color="pink"></div>
-          <div class="color-option" data-color="brown"></div>
-          <div class="color-option" data-color="black"></div>
-        </div>
-      </div>
-
-      <div class="size-section">
-        <label class="section-label">Size:</label>
-        <div class="size-options">
-          <div class="btn">
-            <button class="size-btn">S</button>
-            <p>1 left</p>
-          </div>
-
-          <div class="btn">
-            <button class="size-btn active">M</button>
-            <p>2 left</p>
-          </div>
-          <div class="btn">
-            <button class="size-btn">L</button>
-            <p>3 left</p>
-          </div>
-          <div class="btn">
-            <button class="size-btn">XL</button>
-            <p>5 left</p>
-          </div>
-          <div class="btn">
-            <button class="size-btn">XXL</button>
-            <p>1 left</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="store-info">
-        <div class="store-header">
-          <span class="store-name">SION Official Store</span>
-          <span class="verified-badge">
-            <img src="../img/Check.png" alt="" />
-            <div class="verify-text">
-              Verified Seller | 90% Positive Ratings
+      <div class="desktop-layout">
+        <div class="desktop-left">
+          <section class="pdt-image-section">
+            <div class="pdt-image-container">
+              <img
+                src="../img/yellow-hoodie.png"
+                alt="Yellow Premium Hoodie"
+                class="pdt-image"
+              />
+              <div class="wishlist-btn"><img src="../img/heart.svg" alt="" /></div>
             </div>
-          </span>
+          </section>
         </div>
-        <div class="store-actions">
-          <button class="follow-btn">Follow</button>
-          <button class="visit-store-btn">Visit Store</button>
+        <div class="desktop-right">
+          <div class="main-price-section">
+            <span class="main-original-price">BDT 4,999</span>
+            <span class="main-current-price"
+              >BDT 1,999
+              <p class="main-discount">60% off</p></span
+            >
+          </div>
+
+          <h1 class="product-title">
+            Angel Jacket - This is a premium quality product with...
+            <button class="read-more">read more</button>
+          </h1>
+
+          <div class="color-section">
+            <label class="section-label">Colour:</label>
+            <div class="color-options">
+              <div class="color-option active" data-color="yellow"></div>
+              <div class="color-option" data-color="pink"></div>
+              <div class="color-option" data-color="brown"></div>
+              <div class="color-option" data-color="black"></div>
+            </div>
+          </div>
+
+          <div class="size-section">
+            <label class="section-label">Size:</label>
+            <div class="size-options">
+              <div class="btn">
+                <button class="size-btn">S</button>
+                <p>1 left</p>
+              </div>
+
+              <div class="btn">
+                <button class="size-btn active">M</button>
+                <p>2 left</p>
+              </div>
+              <div class="btn">
+                <button class="size-btn">L</button>
+                <p>3 left</p>
+              </div>
+              <div class="btn">
+                <button class="size-btn">XL</button>
+                <p>5 left</p>
+              </div>
+              <div class="btn">
+                <button class="size-btn">XXL</button>
+                <p>1 left</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="store-info">
+            <div class="store-header">
+              <span class="store-name">SION Official Store</span>
+              <span class="verified-badge">
+                <img src="../img/Check.png" alt="" />
+                <div class="verify-text">
+                  Verified Seller | 90% Positive Ratings
+                </div>
+              </span>
+            </div>
+            <div class="store-actions">
+              <button class="follow-btn">Follow</button>
+              <button class="visit-store-btn">Visit Store</button>
+            </div>
+          </div>
+
+          <div class="tags">
+            <p class="primary">Scalable</p>
+            <p class="secondary">Current</p>
+            <p>Value</p>
+            <p>Authentic</p>
+          </div>
+
+          <div class="product-details">
+            <h4>PRODUCT DETAILS</h4>
+            <p>Material: 100% Cotton</p>
+            <p>Fit: Regular Fit</p>
+            <p>Care Instructions: Machine Wash</p>
+          </div>
+          
+          
         </div>
       </div>
-
-      <div class="tags">
-        <p class="primary">Scalable</p>
-        <p class="secondary">Current</p>
-        <p>Value</p>
-        <p>Authentic</p>
-      </div>
-
-      <div class="product-details">
-        <h4>PRODUCT DETAILS</h4>
-        <p>Material: 100% Cotton</p>
-        <p>Fit: Regular Fit</p>
-        <p>Care Instructions: Machine Wash</p>
-      </div>
-
+<div class="bottom-button-container">
+            <div class="button-group">
+              <button class="add-to-cart-btn">Add to Cart</button>
+              <button class="buy-now-btn">Buy Now</button>
+            </div>
+          </div>
       <div class="ratings-container">
         <div class="rating-header">
           <h2>Ratings & Reviews</h2>
@@ -203,44 +254,6 @@
               Perspiciatis, fugiat.
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="product-description-container">
-        <div class="product-header">
-          <h2>Product Description</h2>
-          <span class="expand-icon">−</span>
-        </div>
-
-        <div class="product-info">
-          <div class="info-column">
-            <div class="info-item">
-              <div class="info-label">Fit</div>
-              <div class="info-value">Regular Fit</div>
-            </div>
-          </div>
-          <div class="info-column">
-            <div class="info-item">
-              <div class="info-label">Sport</div>
-              <div class="info-value">Training or Gym</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="description-text">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
-          distinctio doloremque, impedit expedita quasi optio doloribus aliquam?
-          Quo odit enim iusto perferendis numquam ea minima culpa sed aut
-          aspernatur molestias reiciendis dicta veritatis et illum natus in
-          impedit ad nihil nam ipsum error, obcaecati tempora.
-        </div>
-
-        <div class="description-text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-          laudantium nulla beatae aliquid reprehenderit ea praesentium vitae
-          illum! Alias nemo fugiat consectetur culpa magni dolore ipsum nihil,
-          placeat numquam reprehenderit accusantium, doloremque ullam optio,
-          eaque temporibus quos? Dolorum aspernatur doloremque
         </div>
       </div>
 
@@ -359,13 +372,9 @@
             </div>
           </div>
         </div>
-        <div class="bottom-button-container">
-          <div class="button-group">
-            <button class="add-to-cart-btn">Add to Cart</button>
-            <button class="buy-now-btn">Buy Now</button>
-          </div>
-        </div>
+        
       </div>
     </div>
+    <div data-include="footer.html"></div>
   </body>
 </html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SION Fashion</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/tect.css"/>
+  <style>
+    /* ...existing styles from index.php... */
+    .category-slider, .brand-slider { display: flex; overflow-x: auto; scroll-behavior: smooth; }
+    .category-slider::-webkit-scrollbar, .brand-slider::-webkit-scrollbar { display: none; }
+    .cart-btn.added, .wish-btn.added { background-color: #4CAF50; color: white; }
+    .cart-btn.removed, .wish-btn.removed { background-color: #f44336; color: white; }
+    a { text-decoration: none; color: #333; }
+    /* ...rest of the style block from index.php... */
+  </style>
+</head>
+<body>
+<!-- Header -->
+<!-- <header>
+  <div class="logo">SION</div>
+  <div class="search-bar">
+    <form action="#" method="GET">
+      <input type="text" name="search" placeholder="Search for products..." required>
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+  <div class="header-icons">
+    <a href="#" class="wishlist-icon-container">
+      <i class="fas fa-heart"></i>
+      <span class="wishlist-count">2</span>
+    </a>
+    <a href="#" class="cart-icon-container">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-count">3</span>
+    </a>
+  </div>
+</header> -->
+<!-- Gender Filter -->
+<div class="gender-filter gender-buttons">
+  <button class="gender-btn" data-gender="men">Men</button>
+  <button class="gender-btn" data-gender="women">Women</button>
+</div>
+<!-- Categories -->
+<div class="categories category-slider" id="category-container">
+  <div class='category-slide'><a href='#'><img src='assets/images/zara.png' alt='Zara'><p>Zara</p></a></div>
+  <div class='category-slide'><a href='#'><img src='assets/images/Apex.png' alt='Apex'><p>Apex</p></a></div>
+  <div class='category-slide'><a href='#'><img src='assets/images/trending.png' alt='Trending'><p>Trending</p></a></div>
+  <div class='category-slide'><a href='#'><img src='assets/images/supportt.png' alt='Support'><p>Support</p></a></div>
+</div>
+<!-- Banners -->
+<div class="slider-container">
+  <div class="banner-slider">
+    <div class='banner-slide'><a href='#'><img src='assets/images/SaleBanner.png' alt='Sale'><div class='banner-content'><h2>Big Sale</h2><h1>Up to 50% Off</h1><button class='banner-btn'>SHOP NOW</button></div></a></div>
+    <div class='banner-slide'><a href='#'><img src='assets/images/page-header-bg.jpg' alt='New Arrivals'><div class='banner-content'><h2>New Arrivals</h2><h1>Summer Collection</h1><button class='banner-btn'>SHOP NOW</button></div></a></div>
+  </div>
+  <div class="banner-nav">
+    <button class="banner-nav-btn prev-banner"><i class="fas fa-chevron-left"></i></button>
+    <button class="banner-nav-btn next-banner"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="banner-dots">
+    <div class='banner-dot active' data-index='0'></div>
+    <div class='banner-dot' data-index='1'></div>
+  </div>
+</div>
+<!-- Top Brands -->
+<div class="section-title">Top <span>Brands</span></div>
+<div class="slider-wrapper">
+  <div class="brand-slider" id="brand-container">
+    <div class='brand-slide'><a href='#'><img src='assets/images/zara.png' alt='Zara'></a></div>
+    <div class='brand-slide'><a href='#'><img src='assets/images/Apex.png' alt='Apex'></a></div>
+    <div class='brand-slide'><a href='#'><img src='assets/images/trending.png' alt='Trending'></a></div>
+    <div class='brand-slide'><a href='#'><img src='assets/images/supportt.png' alt='Support'></a></div>
+  </div>
+</div>
+<!-- Big Deals -->
+<div class="bigdeal-main">
+  <div class="big-deals-title">Big Deals</div>
+  <div class="big-deals-subtitle">Don't miss out on our exclusive deals!</div>
+  <div class="deals-grid">
+    <div class='deal-card'><a href='#'><img src='assets/images/SaleBanner.png' alt='Big Deal 1'></a></div>
+    <div class='deal-card'><a href='#'><img src='assets/images/page-header-bg.jpg' alt='Big Deal 2'></a></div>
+    <div class='deal-card'><a href='#'><img src='assets/images/zara.png' alt='Big Deal 3'></a></div>
+    <div class='deal-card'><a href='#'><img src='assets/images/Apex.png' alt='Big Deal 4'></a></div>
+  </div>
+</div>
+<!-- Products -->
+<div class="section-title">Discover <span>Products</span></div>
+<div class="products" id="product-container">
+  <div class='product-card'>
+    <div class='product-image'>
+      <img src='assets/images/Mask Group.png' alt='Product 1'>
+      <div class='label-launch'>Just Launched</div>
+      <div class='wishlist-icon wish-btn'>+</div>
+      <div class='rating'><i class='fa fa-star'></i> 4.5</div>
+    </div>
+    <div class='product-info'>
+      <div class='product-name'>Classic T-Shirt</div>
+      <div class='product-price'>BDT 999</div>
+      <div><span class='product-original'>BDT 1299</span> <span class='product-discount'>23% OFF</span></div>
+      <div class='brand'>
+        <div class='brand-logo'>
+          <img src='assets/images/zara.png' alt='Zara'>
+        </div>
+        <div class='add-to-cart'>
+          <button class='cart-btn'>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='product-card'>
+    <div class='product-image'>
+      <img src='assets/images/Mask Group.png' alt='Product 2'>
+      <div class='label-launch'>Just Launched</div>
+      <div class='wishlist-icon wish-btn'>+</div>
+      <div class='rating'><i class='fa fa-star'></i> 4.2</div>
+    </div>
+    <div class='product-info'>
+      <div class='product-name'>Premium Hoodie</div>
+      <div class='product-price'>BDT 1499</div>
+      <div><span class='product-original'>BDT 1999</span> <span class='product-discount'>25% OFF</span></div>
+      <div class='brand'>
+        <div class='brand-logo'>
+          <img src='assets/images/Apex.png' alt='Apex'>
+        </div>
+        <div class='add-to-cart'>
+          <button class='cart-btn'>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='product-card'>
+    <div class='product-image'>
+      <img src='assets/images/Mask Group.png' alt='Product 3'>
+      <div class='label-launch'>Just Launched</div>
+      <div class='wishlist-icon wish-btn'>+</div>
+      <div class='rating'><i class='fa fa-star'></i> 4.8</div>
+    </div>
+    <div class='product-info'>
+      <div class='product-name'>Denim Jeans</div>
+      <div class='product-price'>BDT 1799</div>
+      <div><span class='product-original'>BDT 2199</span> <span class='product-discount'>18% OFF</span></div>
+      <div class='brand'>
+        <div class='brand-logo'>
+          <img src='assets/images/trending.png' alt='Trending'>
+        </div>
+        <div class='add-to-cart'>
+          <button class='cart-btn'>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='product-card'>
+    <div class='product-image'>
+      <img src='assets/images/Mask Group.png' alt='Product 4'>
+      <div class='label-launch'>Just Launched</div>
+      <div class='wishlist-icon wish-btn'>+</div>
+      <div class='rating'><i class='fa fa-star'></i> 4.0</div>
+    </div>
+    <div class='product-info'>
+      <div class='product-name'>Sneakers</div>
+      <div class='product-price'>BDT 2499</div>
+      <div><span class='product-original'>BDT 2999</span> <span class='product-discount'>17% OFF</span></div>
+      <div class='brand'>
+        <div class='brand-logo'>
+          <img src='assets/images/supportt.png' alt='Support'>
+        </div>
+        <div class='add-to-cart'>
+          <button class='cart-btn'>Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer>
+    <a href="#" class="footer-btn">
+        <i class="fas fa-tag"></i>
+        <span>Offer</span>
+    </a>
+    <a href="#" class="footer-btn">
+        <i class="fas fa-chart-line"></i>
+        <span>Trending</span>
+    </a>
+    <a href="#" class="footer-btn active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+    <a href="#" class="footer-btn">
+        <i class="fas fa-comment"></i>
+        <span>Message</span>
+    </a>
+    <a href="#" class="footer-btn">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+    </a>
+</footer>
+</body>
+</html>
