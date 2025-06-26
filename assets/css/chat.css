@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .chat-header .status-bar {
+    font-size: 12px;
+    color: #999;
+  }
+  .subtitle {
+    white-space: nowrap;
+  }
+  body {
+    margin: 0;
+    background-color: #f5f5f5;
+    height: 100vh;
+  }
+ 
+  
+  /* Chat Button */
+  .chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0057ff;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  /* Chat Box */
+  .chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 340px;
+    height: 520px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    animation: slideUp 0.4s ease forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Header */
+  .chat-header {
+    background-color: #f7f8fa;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .chat-header .name {
+    font-weight: bold;
+    color: #0057ff;
+    font-size: 16px;
+  }
+  
+  .chat-header .role {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  /* Chat Body */
+  .chat-body {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+  .chat-msg {
+    background-color: #eef3ff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    max-width: 90%;
+  }
+  
+  .chat-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 16px;
+  }
+  
+  .chat-options button {
+    padding: 8px 12px;
+    background-color: #0057ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .order-card {
+    display: flex;
+    border: 1px solid #0057ff;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 16px;
+    gap: 10px;
+  }
+  
+  .order-images img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+  
+  .order-info {
+    font-size: 14px;
+  }
+  
+  .order-info b {
+    font-weight: 600;
+  }
+  
+  .status {
+    font-weight: bold;
+    color: #333;
+    margin-top: 4px;
+  }
+  
+  /* Chat Footer */
+  .chat-footer {
+    background-color: #E5EBFC;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .chat-footer input {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    color: #003399;
+    background-color: #E5EBFC;
+    border: 1px solid #003399;
+  }
+  
+  .chat-footer input::placeholder {
+    color: #003399;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer-icons img {
+    width: 24px;   /* increased from 24px */
+    height: 24px;
+    cursor: pointer;
+    filter: none;
+  }
+  /* User Message */
+ /* User Message */
+.user-msg {
+    background-color: #0057ff;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 14px 14px 0 14px;
+    margin: 10px 0;
+    align-self: flex-end;
+    margin-left: auto;
+    max-width: fit-content;       /* makes it auto-resize */
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  .agent-msg {
+    background-color: #E5EBFC;
+    color: #000a66;
+    padding: 10px 14px;
+    border-radius: 14px 14px 14px 0;
+    margin: 10px 0;
+    align-self: flex-start;
+    margin-right: auto;
+    max-width: fit-content;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  /* Typing Indicator for Customer Care */
+  .status-bar {
+    font-size: 13px;
+    color: #0057ff;
+    text-align: right;
+    width: 100%;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  
+  
+  
+  /* Typing Indicator */
+  .typing-status {
+    font-size: 12px;
+    color: #999;
+    margin-left: 5px;
+  }
+  
+  
