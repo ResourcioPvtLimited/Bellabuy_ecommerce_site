@@ -1,17 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Wishlist</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/wishlist.css"/>
-</head>
-<body>
-  <!-- Header Section -->
-  <!-- <div class="shop-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wishlist</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/wishlist.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <!-- Header Section -->
+    <!-- <div class="shop-header">
     <a href="index.php" class="back-button">
       <i class="fas fa-arrow-left"></i>
     </a>
@@ -28,11 +35,10 @@
     </div>
   </div> -->
 
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <!-- Wishlist Container -->
-    <div class="wishlist-container">
-      
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Wishlist Container -->
+      <div class="wishlist-container">
         <!-- <div class="wishlist-header">
           <h2>Your Wishlist</h2>
           <span class="item-count"><?= $wishCount ?> items</span>
@@ -44,8 +50,7 @@
           <label for="selectAll">Select all items</label>
         </div> -->
 
-       
-          <!-- <div class="wishlist-card" data-price="<?= $item['price'] ?>" data-original-price="<?= $item['max_price'] ?>" data-id="<?= $item['id'] ?>">
+        <!-- <div class="wishlist-card" data-price="<?= $item['price'] ?>" data-original-price="<?= $item['max_price'] ?>" data-id="<?= $item['id'] ?>">
             <div class="product-checkbox">
               <input type="checkbox" class="product-select" onchange="updateSelectionSummary()" checked>
             </div>
@@ -80,258 +85,462 @@
               <i class="fas fa-trash" ></i>
             </div>
           </div> -->
-       
-        
+
         <!-- Combined Action Button -->
-        <button class="combined-action-btn" id="combinedActionBtn">Add Selected to Cart</button>
-      
+        <button class="combined-action-btn" id="combinedActionBtn">
+          Add Selected to Cart
+        </button>
+
         <div class="empty-wishlist">
           <i class="fas fa-heart"></i>
+          <img src="../assets/images/wishlist1.svg" alt="" />
+          <img src="../assets/images/wishlist1.svg" alt="" />
+          <img src="../assets/images/wishlist2.svg" alt="" />
+          <img src="../assets/images/wishlist2.svg" alt="" />
           <h3>Your wishlist is empty</h3>
           <p>Save your favorite items here to view them later</p>
-          <button class="shop-now-btn" >Start Shopping</button>
+          <button class="shop-now-btn">Start Shopping</button>
         </div>
-     
-    </div>
+      </div>
 
-    <!-- Featured Products Section -->
-    <!-- <div class="dropdown-product">
-      <details class="dropdown-section">
-        <summary class="Featured-title">Featured Product</summary>
-        <div class="products">
-          
-
-            <div class="product-card" data-id="<?= $product['id'] ?>">
+      <!-- Featured Products Section -->
+      <div class="dropdown-product">
+        <details class="dropdown-section">
+          <summary class="Featured-title">Featured Product</summary>
+          <div class="products">
+            <!-- Product Card 1 -->
+            <div class="product-card" data-id="1">
               <div class="product-image">
-                <img src="prod/<?= $product['img1'] ?>" alt="<?= $product['name'] ?>">
+                <img src="prod/sample1.jpg" alt="Stylish Jacket" />
                 <div class="label-launch">Just Launched</div>
-                <div class="wishlist-icon wish-btn <?= $inWishlist ? 'added' : '' ?>" 
-                     data-id="<?= $product['id'] ?>" 
-                     data-type="wishlist">
-                  <?= $inWishlist ? '♥' : '♡' ?>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="1"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
                 </div>
-                <div class="rating"><i class="fa fa-star"></i> <?= $product['star'] ?></div>
+                <div class="rating"><i class="fa fa-star"></i> 4.5</div>
               </div>
               <div class="product-info">
-                <div class="product-name"><?= $product['name'] ?></div>
-                <span class="product-price">BDT <?= $product['price'] ?></span>
+                <div class="product-name">Stylish Jacket</div>
+                <span class="product-price">BDT 89.99</span>
                 <div>
-                  <span class="product-original">BDT <?= $product['max_price'] ?></span>
-                  <span class="product-discount"><?= $discount ?>% OFF</span>
+                  <span class="product-original">BDT 120.00</span>
+                  <span class="product-discount">25% OFF</span>
                 </div>
                 <div class="brand">
-                  <div class="product-brand"><img src="<?= $brand['logo'] ?>" alt="<?= $brand['name'] ?>"></div>
+                  <div class="product-brand">
+                    <img src="brand/logo1.png" alt="Brand Name" />
+                  </div>
                   <div class="add-to-cart">
-                    <button class="cart-btn <?= $inCart ? 'added' : '' ?>" 
-                            data-id="<?= $product['id'] ?>" 
-                            data-type="cart">
-                      <?= $inCart ? 'Remove' : 'Add' ?>
+                    <button
+                      class="cart-btn"
+                      data-id="1"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-          <?php endwhile; ?>
-        </div>
-      </details>
-    </div> -->
-  </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  updateSelectionSummary();
-  attachCartButtonListeners();
-  attachWishlistButtonListeners();
-});
+            <!-- Product Card 2 -->
+            <div class="product-card" data-id="2">
+              <div class="product-image">
+                <img src="prod/sample2.jpg" alt="Modern Sneakers" />
+                <div class="label-launch">Just Launched</div>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="2"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
+                </div>
+                <div class="rating"><i class="fa fa-star"></i> 4.8</div>
+              </div>
+              <div class="product-info">
+                <div class="product-name">Modern Sneakers</div>
+                <span class="product-price">BDT 59.99</span>
+                <div>
+                  <span class="product-original">BDT 80.00</span>
+                  <span class="product-discount">25% OFF</span>
+                </div>
+                <div class="brand">
+                  <div class="product-brand">
+                    <img src="brand/logo2.png" alt="Brand Name" />
+                  </div>
+                  <div class="add-to-cart">
+                    <button
+                      class="cart-btn"
+                      data-id="2"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card" data-id="2">
+              <div class="product-image">
+                <img src="prod/sample2.jpg" alt="Modern Sneakers" />
+                <div class="label-launch">Just Launched</div>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="2"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
+                </div>
+                <div class="rating"><i class="fa fa-star"></i> 4.8</div>
+              </div>
+              <div class="product-info">
+                <div class="product-name">Modern Sneakers</div>
+                <span class="product-price">BDT 59.99</span>
+                <div>
+                  <span class="product-original">BDT 80.00</span>
+                  <span class="product-discount">25% OFF</span>
+                </div>
+                <div class="brand">
+                  <div class="product-brand">
+                    <img src="brand/logo2.png" alt="Brand Name" />
+                  </div>
+                  <div class="add-to-cart">
+                    <button
+                      class="cart-btn"
+                      data-id="2"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="product-card" data-id="2">
+              <div class="product-image">
+                <img src="prod/sample2.jpg" alt="Modern Sneakers" />
+                <div class="label-launch">Just Launched</div>
+                <div
+                  class="wishlist-icon wish-btn"
+                  data-id="2"
+                  data-type="wishlist"
+                  role="button"
+                  aria-label="Add to wishlist"
+                >
+                  ♡
+                </div>
+                <div class="rating"><i class="fa fa-star"></i> 4.8</div>
+              </div>
+              <div class="product-info">
+                <div class="product-name">Modern Sneakers</div>
+                <span class="product-price">BDT 59.99</span>
+                <div>
+                  <span class="product-original">BDT 80.00</span>
+                  <span class="product-discount">25% OFF</span>
+                </div>
+                <div class="brand">
+                  <div class="product-brand">
+                    <img src="brand/logo2.png" alt="Brand Name" />
+                  </div>
+                  <div class="add-to-cart">
+                    <button
+                      class="cart-btn"
+                      data-id="2"
+                      data-type="cart"
+                      aria-pressed="false"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
 
-function toggleSelectAll() {
-  const selectAll = document.getElementById('selectAll');
-  document.querySelectorAll('.product-select').forEach(cb => cb.checked = selectAll.checked);
-  document.querySelectorAll('.wishlist-card').forEach(card => card.classList.toggle('selected', selectAll.checked));
-  updateSelectionSummary();
-}
+      <div id="footer"></div>
+    </div>
 
-function updateSelectionSummary() {
-  const selectedCount = document.querySelectorAll('.product-select:checked').length;
-  document.querySelector('.selected-count').textContent = selectedCount;
-  
-  // Show/hide combined action button
-  const combinedBtn = document.getElementById('combinedActionBtn');
-  if (selectedCount > 0) {
-    combinedBtn.style.display = 'block';
-    combinedBtn.textContent = selectedCount > 1 
-      ? `Add ${selectedCount} Items to Cart` 
-      : 'Add Selected to Cart';
-  } else {
-    combinedBtn.style.display = 'none';
-  }
-}
+    <script>
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+      document.addEventListener("DOMContentLoaded", function () {
+        updateSelectionSummary();
+        attachCartButtonListeners();
+        attachWishlistButtonListeners();
+      });
 
-function addToCart(productId, removeFromWishlist = false) {
-  fetch('', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `pid=${productId}&type=cart${removeFromWishlist ? '&move_to_cart=true' : ''}`
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === 'added') {
-      // Update cart count
-      document.querySelector('.cart-count').textContent = data.count;
-      
-      // If moving from wishlist to cart
-      if (removeFromWishlist) {
-        // Update wishlist count
-        if (data.wishlist_count !== undefined) {
-          document.querySelector('.wishlist-count').textContent = data.wishlist_count;
-        }
-        
-        // Remove the item from wishlist display
-        const card = document.querySelector(`.wishlist-card[data-id="${productId}"]`);
-        if (card) card.remove();
-        
-        // Update wishlist count display
-        const remainingItems = document.querySelectorAll('.wishlist-card').length;
-        document.querySelector('.item-count').textContent = `${remainingItems} items`;
-        
-        // If no more items, show empty state
-        if (remainingItems === 0) {
-          location.reload();
-        }
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          const container = document.getElementById("footer");
+          container.innerHTML = data;
+
+          // Run scripts in footer.html
+          const scripts = container.querySelectorAll("script");
+          scripts.forEach((oldScript) => {
+            const newScript = document.createElement("script");
+            newScript.text = oldScript.text;
+            document.body.appendChild(newScript);
+          });
+        });
+
+      function toggleSelectAll() {
+        const selectAll = document.getElementById("selectAll");
+        document
+          .querySelectorAll(".product-select")
+          .forEach((cb) => (cb.checked = selectAll.checked));
+        document
+          .querySelectorAll(".wishlist-card")
+          .forEach((card) =>
+            card.classList.toggle("selected", selectAll.checked)
+          );
+        updateSelectionSummary();
       }
-      
-      // Show success message
-      alert('Product added to cart!');
-    } else {
-      alert('Product removed from cart!');
-    }
-  });
-}
 
-function addSelectedToCart() {
-  const selectedCards = document.querySelectorAll('.wishlist-card.selected');
-  if (selectedCards.length === 0) return;
-  
-  selectedCards.forEach(card => {
-    const productId = card.dataset.id;
-    addToCart(productId, true);
-  });
-}
+      function updateSelectionSummary() {
+        const selectedCount = document.querySelectorAll(
+          ".product-select:checked"
+        ).length;
+        document.querySelector(".selected-count").textContent = selectedCount;
 
-function buyNow(productId) {
-  // Add to cart first
-  fetch('', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `pid=${productId}&type=cart&move_to_cart=true`
-  })
-  .then(res => res.json())
-  .then(data => {
-    // Update counts
-    document.querySelector('.cart-count').textContent = data.count;
-    if (data.wishlist_count !== undefined) {
-      document.querySelector('.wishlist-count').textContent = data.wishlist_count;
-    }
-    
-    // Redirect to checkout
-    window.location.href = 'checkout.php';
-  });
-}
-
-function removeFromWishlist(productId) {
-  if (confirm('Are you sure you want to remove this item from your wishlist?')) {
-    fetch('', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `pid=${productId}&type=wishlist`
-    })
-    .then(res => res.json())
-    .then(data => {
-      document.querySelector('.wishlist-count').textContent = data.count;
-      // Remove the element from the DOM
-      const card = document.querySelector(`.wishlist-card[data-id="${productId}"]`);
-      if (card) card.remove();
-      
-      // Update wishlist count display
-      const remainingItems = document.querySelectorAll('.wishlist-card').length;
-      document.querySelector('.item-count').textContent = `${remainingItems} items`;
-      
-      // If no more items, show empty state
-      if (remainingItems === 0) {
-        location.reload();
-      }
-    });
-  }
-}
-
-function attachCartButtonListeners() {
-  document.querySelectorAll('.cart-btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      const productId = this.dataset.id;
-      const type = this.dataset.type;
-
-      fetch('', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `pid=${productId}&type=${type}`
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === 'added') {
-          this.textContent = 'Remove';
-          this.classList.add('added');
+        // Show/hide combined action button
+        const combinedBtn = document.getElementById("combinedActionBtn");
+        if (selectedCount > 0) {
+          combinedBtn.style.display = "block";
+          combinedBtn.textContent =
+            selectedCount > 1
+              ? `Add ${selectedCount} Items to Cart`
+              : "Add Selected to Cart";
         } else {
-          this.textContent = 'Add to Cart';
-          this.classList.remove('added');
+          combinedBtn.style.display = "none";
         }
-        document.querySelector('.cart-count').textContent = data.count;
-      });
-    });
-  });
-}
+      }
 
-function attachWishlistButtonListeners() {
-  document.querySelectorAll('.wish-btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      const productId = this.dataset.id;
-      const type = this.dataset.type;
+      function addToCart(productId, removeFromWishlist = false) {
+        fetch("", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `pid=${productId}&type=cart${
+            removeFromWishlist ? "&move_to_cart=true" : ""
+          }`,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "added") {
+              // Update cart count
+              document.querySelector(".cart-count").textContent = data.count;
 
-      fetch('', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `pid=${productId}&type=${type}`
-      })
-      .then(res => res.json())
-      .then(data => {
-        this.innerHTML = data.status === 'added' ? '♥' : '♡';
-        this.classList.toggle('added', data.status === 'added');
-        document.querySelector('.wishlist-count').textContent = data.count;
-        
-        // If adding to wishlist from featured products, refresh the page to show in wishlist
-        if (data.status === 'added' && type === 'wishlist') {
-          location.reload();
+              // If moving from wishlist to cart
+              if (removeFromWishlist) {
+                // Update wishlist count
+                if (data.wishlist_count !== undefined) {
+                  document.querySelector(".wishlist-count").textContent =
+                    data.wishlist_count;
+                }
+
+                // Remove the item from wishlist display
+                const card = document.querySelector(
+                  `.wishlist-card[data-id="${productId}"]`
+                );
+                if (card) card.remove();
+
+                // Update wishlist count display
+                const remainingItems =
+                  document.querySelectorAll(".wishlist-card").length;
+                document.querySelector(
+                  ".item-count"
+                ).textContent = `${remainingItems} items`;
+
+                // If no more items, show empty state
+                if (remainingItems === 0) {
+                  location.reload();
+                }
+              }
+
+              // Show success message
+              alert("Product added to cart!");
+            } else {
+              alert("Product removed from cart!");
+            }
+          });
+      }
+
+      function addSelectedToCart() {
+        const selectedCards = document.querySelectorAll(
+          ".wishlist-card.selected"
+        );
+        if (selectedCards.length === 0) return;
+
+        selectedCards.forEach((card) => {
+          const productId = card.dataset.id;
+          addToCart(productId, true);
+        });
+      }
+
+      function buyNow(productId) {
+        // Add to cart first
+        fetch("", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `pid=${productId}&type=cart&move_to_cart=true`,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // Update counts
+            document.querySelector(".cart-count").textContent = data.count;
+            if (data.wishlist_count !== undefined) {
+              document.querySelector(".wishlist-count").textContent =
+                data.wishlist_count;
+            }
+
+            // Redirect to checkout
+            window.location.href = "checkout.php";
+          });
+      }
+
+      function removeFromWishlist(productId) {
+        if (
+          confirm(
+            "Are you sure you want to remove this item from your wishlist?"
+          )
+        ) {
+          fetch("", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `pid=${productId}&type=wishlist`,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              document.querySelector(".wishlist-count").textContent =
+                data.count;
+              // Remove the element from the DOM
+              const card = document.querySelector(
+                `.wishlist-card[data-id="${productId}"]`
+              );
+              if (card) card.remove();
+
+              // Update wishlist count display
+              const remainingItems =
+                document.querySelectorAll(".wishlist-card").length;
+              document.querySelector(
+                ".item-count"
+              ).textContent = `${remainingItems} items`;
+
+              // If no more items, show empty state
+              if (remainingItems === 0) {
+                location.reload();
+              }
+            });
         }
+      }
+
+      function attachCartButtonListeners() {
+        document.querySelectorAll(".cart-btn").forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const productId = this.dataset.id;
+            const type = this.dataset.type;
+
+            fetch("", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: `pid=${productId}&type=${type}`,
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.status === "added") {
+                  this.textContent = "Remove";
+                  this.classList.add("added");
+                } else {
+                  this.textContent = "Add to Cart";
+                  this.classList.remove("added");
+                }
+                document.querySelector(".cart-count").textContent = data.count;
+              });
+          });
+        });
+      }
+
+      function attachWishlistButtonListeners() {
+        document.querySelectorAll(".wish-btn").forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const productId = this.dataset.id;
+            const type = this.dataset.type;
+
+            fetch("", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: `pid=${productId}&type=${type}`,
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                this.innerHTML = data.status === "added" ? "♥" : "♡";
+                this.classList.toggle("added", data.status === "added");
+                document.querySelector(".wishlist-count").textContent =
+                  data.count;
+
+                // If adding to wishlist from featured products, refresh the page to show in wishlist
+                if (data.status === "added" && type === "wishlist") {
+                  location.reload();
+                }
+              });
+          });
+        });
+      }
+
+      document.querySelectorAll(".product-card").forEach((card) => {
+        card.addEventListener("click", function (e) {
+          if (
+            !e.target.closest("button") &&
+            !e.target.closest(".wishlist-icon")
+          ) {
+            window.location.href = "wishlist_slider.php?id=" + this.dataset.id;
+          }
+        });
       });
-    });
-  });
-}
 
-document.querySelectorAll('.product-card').forEach(card => {
-  card.addEventListener('click', function (e) {
-    if (!e.target.closest('button') && !e.target.closest('.wishlist-icon')) {
-      window.location.href = 'wishlist_slider.php?id=' + this.dataset.id;
-    }
-  });
-});
+      // Combined action button event
+      document
+        .getElementById("combinedActionBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          addSelectedToCart();
+        });
 
-// Combined action button event
-document.getElementById('combinedActionBtn').addEventListener('click', function(e) {
-  e.preventDefault();
-  addSelectedToCart();
-});
-</script>
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          const container = document.getElementById("navbar");
+          container.innerHTML = data;
 
-</body>
+          // Re-execute <script> tags
+          const scripts = container.querySelectorAll("script");
+          scripts.forEach((oldScript) => {
+            const newScript = document.createElement("script");
+            newScript.text = oldScript.text;
+            document.body.appendChild(newScript); // or container.appendChild
+          });
+        });
+    </script>
+  </body>
 </html>
