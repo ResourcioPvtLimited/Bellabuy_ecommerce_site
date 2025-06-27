@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Activity</title>
+    <link rel="stylesheet" href="../assets/css/activity.css">
+</head>
+<body>
+    <div class="container">
+        <div id="navbar"></div>
+        
+        <div class="heading">
+            <h3>My Activity</h3>
+        </div>
+
+        <!-- Month -->
+        <div class="month-section">
+            <div class="month">April</div>
+        </div>
+
+        <!-- Total Section -->
+        <div class="total-section">
+            <div class="total-container">
+                <div class="nav-arrows nav-left">‹</div>
+                <div class="total-circle">
+                    <div class="total-label">Total</div>
+                    <div class="total-amount">৳3210</div>
+                </div>
+                <div class="nav-arrows nav-right">›</div>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="categories">
+            <div class="category clothing">Clothing $183.00</div>
+            <div class="category lingerie">Lingerie $92.00</div>
+            <div class="category shoes">Shoes $47.00</div>
+            <div class="category bags">Bags $43.00</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-circle">12</div>
+                <div class="stat-label">Ordered</div>
+            </div>
+            <div class="stat">
+                <div class="stat-circle">5</div>
+                <div class="stat-label">Received</div>
+            </div>
+            <div class="stat">
+                <div class="stat-circle">7</div>
+                <div class="stat-label">To Received</div>
+            </div>
+        </div>
+
+        <!-- Order History Button -->
+        <button class="order-history">Order History</button>
+
+        <!-- Bottom Navigation -->
+        <!-- <div class="bottom-nav">
+            <div class="nav-item active">
+                <div class="nav-icon">🏠</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon">🤍</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon">📋</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon">🛍️</div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon">👤</div>
+            </div>
+        </div> -->
+    </div>
+    <div id="footer"></div>
+
+    <script>
+    function loadHTML(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(data => {
+          const container = document.getElementById(id);
+          container.innerHTML = data;
+
+          // Execute scripts inside the included HTML
+          const scripts = container.querySelectorAll('script');
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+          });
+        });
+    }
+
+    loadHTML("navbar", "navbar.html");
+    loadHTML("footer", "footer.html");
+  </script>
+</body>
+</html>
