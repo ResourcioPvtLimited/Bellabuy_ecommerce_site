@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="../assets/css/main.css"/>
   <!-- <link rel="stylesheet" href="../assets/css/text.css"/>  -->
   <link rel="stylesheet" href="../assets/css/index.css"/>
+<link rel="stylesheet" href="../assets/css/trending.css"/>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 
     // Function to include HTML content
@@ -82,31 +84,72 @@ window.addEventListener('DOMContentLoaded', includeHTML);
   <button class="gender-btn" data-gender="women">Women</button>
 </div>
 <!-- Categories Heading -->
-<h2 class="section-title" style="margin-top:32px; margin-bottom:0;">Categories</h2>
-<!-- Categories -->
-<section class="categories-section">
-  <div class="category-card">
-    <img src="../assets/images/landingPage/category/footwear.jpg" alt="Footwear" />
-    <div class="category-label">Footwear</div>
+<h2 class="sectiontitle" style="margin-top:32px; margin-bottom:0;">Categories</h2>
+<div class="categories-scroll-card">
+  <div class="categories-scroll">
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Footwear" />
+      </div>
+      <div class="category-icon-label">T-Shirts</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/skirt.png" alt="Jackets" />
+      </div>
+      <div class="category-icon-label">Skirts</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Streetwear" />
+      </div>
+      <div class="category-icon-label">Streetwear</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Tuxedo" />
+      </div>
+      <div class="category-icon-label">Tuxedo</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Saree" />
+      </div>
+      <div class="category-icon-label">Saree</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Footwear" />
+      </div>
+      <div class="category-icon-label">T-Shirts</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Footwear" />
+      </div>
+      <div class="category-icon-label">T-Shirts</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Footwear" />
+      </div>
+      <div class="category-icon-label">T-Shirts</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Footwear" />
+      </div>
+      <div class="category-icon-label">T-Shirts</div>
+    </div>
+    <div class="category-icon-card">
+      <div class="category-icon-bg">
+        <img src="../assets/images/shirt.png" alt="Footwear" />
+      </div>
+      <div class="category-icon-label">T-Shirts</div>
+    </div>
   </div>
-  <div class="category-card">
-    <img src="../assets/images/landingPage/category/jacket.jpg" alt="Jackets" />
-    <div class="category-label">Jackets</div>
-  </div>
-  <div class="category-card">
-    <img src="../assets/images/landingPage/category/streetwear.jpg" alt="Streetwear" />
-    <div class="category-label">Streetwear</div>
-  </div>
-  <div class="category-card">
-    <img src="../assets/images/landingPage/category/jacket.jpg" alt="Tuxedo" />
-    <div class="category-label">Tuxedo</div>
-  </div>
-  <div class="category-card">
-    <img src="../assets/images/landingPage/category/saree.jpg" alt="Saree" />
-    <div class="category-label">Saree</div>
-  </div>
-</section>
-<div class="section-title">Top <span>Brands</span></div>
+</div>
+<div class="sectiontitle">Top <span>Brands</span></div>
 <div class="slider-wrapper">
   <div class="brand-slider" id="brand-container">
    <div class='brand-slide'><a href=''><img src='../assets/images/zara.png'></a></div>
@@ -120,50 +163,109 @@ window.addEventListener('DOMContentLoaded', includeHTML);
 <div class="bigdeal-main">
   <div class="big-deals-title">Big Deals</div>
   <div class="big-deals-subtitle">Don't miss out on our exclusive deals!</div>
-  <div class="deals-grid">
-  <div class="bigdeal-images-row">
-  <div class="bigdeal-image-card">
-    <img src="../img/bigdeal2.png" alt="T-Shirts" class="deal-img">
-  </div>
-  <div class="bigdeal-image-card">
-    <img src="../img/bigdeal.png" alt="Casual Shoes" class="deal-img">
-  </div>
-</div>
-<div class="bigdeal-images-row">
-  <div class="bigdeal-image-card">
-    <img src="../img/bigdeal.png" alt="Casual Shoes" class="deal-img">
-  </div>
-  <div class="bigdeal-image-card">
-    <img src="../img/bigdeal.png" alt="Casual Shoes" class="deal-img">
-  </div>
-</div>
+  <div class="deals-grid bigdeal-flex-wrap">
+    <!-- Offer ends in timer column -->
+    <div class="bigdeal-offer-timers bigdeal-timer-large">
+      <div class="bigdeal-offer-timer" id="bigdeal-timer-1">Offer ends in 01:00:00</div>
+      
+    </div>
+    <!-- Big deal images -->
+    <div class="bigdeal-images-col">
+      <div class="bigdeal-images-row">
+        <div class="bigdeal-image-card">
+          <img src="../img/bigdeal2.png" alt="T-Shirts" class="deal-img">
+        </div>
+        <div class="bigdeal-image-card">
+          <img src="../img/bigdeal.png" alt="Casual Shoes" class="deal-img">
+        </div>
       </div>
+      <div class="bigdeal-images-row">
+        <div class="bigdeal-image-card">
+          <img src="../img/bigdeal.png" alt="Casual Shoes" class="deal-img">
+        </div>
+        <div class="bigdeal-image-card">
+          <img src="../img/bigdeal.png" alt="Casual Shoes" class="deal-img">
+        </div>
       </div>
-<!--Product Section-->
-<div class="section-title">Discover <span>Our products</span></div>
-       <section class="product-grid">
-           <div class="product-card">
-  <div class="product-image">
-    <span class="badge">Just Arrived</span>
-    <button class="close-btn">&times;</button>
-    <img src="../assets/images/Mask Group.png" alt="Product Image" />
-  </div>
-  <div class="product-info">
-    <p class="product-name">Product 1</p>
-    <p class="price">
-      <span class="new-price">BDT 90</span>
-      <span class="old-price">BDT 120</span>
-      <span class="discount">10% OFF</span>
-    </p>
-    <img src="../assets/images/zara.png" alt="Brand Logo" class="brand-logo" />
-    <button class="cart-btn">Move to Cart</button>
+    </div>
   </div>
 </div>
 
-<div class="product-card">
-  <div class="product-image">
-    <span class="badge">Just Arrived</span>
-    <button class="close-btn">&times;</button>
+
+<script>
+// Big Deal timers
+function startBigDealTimers() {
+  const times = [54089]; // 15:01:29 in seconds
+  const el = document.getElementById('bigdeal-timer-1');
+  let timer = times[0];
+  function update() {
+    let h = Math.floor(timer/3600);
+    let m = Math.floor((timer%3600)/60);
+    let s = timer%60;
+    el.innerHTML = `Offer Ends in <span>${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}</span> HRS`;
+    if(timer>0) { timer--; setTimeout(update,1000); }
+    else { el.innerHTML = 'Offer ended'; }
+  }
+  update();
+}
+document.addEventListener('DOMContentLoaded', startBigDealTimers);
+</script>
+<!-- Trending  Section -->
+       <h2 class="sectiontitle" style="margin-top:32px; margin-bottom:0;">Trending</h2>
+       <section class="trending">
+       <section class="category-showcase">
+          <div class="category-header">
+            <h2>OFFICE SHIRTS</h2>
+          </div>
+          <div class="category-products">
+          <div class="product-scroll">
+            <div class="product-item">
+              <div class="product-image">
+                <img src="../assets/images/Mask Group.png" alt="Office Shirt" />
+                <div class="product-price">₹ 1,250 <span>990</span></div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-image">
+                <img src="../assets/images/Mask Group.png" alt="Office Shirt" />
+                <div class="product-price">₹ 1,290 <span>839</span></div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-image">
+                <img src="../assets/images/Mask Group.png" alt="Office Shirt" />
+                <div class="product-price">₹ 1,350 <span>899</span></div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-image">
+                <img src="../assets/images/Mask Group.png" alt="Office Shirt" />
+                <div class="product-price">₹ 1,690 <span>879</span></div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-image">
+                <img src="../assets/images/Mask Group.png" alt="Office Shirt" />
+                <div class="product-price">₹ 1,690 <span>879</span></div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-image">
+                <img src="../assets/images/Mask Group.png" alt="Office Shirt" />
+                <div class="product-price">₹ 1,690 <span>879</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="view-all-btn">VIEW 200 PRODUCTS</div>
+          </div>
+        </section>
+        </section>
+<!--Product Section-->
+<div class="sectiontitle">Discover <span>Our products</span></div>
+       <section class="product-grid">
+           <div class="product-card">
+  <div class="productimage">
+    <span class="badge" style="display:inline-block;">Just Arrived</span>
     <img src="../assets/images/Mask Group.png" alt="Product Image" />
   </div>
   <div class="product-info">
@@ -173,14 +275,16 @@ window.addEventListener('DOMContentLoaded', includeHTML);
       <span class="old-price">BDT 120</span>
       <span class="discount">10% OFF</span>
     </p>
+    <div class="brandlogo">
     <img src="../assets/images/zara.png" alt="Brand Logo" class="brand-logo" />
     <button class="cart-btn">Move to Cart</button>
+    </div>
   </div>
 </div>
-<div class="product-card">
-  <div class="product-image">
-    <span class="badge">Just Arrived</span>
-    <button class="close-btn">&times;</button>
+
+ <div class="product-card">
+  <div class="productimage">
+    <span class="badge" style="display:inline-block;">Just Arrived</span>
     <img src="../assets/images/Mask Group.png" alt="Product Image" />
   </div>
   <div class="product-info">
@@ -190,14 +294,15 @@ window.addEventListener('DOMContentLoaded', includeHTML);
       <span class="old-price">BDT 120</span>
       <span class="discount">10% OFF</span>
     </p>
+    <div class="brandlogo">
     <img src="../assets/images/zara.png" alt="Brand Logo" class="brand-logo" />
     <button class="cart-btn">Move to Cart</button>
+    </div>
   </div>
 </div>
-<div class="product-card">
-  <div class="product-image">
-    <span class="badge">Just Arrived</span>
-    <button class="close-btn">&times;</button>
+ <div class="product-card">
+  <div class="productimage">
+    <span class="badge" style="display:inline-block;">Just Arrived</span>
     <img src="../assets/images/Mask Group.png" alt="Product Image" />
   </div>
   <div class="product-info">
@@ -207,14 +312,15 @@ window.addEventListener('DOMContentLoaded', includeHTML);
       <span class="old-price">BDT 120</span>
       <span class="discount">10% OFF</span>
     </p>
+    <div class="brandlogo">
     <img src="../assets/images/zara.png" alt="Brand Logo" class="brand-logo" />
     <button class="cart-btn">Move to Cart</button>
+    </div>
   </div>
 </div>
-<div class="product-card">
-  <div class="product-image">
-    <span class="badge">Just Arrived</span>
-    <button class="close-btn">&times;</button>
+ <div class="product-card">
+  <div class="productimage">
+    <span class="badge" style="display:inline-block;">Just Arrived</span>
     <img src="../assets/images/Mask Group.png" alt="Product Image" />
   </div>
   <div class="product-info">
@@ -224,14 +330,15 @@ window.addEventListener('DOMContentLoaded', includeHTML);
       <span class="old-price">BDT 120</span>
       <span class="discount">10% OFF</span>
     </p>
+    <div class="brandlogo">
     <img src="../assets/images/zara.png" alt="Brand Logo" class="brand-logo" />
     <button class="cart-btn">Move to Cart</button>
+    </div>
   </div>
 </div>
-<div class="product-card">
-  <div class="product-image">
-    <span class="badge">Just Arrived</span>
-    <button class="close-btn">&times;</button>
+ <div class="product-card">
+  <div class="productimage">
+    <span class="badge" style="display:inline-block;">Just Arrived</span>
     <img src="../assets/images/Mask Group.png" alt="Product Image" />
   </div>
   <div class="product-info">
@@ -241,12 +348,68 @@ window.addEventListener('DOMContentLoaded', includeHTML);
       <span class="old-price">BDT 120</span>
       <span class="discount">10% OFF</span>
     </p>
+    <div class="brandlogo">
     <img src="../assets/images/zara.png" alt="Brand Logo" class="brand-logo" />
     <button class="cart-btn">Move to Cart</button>
+    </div>
+  </div>
+</div>
+ <div class="product-card">
+  <div class="productimage">
+    <span class="badge" style="display:inline-block;">Just Arrived</span>
+    <img src="../assets/images/Mask Group.png" alt="Product Image" />
+  </div>
+  <div class="product-info">
+    <p class="product-name">Product 1</p>
+    <p class="price">
+      <span class="new-price">BDT 90</span>
+      <span class="old-price">BDT 120</span>
+      <span class="discount">10% OFF</span>
+    </p>
+    <div class="brandlogo">
+    <img src="../assets/images/zara.png" alt="Brand Logo" class="brand-logo" />
+    <button class="cart-btn">Move to Cart</button>
+    </div>
   </div>
 </div>
             
         </section>
+<!-- Offer ends in timer for first 4 product cards -->
+<script>
+// Timer for "Offer ends in" for first 4 product cards
+function startOfferTimers() {
+  const offerTimes = [3600, 5400, 7200, 9000]; // seconds for demo
+  document.querySelectorAll('.product-card').forEach((card, idx) => {
+    if(idx < 4) {
+      let timer = offerTimes[idx];
+      const timerDiv = document.createElement('div');
+      timerDiv.className = 'offer-timer';
+      timerDiv.style.position = 'absolute';
+      timerDiv.style.left = '-120px';
+      timerDiv.style.top = '20px';
+      timerDiv.style.background = '#fff0e0';
+      timerDiv.style.color = '#d35400';
+      timerDiv.style.padding = '8px 14px';
+      timerDiv.style.borderRadius = '8px';
+      timerDiv.style.fontWeight = 'bold';
+      timerDiv.style.fontSize = '15px';
+      timerDiv.style.boxShadow = '0 2px 8px rgba(0,0,0,0.07)';
+      card.style.position = 'relative';
+      card.prepend(timerDiv);
+      function updateTimer() {
+        let h = Math.floor(timer/3600);
+        let m = Math.floor((timer%3600)/60);
+        let s = timer%60;
+        timerDiv.textContent = `Offer ends in ${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+        if(timer > 0) { timer--; setTimeout(updateTimer, 1000); }
+        else { timerDiv.textContent = 'Offer ended'; }
+      }
+      updateTimer();
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', startOfferTimers);
+</script>
 </body>
 <div data-include="footer.html"></div>
 </html>
