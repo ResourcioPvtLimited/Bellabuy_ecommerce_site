@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
   <link rel="stylesheet" href="../assets/css/register.css" />
 <link rel="stylesheet" href="../assets/css/main.css">
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     // Function to include HTML content
     function includeHTML() {
@@ -55,18 +54,18 @@ window.addEventListener('DOMContentLoaded', includeHTML);
     
 
     <form class="register-form" id="register-form">
-  <div class="input-wrapper">
+  <!-- <div class="input-wrapper">
     <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A4 4 0 017 16h10a4 4 0 011.879.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
     </svg>
     <input type="text" id="name" name="name" placeholder="Enter your full Name" >
-  </div>
+  </div> -->
 
   <div class="input-wrapper" style="margin-top: 1.5rem;">
     <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
     </svg>
-    <input type="text" id="identifier" name="identifier" placeholder="Enter your E-mail or Phone " >
+    <input type="email" id="email" name="identifier" placeholder="Enter your E-mail"  >
   </div>
 
   <div class="input-wrapper" style="margin-top: 1.5rem;">
@@ -74,7 +73,7 @@ window.addEventListener('DOMContentLoaded', includeHTML);
       <rect x="5" y="11" width="14" height="8" rx="2" />
       <path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4" />
     </svg>
-    <input type="password" id="password" name="password" placeholder="Password" required>
+    <input type="password" id="password" name="password" placeholder="Password" red>
     <button type="button" class="toggle-password" id="togglePasswordBtn" aria-label="Show password">
       <svg id="eyeIcon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24" height="24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -150,19 +149,8 @@ window.addEventListener('DOMContentLoaded', includeHTML);
       }
     });
   </script> -->
+<script type="module" src="../js/register.js"></script>
 
-  <!-- SweetAlert2 Toast Messages -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var registerForm = document.getElementById('register-form');
-  if (registerForm) {
-    registerForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      window.location.href = '/user/login.html'; // Use absolute path for Vercel/static hosting
-    });
-  }
-});
-</script>
 
 </body>
 </html>
