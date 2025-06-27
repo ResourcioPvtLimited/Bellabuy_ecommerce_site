@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 414px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+.heading{
+    width: 200px;
+    background-color: black;
+    padding: 10px 40px;
+    color: white;
+    border-radius: 30px;
+    margin: 10px 20px 0;
+}
+
+.month-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.month {
+    color: #007AFF;
+    font-size: 18px;
+    font-weight: 600;
+    background: #F9F9F9;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.total-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.total-container {
+    position: relative;
+    display: inline-block;
+}
+
+.total-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 4px 4px 20px #00000013,
+                -4px -4px 20px #00000013;
+}
+
+.total-label {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c2c2e;
+    margin-bottom: 8px;
+}
+
+.total-amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c2c2e;
+}
+
+.nav-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #5f5f60;
+    cursor: pointer;
+}
+
+.nav-left {
+    left: -40px;
+}
+
+.nav-right {
+    right: -40px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.category {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+.clothing {
+    background-color: #151414;
+}
+
+.lingerie {
+    background-color: #151414;
+}
+
+.shoes {
+    background-color: #FE7F00;
+}
+
+.bags {
+    background-color: #F34D75;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #2c2c2e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto 10px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #2c2c2e;
+    font-weight: 500;
+}
+
+.order-history {
+    margin: 20px;
+    background-color: #2c2c2e;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: calc(100% - 40px);
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 414px;
+    background-color: white;
+    border-top: 1px solid #e5e5e7;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 25px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.nav-item.active {
+    opacity: 1;
+}
+
+.nav-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+@media (min-width: 414px) {
+    .container {
+        max-width: 100%;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .status-bar {
+        display: none;
+    }
+
+    .header {
+        padding: 30px 40px;
+    }
+
+    .total-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .total-amount {
+        font-size: 42px;
+    }
+
+    .categories {
+        padding: 0 40px;
+        justify-content: center;
+    }
+
+    .stats {
+        padding: 0 40px;
+        max-width: 400px;
+        margin: 0 auto 40px;
+    }
+
+    .order-history {
+        margin: 30px 40px;
+        width: calc(100% - 80px);
+    }
+
+    .bottom-nav {
+        position: relative;
+        transform: none;
+        left: auto;
+        padding: 20px 0;
+        margin-top: 20px;
+    }
+}
