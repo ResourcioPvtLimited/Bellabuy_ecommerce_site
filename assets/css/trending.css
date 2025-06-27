@@ -8,7 +8,7 @@
 body {
     background-color: #f5f5f5;
     color: #333;
-    padding-bottom: 70px;
+    
     /* Space for footer */
     max-width: 500px;
     /* Mobile width */
@@ -19,7 +19,7 @@ body {
 
 .container-wrapper {
     width: 100%;
-    max-width: 1400px;
+    
     margin: 0 auto;
     position: relative;
     padding: 0 5px;
@@ -91,7 +91,7 @@ body {
 
 /* Content Wrapper */
 .content-wrapper {
-    padding-top: 60px;
+    
     /* Header height + spacing */
     width: 100%;
 }
@@ -538,7 +538,7 @@ body {
             "shirts shirts"
             "women men";
         gap: 20px;
-        padding: 80px 20px 0;
+        padding-top: 20px;
     }
 
     .offer-banner {
@@ -567,9 +567,7 @@ body {
 }
 
 @media (min-width: 1400px) {
-    .content-wrapper {
-        padding: 80px 20px 0;
-    }
+    
 
     .hero-content h2 {
         font-size: 52px;
